@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stories | Telugu & English Stories</title>
+
+  <meta name="description"
+        content="Discover beautiful Telugu and English stories, including horror, love, adventure, mystery, mythology, and moral stories.">
+
+  <style>
+    :root {
+      --bg: #090d18;
+      --card: #141b2b;
+      --text: #f5f3ff;
+      --muted: #b5bdd0;
+      --accent: #c084fc;
+      --accent2: #38bdf8;
+      --border: rgba(255,255,255,0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Animated background */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 15% 10%,
+          rgba(124,58,237,0.23), transparent 45%),
+        radial-gradient(ellipse at 85% 35%,
+          rgba(14,165,233,0.16), transparent 40%),
+        linear-gradient(160deg, #090d18, #111027, #080b14);
+    }
+
+    .orb {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.22;
+      animation: float 14s ease-in-out infinite alternate;
+    }
+
+    .orb.one {
+      background: #9333ea;
+      top: 10%;
+      left: -150px;
+    }
+
+    .orb.two {
+      background: #0284c7;
+      right: -150px;
+      top: 50%;
+      animation-delay: -6s;
+    }
+
+    @keyframes float {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(100px, 80px);
+      }
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9,13,24,0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #e9d5ff, #38bdf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .language-select {
+      background: #171b2c;
+      color: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px;
+      max-width: 125px;
+    }
+
+    /* Hero */
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 440px;
+      padding: 75px 20px 55px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #e9d5ff;
+      background: rgba(192,132,252,0.12);
+      border: 1px solid rgba(192,132,252,0.3);
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #c084fc, #67e8f9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 600px;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 19px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(100deg, #9333ea, #2563eb);
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero-art {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .moon {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e9d5ff, #7dd3fc);
+      box-shadow: 0 0 90px rgba(192,132,252,0.25);
+      display: grid;
+      place-items: center;
+      font-size: 90px;
+      animation: moonFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes moonFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .floating-label {
+      position: absolute;
+      background: rgba(20,27,43,0.92);
+      border: 1px solid var(--border);
+      padding: 10px 15px;
+      border-radius: 12px;
+      font-size: 13px;
+      animation: float 8s ease-in-out infinite alternate;
+    }
+
+    .label-one {
+      top: 25px;
+      right: 0;
+    }
+
+    .label-two {
+      bottom: 35px;
+      left: 0;
+    }
+
+    /* Search */
+
+    .search-section {
+      max-width: 850px;
+      margin: 0 auto 55px;
+      padding: 0 20px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      background: rgba(20,27,43,0.85);
+      border-radius: 17px;
+    }
+
+    .search-box input {
+      min-width: 0;
+      flex: 1;
+      padding: 12px;
+      border: none;
+      outline: none;
+      color: white;
+      background: transparent;
+    }
+
+    .search-box button {
+      padding: 11px 17px;
+      background: #9333ea;
+      color: white;
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* Main sections */
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 25px 20px 55px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(24px, 4vw, 34px);
+      margin-bottom: 4px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .category-card {
+      min-height: 135px;
+      padding: 20px;
+      border-radius: 17px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.025)
+      );
+      border: 1px solid var(--border);
+      transition: transform 0.25s, border-color 0.25s;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .category-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .category-card h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .category-card p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Story cards */
+
+    .filter-bar {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-bottom: 23px;
+    }
+
+    .filter-btn {
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 9px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #9333ea;
+      color: white;
+      border-color: #9333ea;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .story-card {
+      overflow: hidden;
+      background: rgba(20,27,43,0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.22);
+    }
+
+    .story-cover {
+      height: 150px;
+      display: grid;
+      place-items: center;
+      font-size: 58px;
+      background:
+        radial-gradient(circle at 50% 40%,
+          rgba(192,132,252,0.27), transparent 65%),
+        linear-gradient(135deg, #202344, #111827);
+    }
+
+    .story-content {
+      padding: 19px;
+    }
+
+    .story-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+
+    .story-content h3 {
+      font-size: 19px;
+      line-height: 1.35;
+      margin-bottom: 9px;
+    }
+
+    .story-content p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .read-link {
+      color: #d8b4fe;
+      font-weight: bold;
+      font-size: 13px;
+      background: none;
+      border: none;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 45px 20px;
+      border: 1px dashed var(--border);
+      border-radius: 15px;
+      color: var(--muted);
+    }
+
+    /* Story reader */
+
+    .reader {
+      display: none;
+      max-width: 850px;
+      margin: 0 auto 60px;
+      padding: 30px;
+      background: rgba(20,27,43,0.95);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      scroll-margin-top: 100px;
+    }
+
+    .reader.visible {
+      display: block;
+      animation: appear 0.4s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reader h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .reader-meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .reader-body {
+      font-size: 17px;
+      line-height: 2;
+      overflow-wrap: anywhere;
+    }
+
+    .reader-body p {
+      margin-bottom: 20px;
+    }
+
+    .reader-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    /* About and footer */
+
+    .about-box {
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.035);
+    }
+
+    .about-box h2 {
+      margin-bottom: 12px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #d8b4fe;
+    }
+
+    /* Responsive design */
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+      }
+
+      .hero-art {
+        min-height: 230px;
+      }
+
+      .moon {
+        width: 150px;
+        height: 150px;
+        font-size: 70px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .story-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .navbar {
+        padding: 12px;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 45px 17px 35px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .section {
+        padding: 20px 15px 40px;
+      }
+
+      .category-grid,
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-cover {
+        height: 170px;
+      }
+
+      .reader {
+        margin: 0 15px 40px;
+        padding: 22px;
+      }
+
+      .reader h2 {
+        font-size: 25px;
+      }
+
+      .reader-body {
+        font-size: 16px;
+      }
+
+      .search-box button {
+        padding: 10px 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="background" aria-hidden="true">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="logo">✦ STORIES</a>
+
+      <div class="nav-links">
+        <a href="#home" data-en="Home" data-te="హోమ్">Home</a>
+        <a href="#categories" data-en="Categories" data-te="విభాగాలు">Categories</a>
+        <a href="#stories" data-en="Stories" data-te="కథలు">Stories</a>
+        <a href="#about" data-en="About" data-te="మా గురించి">About</a>
+      </div>
+
+      <select id="languageSelect"
+              class="language-select"
+              aria-label="Select language">
+        <option value="en">English</option>
+        <option value="te">తెలుగు</option>
+      </select>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow"
+              data-en="✦ A WORLD OF IMAGINATION"
+              data-te="✦ ఊహలకు ఒక కొత్త ప్రపంచం">
+          ✦ A WORLD OF IMAGINATION
+        </span>
+
+        <h1>
+          <span data-en="Every story opens" data-te="ప్రతి కథ తెరుస్తుంది">
+            Every story opens
+          </span>
+          <br>
+          <span class="gradient-text"
+                data-en="a new world."
+                data-te="ఒక కొత్త ప్రపంచాన్ని.">
+            a new world.
+          </span>
+        </h1>
+
+        <p data-en="Discover unforgettable stories filled with mystery, love, adventure, wisdom and imagination. Read in Telugu or English, and find your next favourite story."
+           data-te="రహస్యం, ప్రేమ, సాహసం, జ్ఞానం మరియు ఊహలతో నిండిన అద్భుతమైన కథలను చదవండి. తెలుగు లేదా ఇంగ్లీష్‌లో మీకు నచ్చిన కథను కనుగొనండి.">
+          Discover unforgettable stories filled with mystery, love,
+          adventure, wisdom and imagination. Read in Telugu or English,
+          and find your next favourite story.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary"
+             href="#stories"
+             data-en="Explore Stories →"
+             data-te="కథలను చదవండి →">
+            Explore Stories →
+          </a>
+
+          <a class="btn btn-secondary"
+             href="#categories"
+             data-en="Browse Categories"
+             data-te="విభాగాలను చూడండి">
+            Browse Categories
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="moon">📖</div>
+        <div class="floating-label label-one">✨ Endless Imagination</div>
+        <div class="floating-label label-two">🌙 Stories for Every Mood</div>
+      </div>
+    </section>
+
+    <section class="search-section" aria-label="Search stories">
+      <div class="search-box">
+        <input id="searchInput"
+               type="search"
+               placeholder="Search stories, categories..."
+               aria-label="Search stories">
+
+        <button id="searchButton" type="button">
+          Search
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-heading">
+        <div>
+          <h2 data-en="Explore Categories"
+              data-te="కథల విభాగాలు">
+            Explore Categories
+          </h2>
+
+          <p data-en="Something wonderful for every reader."
+             data-te="ప్రతి పాఠకుడి కోసం ఒక అద్భుతమైన కథ.">
+            Something wonderful for every reader.
+          </p>
+        </div>
+      </div>
+
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section" id="stories">
+      <div class="section-heading">
+        <div>
+          <h2 data-en="Stories to Discover"
+              data-te="మీరు చదవాల్సిన కథలు">
+            Stories to Discover
+          </h2>
+
+          <p data-en="Choose a story and enter another world."
+             data-te="ఒక కథను ఎంచుకుని మరో ప్రపంచంలోకి వెళ్లండి.">
+            Choose a story and enter another world.
+          </p>
+        </div>
+      </div>
+
+      <div class="filter-bar" id="filterBar"></div>
+
+      <div class="story-grid" id="storyGrid"></div>
+    </section>
+
+    <section class="reader" id="reader" aria-live="polite">
+      <div class="reader-actions">
+        <button class="btn btn-secondary"
+                id="backButton"
+                type="button">
+          ← Back to stories
+        </button>
+
+        <button class="btn btn-secondary"
+                id="bookmarkButton"
+                type="button">
+          ♡ Save story
+        </button>
+      </div>
+
+      <h2 id="readerTitle"></h2>
+      <div class="reader-meta" id="readerMeta"></div>
+      <article class="reader-body" id="readerBody"></article>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about-box">
+        <h2 data-en="A home for every kind of story"
+            data-te="ప్రతి రకమైన కథకు ఒక వేదిక">
+          A home for every kind of story
+        </h2>
+
+        <p data-en="Stories is a growing collection of original and inspiring tales in Telugu and English. From spooky mysteries and beautiful love stories to timeless moral tales and exciting adventures, there is always another world to discover."
+           data-te="Stories అనేది తెలుగు మరియు ఇంగ్లీష్‌లోని కథల సమాహారం. భయానక రహస్యాల నుంచి అందమైన ప్రేమకథల వరకు, నీతి కథల నుంచి సాహస కథల వరకు ఎన్నో కథలను ఇక్కడ చదవవచ్చు.">
+          Stories is a growing collection of original and inspiring tales
+          in Telugu and English. From spooky mysteries and beautiful love
+          stories to timeless moral tales and exciting adventures, there
+          is always another world to discover.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>✦ STORIES — తెలుగు కథలు & English Stories</p>
+    <p>
+      <span data-en="Made for the love of storytelling."
+            data-te="కథలను ప్రేమించే ప్రతి ఒక్కరి కోసం.">
+        Made for the love of storytelling.
+      </span>
+    </p>
+    <p>© <span id="year"></span> Stories</p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    /*
+      STORIES WEBSITE
+      Version 1.0
+
+      Add new stories to the storiesData array.
+      No database is required for this version.
+    */
+
+    const categories = [
+      {
+        id: "horror",
+        icon: "👻",
+        en: "Horror & Ghost",
+        te: "భూతాల కథలు",
+        descEn: "Ghosts and spooky mysteries",
+        descTe: "దెయ్యాలు మరియు భయానక రహస్యాలు"
+      },
+      {
+        id: "love",
+        icon: "❤️",
+        en: "Love & Romance",
+        te: "ప్రేమ కథలు",
+        descEn: "Love and heartfelt moments",
+        descTe: "ప్రేమ మరియు హృదయాన్ని తాకే కథలు"
+      },
+      {
+        id: "adventure",
+        icon: "🗺️",
+        en: "Adventure",
+        te: "సాహస కథలు",
+        descEn: "Journeys and discoveries",
+        descTe: "ప్రయాణాలు మరియు అన్వేషణలు"
+      },
+      {
+        id: "moral",
+        icon: "🌳",
+        en: "Moral Stories",
+        te: "నీతి కథలు",
+        descEn: "Lessons for life",
+        descTe: "జీవితానికి ఉపయోగపడే నీతులు"
+      },
+      {
+        id: "mystery",
+        icon: "🔎",
+        en: "Mystery & Thriller",
+        te: "రహస్య కథలు",
+        descEn: "Secrets and suspense",
+        descTe: "రహస్యాలు మరియు ఉత్కంఠ"
+      },
+      {
+        id: "mythology",
+        icon: "🪔",
+        en: "Mythology",
+        te: "పౌరాణిక కథలు",
+        descEn: "Legends and traditions",
+        descTe: "పురాణాలు మరియు సంప్రదాయాలు"
+      },
+      {
+        id: "comedy",
+        icon: "😂",
+        en: "Comedy",
+        te: "హాస్య కథలు",
+        descEn: "Stories to make you smile",
+        descTe: "నవ్వించే సరదా కథలు"
+      },
+      {
+        id: "inspiration",
+        icon: "🌟",
+        en: "Inspirational",
+        te: "స్ఫూర్తిదాయక కథలు",
+        descEn: "Dreams, courage and hope",
+        descTe: "కలలు, ధైర్యం మరియు ఆశ"
+      },
+      {
+        id: "family",
+        icon: "👨‍👩‍👦",
+        en: "Family Stories",
+        te: "కుటుంబ కథలు",
+        descEn: "Stories for everyone",
+        descTe: "అందరూ కలిసి చదివే కథలు"
+      },
+      {
+        id: "fantasy",
+        icon: "🧙",
+        en: "Fantasy",
+        te: "మాయాజాల కథలు",
+        descEn: "Magic and imaginary worlds",
+        descTe: "మాయాజాలం మరియు అద్భుత ప్రపంచాలు"
+      },
+      {
+        id: "historical",
+        icon: "🏰",
+        en: "Historical",
+        te: "చారిత్రక కథలు",
+        descEn: "Stories from the past",
+        descTe: "గతకాలపు కథలు"
+      },
+      {
+        id: "kids",
+        icon: "🧸",
+        en: "Kids Stories",
+        te: "పిల్లల కథలు",
+        descEn: "Fun stories for children",
+        descTe: "పిల్లల కోసం సరదా కథలు"
+      }
+    ];
+
+    /*
+      The sample stories below are original short examples.
+      Add more stories here as the website grows.
+    */
+
+    const storiesData = [
+      {
+        id: "s001",
+        category: "horror",
+        icon: "👻",
+        minutes: 3,
+        title: {
+          en: "The Light in the Empty House",
+          te: "ఖాళీ ఇంటిలో వెలుగు"
+        },
+        description: {
+          en: "Every night, a forgotten house lights up at exactly midnight.",
+          te: "ప్రతి రాత్రి సరిగ్గా అర్ధరాత్రి ఒక పాడుబడిన ఇంటిలో వెలుగు కనిపించేది."
+        },
+        body: {
+          en: [
+            "At the end of a quiet village stood an old house. Nobody had lived there for twenty years. Yet every night, exactly at midnight, a small yellow light appeared in its upstairs window.",
+            "One evening, a curious young man named Arjun decided to discover the truth. He walked through the rusty gate and entered the house. Dust covered the furniture, and the wooden staircase creaked beneath his feet.",
+            "Upstairs, he found a little lamp burning beside a photograph. The photograph showed a family standing in front of the very same house.",
+            "Suddenly, a gentle voice whispered, 'Thank you for coming back.' Arjun turned around. The room was empty, but the photograph now showed one additional person standing beside the family.",
+            "The next morning, villagers found the gate open. The light never appeared again. But sometimes, people passing the house say they see a new face in the old photograph."
+          ],
+          te: [
+            "ఒక నిశ్శబ్దమైన గ్రామం చివర ఒక పాత ఇల్లు ఉండేది. ఇరవై సంవత్సరాలుగా అక్కడ ఎవరూ నివసించలేదు. అయినప్పటికీ, ప్రతి రాత్రి సరిగ్గా అర్ధరాత్రి సమయంలో పై అంతస్తు కిటికీలో ఒక చిన్న పసుపు రంగు వెలుగు కనిపించేది.",
+            "ఒక రోజు అర్జున్ అనే యువకుడు ఆ రహస్యాన్ని తెలుసుకోవాలని నిర్ణయించుకున్నాడు. తుప్పుపట్టిన గేటు దాటి ఇంట్లోకి వెళ్లాడు. ఫర్నిచర్‌పై దుమ్ము పేరుకుపోయింది. చెక్క మెట్లు అతని అడుగులకు శబ్దం చేశాయి.",
+            "పై అంతస్తులో ఒక ఫోటో పక్కన చిన్న దీపం వెలుగుతూ కనిపించింది. ఆ ఫోటోలో ఒక కుటుంబం అదే ఇంటి ముందు నిలబడి ఉంది.",
+            "అకస్మాత్తుగా ఒక మృదువైన స్వరం, 'తిరిగి వచ్చినందుకు ధన్యవాదాలు' అని చెప్పింది. అర్జున్ వెనక్కి తిరిగాడు. గదిలో ఎవరూ లేరు. కానీ ఫోటోలో ఆ కుటుంబం పక్కన ఇప్పుడు మరో వ్యక్తి కనిపించాడు.",
+            "మరుసటి ఉదయం గ్రామస్థులకు గేటు తెరిచి కనిపించింది. ఆ రాత్రి తర్వాత ఆ వెలుగు మళ్లీ కనిపించలేదు. అయితే, ఆ ఇంటి పక్కగా వెళ్లేవారు పాత ఫోటోలో కొత్త ముఖాన్ని చూస్తున్నామని చెబుతుంటారు."
+          ]
+        }
+      },
+
+      {
+        id: "s002",
+        category: "love",
+        icon: "❤️",
+        minutes: 3,
+        title: {
+          en: "A Letter Never Sent",
+          te: "పంపని ఉత్తరం"
+        },
+        description: {
+          en: "A forgotten letter reveals a love story many years later.",
+          te: "ఎన్నో సంవత్సరాల తర్వాత ఒక పాత ఉత్తరం ప్రేమకథను బయటపెట్టింది."
+        },
+        body: {
+          en: [
+            "While cleaning her grandmother's house, Meera discovered a blue envelope hidden inside an old book.",
+            "The letter was written by someone named Ravi. He described a promise to meet beneath a banyan tree on the day the first monsoon rain arrived.",
+            "At the bottom, one sentence was underlined: 'Even if life takes us apart, I will remember this place.'",
+            "Meera asked her grandmother about the letter. For a long time, the old woman said nothing. Then she smiled and pointed toward the window. Beyond it stood the same banyan tree.",
+            "'He came that day,' her grandmother whispered. 'I was too afraid to leave home. I have wondered about that moment ever since.'",
+            "Meera folded the letter carefully. Some stories do not end when the pages stop. They wait for someone to listen."
+          ],
+          te: [
+            "తన అమ్మమ్మ ఇంటిని శుభ్రం చేస్తుండగా మీరాకు ఒక పాత పుస్తకంలో దాచిన నీలిరంగు కవరు కనిపించింది.",
+            "ఆ ఉత్తరం రవి అనే వ్యక్తి రాశాడు. మొదటి వర్షం పడిన రోజున మర్రిచెట్టు కింద కలుసుకుందామని ఇచ్చుకున్న మాట గురించి అందులో ఉంది.",
+            "చివరలో ఒక వాక్యానికి గీత గీసి ఉంది: 'జీవితం మనల్ని దూరం చేసినా, ఈ ప్రదేశాన్ని నేను గుర్తుంచుకుంటాను.'",
+            "మీరా ఆ ఉత్తరం గురించి అమ్మమ్మను అడిగింది. చాలాసేపు మౌనంగా ఉన్న ఆమె చివరకు కిటికీ వైపు చూపించింది. అక్కడ అదే మర్రిచెట్టు కనిపించింది.",
+            "'ఆ రోజు అతను వచ్చాడు,' అని అమ్మమ్మ మెల్లగా చెప్పింది. 'కానీ నేను ఇంటి నుంచి బయటకు రావడానికి భయపడ్డాను. అప్పటి నుంచి ఆ క్షణం గురించి ఆలోచిస్తూనే ఉన్నాను.'",
+            "మీరా ఆ ఉత్తరాన్ని జాగ్రత్తగా మడిచింది. కొన్ని కథలు పేజీలు ముగిసినంత మాత్రాన ముగియవు. ఎవరో వినేవారి కోసం ఎదురుచూస్తుంటాయి."
+          ]
+        }
+      },
+
+      {
+        id: "s003",
+        category: "moral",
+        icon: "🌳",
+        minutes: 2,
+        title: {
+          en: "The Honest Woodcutter",
+          te: "నిజాయితీగల కట్టెలు కొట్టేవాడు"
+        },
+        description: {
+          en: "An old tale about honesty and the rewards of telling the truth.",
+          te: "నిజం చెప్పడం వల్ల కలిగే మంచిని తెలిపే నీతి కథ."
+        },
+        body: {
+          en: [
+            "A poor woodcutter worked beside a river every day. One afternoon, his axe slipped from his hands and fell into the deep water.",
+            "He sat on the bank, worried because he had no money to buy another axe. A mysterious helper appeared and offered him a golden axe. The woodcutter shook his head. 'That is not mine,' he said.",
+            "Next came a silver axe. Again, he refused it. Finally, his own old iron axe appeared, and he happily accepted it.",
+            "The helper was pleased by his honesty and rewarded him. The woodcutter returned home grateful, knowing that telling the truth had been worth more than gold.",
+            "Moral: Honesty is valuable even when nobody is watching."
+          ],
+          te: [
+            "ఒక పేద కట్టెలు కొట్టేవాడు ప్రతిరోజూ నది పక్కన పని చేసేవాడు. ఒక రోజు అతని గొడ్డలి చేతిలో నుంచి జారి లోతైన నీటిలో పడిపోయింది.",
+            "మరో గొడ్డలి కొనడానికి డబ్బులు లేక అతను నది ఒడ్డున బాధగా కూర్చున్నాడు. అప్పుడు ఒక వింత వ్యక్తి వచ్చి బంగారు గొడ్డలిని చూపించాడు. 'ఇది నాది కాదు' అని కట్టెలు కొట్టేవాడు చెప్పాడు.",
+            "తర్వాత వెండి గొడ్డలిని చూపించాడు. దానిని కూడా అతను తిరస్కరించాడు. చివరకు తన పాత ఇనుప గొడ్డలిని చూపించగా సంతోషంగా తీసుకున్నాడు.",
+            "అతని నిజాయితీకి సంతోషించిన ఆ వ్యక్తి అతనికి బహుమతి ఇచ్చాడు. నిజం చెప్పడం బంగారం కంటే విలువైనదని తెలుసుకుని అతను ఇంటికి తిరిగివెళ్లాడు.",
+            "నీతి: ఎవరూ చూడకపోయినా నిజాయితీగా ఉండటం ఎంతో విలువైనది."
+          ]
+        }
+      },
+
+      {
+        id: "s004",
+        category: "adventure",
+        icon: "🗺️",
+        minutes: 3,
+        title: {
+          en: "The Map Under the Tree",
+          te: "చెట్టు కింద ఉన్న పటం"
+        },
+        description: {
+          en: "Two friends discover an old map and begin an unexpected adventure.",
+          te: "పాత పటాన్ని కనుగొన్న ఇద్దరు స్నేహితుల సాహసం."
+        },
+        body: {
+          en: [
+            "Kiran and Dev were exploring a hill near their village when they noticed a small metal box beneath the roots of a tree.",
+            "Inside the box was a hand-drawn map marked with a river, three hills and a mysterious symbol.",
+            "The friends followed the map until they reached a narrow path hidden behind tall grass. At the end stood an ancient stone arch.",
+            "They discovered no gold or jewels beyond the arch. Instead, they found a spring of clear water and a collection of old books carefully protected from the rain.",
+            "The greatest treasure, they realized, was the knowledge and history that had remained hidden for generations."
+          ],
+          te: [
+            "కిరణ్, దేవ్ అనే ఇద్దరు స్నేహితులు తమ గ్రామం దగ్గర ఉన్న కొండను అన్వేషిస్తుండగా ఒక చెట్టు వేర్ల కింద చిన్న లోహపు పెట్టెను గమనించారు.",
+            "పెట్టెలో ఒక చేతితో గీసిన పటం ఉంది. అందులో ఒక నది, మూడు కొండలు, ఒక రహస్య గుర్తు ఉన్నాయి.",
+            "వారు పటాన్ని అనుసరిస్తూ పొడవైన గడ్డి వెనుక దాగి ఉన్న సన్నని దారిని చేరుకున్నారు. దారి చివర ఒక పురాతన రాతి తోరణం కనిపించింది.",
+            "ఆ తోరణం దాటి వెళ్లినప్పుడు వారికి బంగారం, వజ్రాలు కనిపించలేదు. బదులుగా స్వచ్ఛమైన నీటి ఊట, వర్షం తగలకుండా భద్రపరిచిన పాత పుస్తకాలు కనిపించాయి.",
+            "తరతరాలుగా దాగి ఉన్న జ్ఞానం, చరిత్రే నిజమైన నిధి అని వారు తెలుసుకున్నారు."
+          ]
+        }
+      },
+
+      {
+        id: "s005",
+        category: "mystery",
+        icon: "🔎",
+        minutes: 3,
+        title: {
+          en: "The Clock That Stopped",
+          te: "ఆగిపోయిన గడియారం"
+        },
+        description: {
+          en: "A strange clock stops at the same time every evening.",
+          te: "ప్రతి సాయంత్రం ఒకే సమయానికి ఆగిపోయే వింత గడియారం."
+        },
+        body: {
+          en: [
+            "In an antique shop stood a clock that always stopped at 7:17 in the evening. The shopkeeper had repaired it many times, but the problem never disappeared.",
+            "One day, a young visitor noticed that the clock stopped whenever a particular old train passed behind the building.",
+            "The shopkeeper investigated and found a forgotten vibration in the wooden wall. The passing train shook the clock just enough to interrupt its delicate mechanism.",
+            "After the clock was moved to another shelf, it continued ticking through the evening.",
+            "The mystery was solved, but the shopkeeper kept telling customers that every old object had a story waiting to be discovered."
+          ],
+          te: [
+            "ఒక పాత వస్తువుల దుకాణంలో ఉన్న గడియారం ప్రతిరోజూ సాయంత్రం 7:17 గంటలకు ఆగిపోయేది. దుకాణదారుడు ఎన్నిసార్లు బాగుచేసినా సమస్య అలాగే ఉండేది.",
+            "ఒక రోజు వచ్చిన యువకుడు, దుకాణం వెనుక నుంచి ఒక పాత రైలు వెళ్లినప్పుడల్లా గడియారం ఆగిపోతున్నట్లు గమనించాడు.",
+            "దుకాణదారుడు పరిశీలించగా చెక్క గోడలో ప్రకంపనలు కలుగుతున్నాయని తెలుసుకున్నాడు. రైలు వెళ్లేటప్పుడు వచ్చే కంపనం గడియారంలోని సున్నితమైన యంత్రాంగాన్ని ప్రభావితం చేస్తోంది.",
+            "గడియారాన్ని మరో అరలో పెట్టిన తర్వాత అది సాయంత్రం అంతా సరిగ్గా పనిచేసింది.",
+            "రహస్యం పరిష్కారమైనా, ప్రతి పాత వస్తువులో తెలుసుకోవాల్సిన ఒక కథ ఉంటుందని దుకాణదారుడు చెబుతూనే ఉండేవాడు."
+          ]
+        }
+      },
+
+      {
+        id: "s006",
+        category: "inspiration",
+        icon: "🌟",
+        minutes: 2,
+        title: {
+          en: "One More Attempt",
+          te: "మరో ప్రయత్నం"
+        },
+        description: {
+          en: "A young inventor learns why failure is not the end.",
+          te: "ఓటమి అంతం కాదని తెలుసుకున్న యువ ఆవిష్కర్త కథ."
+        },
+        body: {
+          en: [
+            "A young inventor named Tara wanted to build a small machine that could help farmers save water.",
+            "Her first model leaked. The second consumed too much electricity. The third stopped working after an hour.",
+            "Her friends suggested that she choose an easier project. Tara decided to examine every failure instead.",
+            "After weeks of careful experiments, she created a simple device that released water only when the soil became dry.",
+            "When a farmer tested it, he smiled and said, 'This will help us.' Tara finally understood that every failed attempt had taught her something important.",
+            "Moral: Progress often begins with the courage to try again."
+          ],
+          te: [
+            "తారా అనే యువ ఆవిష్కర్త రైతులకు నీటిని ఆదా చేయడంలో సహాయపడే ఒక చిన్న యంత్రాన్ని తయారు చేయాలనుకుంది.",
+            "మొదటి యంత్రంలో నీరు కారింది. రెండోది ఎక్కువ విద్యుత్తు వాడింది. మూడోది గంటకే ఆగిపోయింది.",
+            "సులభమైన పని ఎంచుకోమని స్నేహితులు చెప్పినా, తారా ప్రతి తప్పును పరిశీలించాలని నిర్ణయించుకుంది.",
+            "కొన్ని వారాల ప్రయోగాల తర్వాత, నేల ఎండిపోయినప్పుడు మాత్రమే నీటిని విడుదల చేసే చిన్న పరికరాన్ని తయారు చేసింది.",
+            "ఒక రైతు దాన్ని పరీక్షించి, 'ఇది మాకు ఎంతో ఉపయోగపడుతుంది' అని నవ్వాడు. ప్రతి ప్రయత్నం తనకు ఏదో ఒక పాఠం నేర్పిందని తారా గ్రహించింది.",
+            "నీతి: మళ్లీ ప్రయత్నించే ధైర్యంతోనే పురోగతి మొదలవుతుంది."
+          ]
+        }
+      },
+
+      {
+        id: "s007",
+        category: "mythology",
+        icon: "🪔",
+        minutes: 2,
+        title: {
+          en: "The Lamp of Wisdom",
+          te: "జ్ఞాన దీపం"
+        },
+        description: {
+          en: "An imaginative traditional-style tale about wisdom and humility.",
+          te: "జ్ఞానం మరియు వినయం గురించి ఒక కల్పిత కథ."
+        },
+        body: {
+          en: [
+            "In a small kingdom, a young prince believed that having all the answers made him wise.",
+            "One day, an old teacher gave him an unlit lamp and asked him to find the brightest flame in the kingdom.",
+            "The prince visited palaces, markets and temples. He found beautiful lamps everywhere but could not decide which flame was the brightest.",
+            "Finally, a village child lit the lamp using a small flame and said, 'A light is useful when it helps someone see.'",
+            "The prince understood that wisdom was not about appearing important. It was about using knowledge to help others.",
+            "This is an original fictional tale inspired by traditional moral storytelling, not a historical scripture."
+          ],
+          te: [
+            "ఒక చిన్న రాజ్యంలో, అన్ని ప్రశ్నలకు సమాధానాలు తెలిసినవాడే జ్ఞాని అని ఒక యువరాజు నమ్మేవాడు.",
+            "ఒక రోజు ఒక వృద్ధ గురువు అతనికి వెలగని దీపాన్ని ఇచ్చి, రాజ్యంలో అత్యంత ప్రకాశవంతమైన జ్యోతిని కనుక్కోమన్నాడు.",
+            "యువరాజు రాజభవనాలు, మార్కెట్లు, దేవాలయాలు సందర్శించాడు. ఎన్నో అందమైన దీపాలు కనిపించాయి కానీ ఏది గొప్పదో నిర్ణయించలేకపోయాడు.",
+            "చివరకు ఒక గ్రామ బాలుడు చిన్న జ్యోతితో ఆ దీపాన్ని వెలిగించి, 'వెలుగు ఇతరులకు దారి చూపినప్పుడే ఉపయోగపడుతుంది' అన్నాడు.",
+            "జ్ఞానం అంటే గొప్పగా కనిపించడం కాదు, ఇతరులకు సహాయపడటానికి దాన్ని ఉపయోగించడమని యువరాజు తెలుసుకున్నాడు.",
+            "ఇది సంప్రదాయ నీతి కథల స్ఫూర్తితో రాసిన కల్పిత కథ మాత్రమే; చారిత్రక గ్రంథంలోని కథ కాదు."
+          ]
+        }
+      },
+
+      {
+        id: "s008",
+        category: "comedy",
+        icon: "😂",
+        minutes: 2,
+        title: {
+          en: "The Clever Shopkeeper",
+          te: "తెలివైన దుకాణదారుడు"
+        },
+        description: {
+          en: "A funny village misunderstanding ends with everyone laughing.",
+          te: "ఒక గ్రామంలో జరిగిన సరదా అపార్థం అందరినీ నవ్వించింది."
+        },
+        body: {
+          en: [
+            "Ramu ran a small shop in a village. One morning, a customer asked him for something that would make his memory stronger.",
+            "Ramu handed him a notebook and a pencil.",
+            "'Will these improve my memory?' the customer asked.",
+            "'No,' said Ramu. 'But you can write down what you forget!'",
+            "The customer thought for a moment, then laughed and bought both items.",
+            "From that day onward, Ramu kept notebooks near the counter and called them his 'never-forget collection.'"
+          ],
+          te: [
+            "రాము ఒక గ్రామంలో చిన్న దుకాణం నడిపేవాడు. ఒక ఉదయం ఒక కస్టమర్ వచ్చి జ్ఞాపకశక్తి పెరగడానికి ఏదైనా ఇవ్వమన్నాడు.",
+            "రాము అతనికి ఒక నోట్‌బుక్, పెన్సిల్ ఇచ్చాడు.",
+            "'ఇవి నా జ్ఞాపకశక్తిని పెంచుతాయా?' అని కస్టమర్ అడిగాడు.",
+            "'లేదు,' అన్నాడు రాము. 'కానీ మర్చిపోయిన విషయాలను రాసుకోవచ్చు కదా!'",
+            "కస్టమర్ కాసేపు ఆలోచించి నవ్వుతూ రెండింటినీ కొనుక్కున్నాడు.",
+            "ఆ రోజు నుంచి రాము తన దుకాణంలో నోట్‌బుక్‌లను 'మర్చిపోని సేకరణ' అని పిలవసాగాడు."
+          ]
+        }
+      },
+
+      {
+        id: "s009",
+        category: "family",
+        icon: "👨‍👩‍👦",
+        minutes: 2,
+        title: {
+          en: "Grandmother's Garden",
+          te: "అమ్మమ్మ తోట"
+        },
+        description: {
+          en: "A child discovers that the smallest acts of care can grow into something beautiful.",
+          te: "చిన్న చిన్న ప్రేమపూర్వక పనులు అందమైన ఫలితాలను ఇస్తాయని తెలిపే కథ."
+        },
+        body: {
+          en: [
+            "Every summer, Anu visited her grandmother, who grew flowers and vegetables in a little garden.",
+            "Anu wanted the plants to grow quickly, so she poured lots of water onto them every morning.",
+            "Her grandmother gently explained that plants needed the right amount of water, sunlight and patience.",
+            "Anu began caring for one small seedling each day. Weeks passed, and the seedling grew into a healthy plant.",
+            "When Anu returned home, she carried a little pot with her. She wanted to create a garden of her own.",
+            "Her grandmother smiled. The garden had taught Anu how to care for something beyond herself."
+          ],
+          te: [
+            "ప్రతి వేసవిలో అను తన అమ్మమ్మను కలవడానికి వెళ్లేది. అమ్మమ్మ ఇంటి దగ్గర పూలు, కూరగాయలతో చిన్న తోట ఉండేది.",
+            "మొక్కలు త్వరగా పెరగాలని అను ప్రతిరోజూ వాటికి చాలా నీరు పోసేది.",
+            "మొక్కలకు సరైన నీరు, సూర్యకాంతి, ఓపిక అవసరమని అమ్మమ్మ ప్రేమగా వివరించింది.",
+            "అను ప్రతిరోజూ ఒక చిన్న మొక్కను జాగ్రత్తగా చూసుకోవడం మొదలుపెట్టింది. కొన్ని వారాలకు అది ఆరోగ్యంగా పెరిగింది.",
+            "ఇంటికి తిరిగి వెళ్లేటప్పుడు అను ఒక చిన్న కుండీలో మొక్కను తీసుకెళ్లింది. తనకంటూ ఒక తోటను పెంచుకోవాలని అనుకుంది.",
+            "అమ్మమ్మ నవ్వింది. ఆ తోట తనకంటే ఇతరుల పట్ల కూడా శ్రద్ధ చూపడం అనుకు నేర్పింది."
+          ]
+        }
+      },
+
+      {
+        id: "s010",
+        category: "fantasy",
+        icon: "🧙",
+        minutes: 3,
+        title: {
+          en: "The Door Among the Stars",
+          te: "నక్షత్రాల మధ్య తలుపు"
+        },
+        description: {
+          en: "A curious child finds a door to an extraordinary imaginary world.",
+          te: "ఒక వింత ప్రపంచానికి దారి తీసే తలుపును కనుగొన్న బాలుడి కథ."
+        },
+        body: {
+          en: [
+            "One night, a child named Nikhil noticed a tiny silver door painted on the wall of his room.",
+            "When he touched its handle, the door opened into a sky filled with floating islands and rivers of light.",
+            "A tiny glowing bird explained that the world was losing its colours because everyone had stopped telling stories.",
+            "Nikhil shared a story about a brave little turtle. With every sentence, a flower appeared, a river brightened and a new star lit the sky.",
+            "When he returned to his room, the silver door had disappeared. But a tiny silver feather remained on his desk.",
+            "Nikhil began telling stories every evening, wondering what other worlds might be listening."
+          ],
+          te: [
+            "ఒక రాత్రి నిఖిల్ అనే బాలుడు తన గది గోడపై చిన్న వెండి తలుపును గమనించాడు.",
+            "దాని తలుపు గొళ్లెం తాకగానే, ఆకాశంలో తేలియాడే దీవులు, కాంతితో ప్రవహించే నదులు ఉన్న ప్రపంచంలోకి తలుపు తెరుచుకుంది.",
+            "ఒక చిన్న వెలుగుతున్న పక్షి, ఎవరూ కథలు చెప్పడం మానేయడంతో ఆ ప్రపంచంలోని రంగులు కనుమరుగవుతున్నాయని చెప్పింది.",
+            "నిఖిల్ ధైర్యమైన చిన్న తాబేలు గురించి ఒక కథ చెప్పాడు. ప్రతి వాక్యంతో ఒక పువ్వు వికసించింది, నది ప్రకాశించింది, కొత్త నక్షత్రం వెలిగింది.",
+            "తన గదికి తిరిగి వచ్చేసరికి వెండి తలుపు కనిపించలేదు. కానీ బల్లపై ఒక చిన్న వెండి ఈక మిగిలింది.",
+            "ఆ రోజు నుంచి నిఖిల్ ప్రతి సాయంత్రం కథలు చెప్పడం మొదలుపెట్టాడు. ఇంకా ఎన్ని ప్రపంచాలు తన కథల కోసం ఎదురుచూస్తున్నాయో అని ఆలోచించేవాడు."
+          ]
+        }
+      }
+    ];
+
+    const $ = (selector) => document.querySelector(selector);
+
+    let currentLanguage = "en";
+    let currentCategory = "all";
+    let currentSearch = "";
+    let currentStoryId = null;
+
+    const translations = {
+      en: {
+        searchPlaceholder: "Search stories, categories...",
+        search: "Search",
+        all: "All Stories",
+        latest: "Latest",
+        read: "Read Story →",
+        minutes: "min read",
+        save: "♡ Save story",
+        saved: "♥ Saved",
+        back: "← Back to stories",
+        empty: "No stories found. Try another search.",
+        savedMessage: "Story saved!",
+        removedMessage: "Story removed from favourites.",
+        savedCategory: "Saved Stories",
+        categoryCount: "stories",
+        readerTitle: "Your story"
+      },
+      te: {
+        searchPlaceholder: "కథలు, విభాగాల కోసం వెతకండి...",
+        search: "వెతకండి",
+        all: "అన్ని కథలు",
+        latest: "కొత్తవి",
+        read: "కథ చదవండి →",
+        minutes: "నిమిషాల చదువు",
+        save: "♡ కథను దాచండి",
+        saved: "♥ దాచబడింది",
+        back: "← కథల దగ్గరకు వెళ్లండి",
+        empty: "కథలు కనిపించలేదు. వేరే పదంతో వెతకండి.",
+        savedMessage: "కథ దాచబడింది!",
+        removedMessage: "ఇష్టమైన కథల నుంచి తొలగించబడింది.",
+        savedCategory: "దాచిన కథలు",
+        categoryCount: "కథలు",
+        readerTitle: "మీ కథ"
+      }
+    };
+
+    function t(key) {
+      return translations[currentLanguage][key];
+    }
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, (character) => {
+        const map = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        };
+
+        return map[character];
+      });
+    }
+
+    function getSavedStories() {
+      try {
+        const saved = JSON.parse(
+          localStorage.getItem("stories-favourites") || "[]"
+        );
+
+        return Array.isArray(saved) ? saved : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveFavouriteIds(ids) {
+      try {
+        localStorage.setItem(
+          "stories-favourites",
+          JSON.stringify(ids)
+        );
+
+        return true;
+      } catch (error) {
+        alert("Your browser could not save this story.");
+        return false;
+      }
+    }
+
+    function renderCategories() {
+      const grid = $("#categoryGrid");
+
+      grid.innerHTML = categories.map((category) => {
+        const name = category[currentLanguage];
+        const description = currentLanguage === "te"
+          ? category.descTe
+          : category.descEn;
+
+        return `
+          <button class="category-card"
+                  type="button"
+                  data-category="${escapeHTML(category.id)}"
+                  style="text-align:left;color:inherit;font:inherit;width:100%">
+            <div class="category-icon">${category.icon}</div>
+            <h3>${escapeHTML(name)}</h3>
+            <p>${escapeHTML(description)}</p>
+          </button>
+        `;
+      }).join("");
+
+      grid.querySelectorAll("[data-category]").forEach((button) => {
+        button.addEventListener("click", () => {
+          currentCategory = button.dataset.category;
+          renderFilters();
+          renderStories();
+
+          $("#stories").scrollIntoView({
+            behavior: "smooth"
+          });
+        });
+      });
+    }
+
+    function renderFilters() {
+      const bar = $("#filterBar");
+
+      const filters = [
+        {
+          id: "all",
+          label: t("all")
+        },
+        {
+          id: "latest",
+          label: t("latest")
+        },
+        {
+          id: "saved",
+          label: t("savedCategory")
+        },
+        ...categories.map((category) => ({
+          id: category.id,
+          label: category[currentLanguage]
+        }))
+      ];
+
+      bar.innerHTML = filters.map((filter) => `
+        <button
+          class="filter-btn ${
+            currentCategory === filter.id ? "active" : ""
+          }"
+          type="button"
+          data-filter="${escapeHTML(filter.id)}">
+          ${escapeHTML(filter.label)}
+        </button>
+      `).join("");
+
+      bar.querySelectorAll("[data-filter]").forEach((button) => {
+        button.addEventListener("click", () => {
+          currentCategory = button.dataset.filter;
+          renderFilters();
+          renderStories();
+        });
+      });
+    }
+
+    function matchesStory(story) {
+      if (currentCategory === "saved") {
+        if (!getSavedStories().includes(story.id)) {
+          return false;
+        }
+      } else if (
+        currentCategory !== "all" &&
+        currentCategory !== "latest" &&
+        story.category !== currentCategory
+      ) {
+        return false;
+      }
+
+      if (!currentSearch) {
+        return true;
+      }
+
+      const category = categories.find(
+        (item) => item.id === story.category
+      );
+
+      const searchFields = [
+        story.title.en,
+        story.title.te,
+        story.description.en,
+        story.description.te,
+        category ? category.en : "",
+        category ? category.te : ""
+      ].join(" ").toLowerCase();
+
+      return searchFields.includes(currentSearch);
+    }
+
+    function renderStories() {
+      const grid = $("#storyGrid");
+
+      let filtered = storiesData.filter(matchesStory);
+
+      if (currentCategory === "latest") {
+        filtered = [...filtered].reverse();
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <div style="font-size:36px;margin-bottom:10px">📚</div>
+            <p>${escapeHTML(t("empty"))}</p>
+          </div>
+        `;
+
+        return;
+      }
+
+      grid.innerHTML = filtered.map((story) => {
+        const category = categories.find(
+          (item) => item.id === story.category
+        );
+
+        const title = story.title[currentLanguage];
+        const description = story.description[currentLanguage];
+
+        const categoryName = category
+          ? category[currentLanguage]
+          : "";
+
+        return `
+          <article class="story-card">
+            <div class="story-cover" aria-hidden="true">
+              ${story.icon}
+            </div>
+
+            <div class="story-content">
+              <div class="story-meta">
+                <span>${escapeHTML(categoryName)}</span>
+                <span>${story.minutes} ${escapeHTML(t("minutes"))}</span>
+              </div>
+
+              <h3>${escapeHTML(title)}</h3>
+
+              <p>${escapeHTML(description)}</p>
+
+              <button class="read-link"
+                      type="button"
+                      data-read="${escapeHTML(story.id)}">
+                ${escapeHTML(t("read"))}
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      grid.querySelectorAll("[data-read]").forEach((button) => {
+        button.addEventListener("click", () => {
+          openStory(button.dataset.read);
+        });
+      });
+    }
+
+    function openStory(id) {
+      const story = storiesData.find(
+        (item) => item.id === id
+      );
+
+      if (!story) {
+        return;
+      }
+
+      currentStoryId = story.id;
+
+      $("#readerTitle").textContent =
+        story.title[currentLanguage];
+
+      const category = categories.find(
+        (item) => item.id === story.category
+      );
+
+      $("#readerMeta").textContent =
+        (category ? category[currentLanguage] + " · " : "") +
+        story.minutes + " " + t("minutes");
+
+      const body = $("#readerBody");
+      body.replaceChildren();
+
+      story.body[currentLanguage].forEach((paragraph) => {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        body.appendChild(p);
+      });
+
+      updateBookmarkButton();
+
+      $("#reader").classList.add("visible");
+
+      $("#reader").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+      try {
+        localStorage.setItem(
+          "stories-last-read",
+          story.id
+        );
+      } catch (error) {
+        // Reading still works if browser storage is unavailable.
+      }
+    }
+
+    function updateBookmarkButton() {
+      const saved = getSavedStories().includes(currentStoryId);
+
+      $("#bookmarkButton").textContent = saved
+        ? t("saved")
+        : t("save");
+    }
+
+    function toggleBookmark() {
+      if (!currentStoryId) {
+        return;
+      }
+
+      const saved = getSavedStories();
+      const alreadySaved = saved.includes(currentStoryId);
+
+      const updated = alreadySaved
+        ? saved.filter((id) => id !== currentStoryId)
+        : [...saved, currentStoryId];
+
+      if (!saveFavouriteIds(updated)) {
+        return;
+      }
+
+      updateBookmarkButton();
+      renderStories();
+
+      if (currentCategory === "saved") {
+        renderFilters();
+      }
+    }
+
+    function updateLanguage() {
+      document.querySelectorAll("[data-en][data-te]").forEach((element) => {
+        element.textContent =
+          element.dataset[currentLanguage];
+      });
+
+      $("#searchInput").placeholder = t("searchPlaceholder");
+      $("#searchButton").textContent = t("search");
+      $("#backButton").textContent = t("back");
+
+      document.documentElement.lang = currentLanguage;
+
+      renderCategories();
+      renderFilters();
+      renderStories();
+
+      if (currentStoryId) {
+        openStory(currentStoryId);
+      }
+    }
+
+    $("#languageSelect").addEventListener("change", (event) => {
+      currentLanguage = event.target.value;
+      updateLanguage();
+    });
+
+    function performSearch() {
+      currentSearch = $("#searchInput").value
+        .trim()
+        .toLocaleLowerCase();
+
+      currentCategory = "all";
+
+      renderFilters();
+      renderStories();
+
+      $("#stories").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    $("#searchButton").addEventListener("click", performSearch);
+
+    $("#searchInput").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        performSearch();
+      }
+    });
+
+    $("#backButton").addEventListener("click", () => {
+      $("#reader").classList.remove("visible");
+
+      $("#stories").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+
+    $("#bookmarkButton").addEventListener(
+      "click",
+      toggleBookmark
+    );
+
+    $("#year").textContent = new Date().getFullYear();
+
+    /* Start the website. */
+
+    renderCategories();
+    renderFilters();
+    renderStories();
+  </script>
+
+</body>
+</html>
