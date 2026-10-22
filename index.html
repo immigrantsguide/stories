@@ -1709,5 +1709,281 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
     renderStories();
   </script>
 
+<!-- SUBMIT A STORY BUTTON AND FORM -->
+<style>
+  #story-submit-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9999;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 25px #8b5cf677;
+    transition: transform .25s;
+  }
+
+  #story-submit-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+  }
+
+  #story-submit-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, .82);
+    backdrop-filter: blur(7px);
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  #story-submit-overlay.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #story-submit-form {
+    width: 100%;
+    max-width: 560px;
+    box-sizing: border-box;
+    background: #171322;
+    color: #fff;
+    border: 1px solid #8b5cf6;
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+
+  #story-submit-form h2 {
+    margin: 0 35px 8px 0;
+    color: #d8b4fe;
+  }
+
+  #story-submit-form p {
+    color: #d1c5dc;
+    line-height: 1.5;
+  }
+
+  #story-submit-form label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: bold;
+  }
+
+  #story-submit-form input,
+  #story-submit-form select,
+  #story-submit-form textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 9px;
+    border: 1px solid #514563;
+    background: #241d32;
+    color: white;
+    font: inherit;
+  }
+
+  #story-submit-form textarea {
+    min-height: 180px;
+    resize: vertical;
+  }
+
+  #story-submit-form input:focus,
+  #story-submit-form select:focus,
+  #story-submit-form textarea:focus {
+    outline: 2px solid #a78bfa;
+  }
+
+  #story-submit-form .story-send {
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #story-submit-close {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  #story-submit-note {
+    font-size: 13px;
+    color: #c4b5fd;
+  }
+
+  @media (max-width: 480px) {
+    #story-submit-btn {
+      right: 12px;
+      bottom: 12px;
+      padding: 13px 17px;
+    }
+
+    #story-submit-form {
+      padding: 20px 16px;
+    }
+  }
+</style>
+
+<button
+  id="story-submit-btn"
+  type="button"
+  aria-haspopup="dialog"
+  aria-controls="story-submit-overlay">
+  ✍️ Submit a Story
+</button>
+
+<div id="story-submit-overlay">
+  <form id="story-submit-form" aria-labelledby="story-form-title">
+    <button id="story-submit-close" type="button"
+      aria-label="Close form">&times;</button>
+
+    <h2 id="story-form-title">📚 Share Your Story</h2>
+    <p>Every story deserves to be told. Share yours in Telugu or English!</p>
+
+    <label for="story-author">Your name *</label>
+    <input id="story-author" name="author" required maxlength="100"
+      placeholder="Enter your name">
+
+    <label for="story-email">Your email *</label>
+    <input id="story-email" name="email" type="email" required maxlength="254"
+      placeholder="you@example.com">
+
+    <label for="story-title">Story title *</label>
+    <input id="story-title" name="title" required maxlength="180"
+      placeholder="Give your story a title">
+
+    <label for="story-language">Story language *</label>
+    <select id="story-language" name="language" required>
+      <option value="Telugu">తెలుగు (Telugu)</option>
+      <option value="English">English</option>
+      <option value="Both">Both Telugu and English</option>
+    </select>
+
+    <label for="story-category">Category *</label>
+    <select id="story-category" name="category" required>
+      <option value="Horror">Horror & Ghost Stories</option>
+      <option value="Romance">Love & Romance</option>
+      <option value="Adventure">Adventure & Fantasy</option>
+      <option value="Mystery">Mystery & Thriller</option>
+      <option value="Crime">Crime & Detective</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Moral">Moral & Family Stories</option>
+      <option value="Mythology">Mythology & Historical</option>
+      <option value="Inspirational">Inspirational</option>
+      <option value="Science Fiction">Science Fiction</option>
+      <option value="Short Story">Short Stories</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="story-content">Your story *</label>
+    <textarea id="story-content" name="story" required
+      minlength="20" maxlength="30000"
+      placeholder="Write or paste your complete story here..."></textarea>
+
+    <label>
+      <input type="checkbox" id="story-permission" required
+        style="display:inline;width:auto;margin-right:8px">
+      I confirm this is my story or I have permission to submit it,
+      and I give the website owner permission to review it for publication.
+    </label>
+
+    <button class="story-send" type="submit">Continue to Email ✉️</button>
+
+    <p id="story-submit-note">
+      Your email app will open with your submission prepared.
+      Review it and press Send to submit it.
+    </p>
+  </form>
+</div>
+
+<script>
+(function () {
+  const overlay = document.getElementById("story-submit-overlay");
+  const form = document.getElementById("story-submit-form");
+  const openBtn = document.getElementById("story-submit-btn");
+  const closeBtn = document.getElementById("story-submit-close");
+
+  function openForm() {
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("story-author").focus();
+  }
+
+  function closeForm() {
+    overlay.classList.remove("open");
+    document.body.style.overflow = "";
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener("click", openForm);
+  closeBtn.addEventListener("click", closeForm);
+
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) closeForm();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && overlay.classList.contains("open")) {
+      closeForm();
+    }
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const recipient = "immigrantsguide@outlook.com";
+
+    const subject = "Story Submission: " + data.get("title");
+    const body = [
+      "NEW STORY SUBMISSION",
+      "",
+      "Author: " + data.get("author"),
+      "Author email: " + data.get("email"),
+      "Title: " + data.get("title"),
+      "Language: " + data.get("language"),
+      "Category: " + data.get("category"),
+      "",
+      "STORY:",
+      data.get("story"),
+      "",
+      "Permission confirmed by submitter."
+    ].join("\n");
+
+    const mailto = "mailto:" + recipient +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    window.location.href = mailto;
+  });
+})();
+</script>
+<!-- END SUBMIT A STORY -->
+
 </body>
 </html>
