@@ -1,1989 +1,455 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title> Krishna Stories | Telugu & English Stories</title>
-  <link href="data:image/svg+xml,
-&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'&gt;
-&lt;rect width='64' height='64' rx='14' fill='%231769e8'/&gt;
-&lt;text x='32' y='43' text-anchor='middle'
-font-family='Arial,Helvetica,sans-serif'
-font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
-&lt;/svg&gt;" rel="icon"/>
-
-  <meta name="description"
-        content="Discover beautiful Telugu and English stories, including horror, love, adventure, mystery, mythology, and moral stories.">
-
-  <style>
-    :root {
-      --bg: #090d18;
-      --card: #141b2b;
-      --text: #f5f3ff;
-      --muted: #b5bdd0;
-      --accent: #c084fc;
-      --accent2: #38bdf8;
-      --border: rgba(255,255,255,0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    button, input, select {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Animated background */
-
-    .background {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 15% 10%,
-          rgba(124,58,237,0.23), transparent 45%),
-        radial-gradient(ellipse at 85% 35%,
-          rgba(14,165,233,0.16), transparent 40%),
-        linear-gradient(160deg, #090d18, #111027, #080b14);
-    }
-
-    .orb {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.22;
-      animation: float 14s ease-in-out infinite alternate;
-    }
-
-    .orb.one {
-      background: #9333ea;
-      top: 10%;
-      left: -150px;
-    }
-
-    .orb.two {
-      background: #0284c7;
-      right: -150px;
-      top: 50%;
-      animation-delay: -6s;
-    }
-
-    @keyframes float {
-      from {
-        transform: translate(0, 0);
-      }
-      to {
-        transform: translate(100px, 80px);
-      }
-    }
-
-    /* Navigation */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(9,13,24,0.86);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      background: linear-gradient(90deg, #e9d5ff, #38bdf8);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    .language-select {
-      background: #171b2c;
-      color: white;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 9px;
-      max-width: 125px;
-    }
-
-    /* Hero */
-
-    .hero {
-      max-width: 1200px;
-      margin: auto;
-      min-height: 440px;
-      padding: 75px 20px 55px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 35px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: #e9d5ff;
-      background: rgba(192,132,252,0.12);
-      border: 1px solid rgba(192,132,252,0.3);
-      padding: 7px 13px;
-      border-radius: 30px;
-      font-size: 12px;
-      letter-spacing: 1px;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #c084fc, #67e8f9);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      color: var(--muted);
-      max-width: 600px;
-      font-size: 16px;
-      margin-bottom: 28px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 19px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: transform 0.2s, opacity 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(100deg, #9333ea, #2563eb);
-      color: white;
-      border: none;
-      font-weight: bold;
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.05);
-    }
-
-    .hero-art {
-      min-height: 300px;
-      display: grid;
-      place-items: center;
-      position: relative;
-    }
-
-    .moon {
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #e9d5ff, #7dd3fc);
-      box-shadow: 0 0 90px rgba(192,132,252,0.25);
-      display: grid;
-      place-items: center;
-      font-size: 90px;
-      animation: moonFloat 5s ease-in-out infinite;
-    }
-
-    @keyframes moonFloat {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-15px);
-      }
-    }
-
-    .floating-label {
-      position: absolute;
-      background: rgba(20,27,43,0.92);
-      border: 1px solid var(--border);
-      padding: 10px 15px;
-      border-radius: 12px;
-      font-size: 13px;
-      animation: float 8s ease-in-out infinite alternate;
-    }
-
-    .label-one {
-      top: 25px;
-      right: 0;
-    }
-
-    .label-two {
-      bottom: 35px;
-      left: 0;
-    }
-
-    /* Search */
-
-    .search-section {
-      max-width: 850px;
-      margin: 0 auto 55px;
-      padding: 0 20px;
-    }
-
-    .search-box {
-      display: flex;
-      gap: 10px;
-      padding: 10px;
-      border: 1px solid var(--border);
-      background: rgba(20,27,43,0.85);
-      border-radius: 17px;
-    }
-
-    .search-box input {
-      min-width: 0;
-      flex: 1;
-      padding: 12px;
-      border: none;
-      outline: none;
-      color: white;
-      background: transparent;
-    }
-
-    .search-box button {
-      padding: 11px 17px;
-      background: #9333ea;
-      color: white;
-      border: none;
-      border-radius: 10px;
-    }
-
-    /* Main sections */
-
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 25px 20px 55px;
-      scroll-margin-top: 90px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(24px, 4vw, 34px);
-      margin-bottom: 4px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .category-card {
-      min-height: 135px;
-      padding: 20px;
-      border-radius: 17px;
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.08),
-        rgba(255,255,255,0.025)
-      );
-      border: 1px solid var(--border);
-      transition: transform 0.25s, border-color 0.25s;
-      cursor: pointer;
-    }
-
-    .category-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-    }
-
-    .category-icon {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .category-card h3 {
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-
-    .category-card p {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Story cards */
-
-    .filter-bar {
-      display: flex;
-      gap: 9px;
-      flex-wrap: wrap;
-      margin-bottom: 23px;
-    }
-
-    .filter-btn {
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 9px 14px;
-      border-radius: 30px;
-      font-size: 13px;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: #9333ea;
-      color: white;
-      border-color: #9333ea;
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .story-card {
-      overflow: hidden;
-      background: rgba(20,27,43,0.9);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .story-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.22);
-    }
-
-    .story-cover {
-      height: 150px;
-      display: grid;
-      place-items: center;
-      font-size: 58px;
-      background:
-        radial-gradient(circle at 50% 40%,
-          rgba(192,132,252,0.27), transparent 65%),
-        linear-gradient(135deg, #202344, #111827);
-    }
-
-    .story-content {
-      padding: 19px;
-    }
-
-    .story-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 11px;
-      margin-bottom: 12px;
-    }
-
-    .story-content h3 {
-      font-size: 19px;
-      line-height: 1.35;
-      margin-bottom: 9px;
-    }
-
-    .story-content p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 17px;
-    }
-
-    .read-link {
-      color: #d8b4fe;
-      font-weight: bold;
-      font-size: 13px;
-      background: none;
-      border: none;
-    }
-
-    .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 45px 20px;
-      border: 1px dashed var(--border);
-      border-radius: 15px;
-      color: var(--muted);
-    }
-
-    /* Story reader */
-
-    .reader {
-      display: none;
-      max-width: 850px;
-      margin: 0 auto 60px;
-      padding: 30px;
-      background: rgba(20,27,43,0.95);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      scroll-margin-top: 100px;
-    }
-
-    .reader.visible {
-      display: block;
-      animation: appear 0.4s ease;
-    }
-
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .reader h2 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    .reader-meta {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 25px;
-    }
-
-    .reader-body {
-      font-size: 17px;
-      line-height: 2;
-      overflow-wrap: anywhere;
-    }
-
-    .reader-body p {
-      margin-bottom: 20px;
-    }
-
-    .reader-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 25px;
-    }
-
-    /* About and footer */
-
-    .about-box {
-      padding: 35px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: rgba(255,255,255,0.035);
-    }
-
-    .about-box h2 {
-      margin-bottom: 12px;
-    }
-
-    .about-box p {
-      color: var(--muted);
-      max-width: 850px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 30px 20px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    footer a {
-      color: #d8b4fe;
-    }
-
-    /* Responsive design */
-
-    @media (max-width: 850px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 55px;
-      }
-
-      .hero-art {
-        min-height: 230px;
-      }
-
-      .moon {
-        width: 150px;
-        height: 150px;
-        font-size: 70px;
-      }
-
-      .category-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .story-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .navbar {
-        padding: 12px;
-        flex-wrap: wrap;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      .nav-links {
-        order: 3;
-        width: 100%;
-        justify-content: space-between;
-        gap: 8px;
-      }
-
-      .nav-links a {
-        font-size: 12px;
-      }
-
-      .hero {
-        padding: 45px 17px 35px;
-      }
-
-      .hero h1 {
-        letter-spacing: -1px;
-      }
-
-      .section {
-        padding: 20px 15px 40px;
-      }
-
-      .category-grid,
-      .story-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .story-cover {
-        height: 170px;
-      }
-
-      .reader {
-        margin: 0 15px 40px;
-        padding: 22px;
-      }
-
-      .reader h2 {
-        font-size: 25px;
-      }
-
-      .reader-body {
-        font-size: 16px;
-      }
-
-      .search-box button {
-        padding: 10px 12px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="background" aria-hidden="true">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-  </div>
-
-  <header>
-    <nav class="navbar">
-      <a href="#home" class="logo">✦ KRISHNA STORIES</a>
-
-      <div class="nav-links">
-        <a href="#home" data-en="Home" data-te="హోమ్">Home</a>
-        <a href="#categories" data-en="Categories" data-te="విభాగాలు">Categories</a>
-        <a href="#stories" data-en="Stories" data-te="కథలు">Stories</a>
-        <a href="#about" data-en="About" data-te="మా గురించి">About</a>
-      </div>
-
-      <select id="languageSelect"
-              class="language-select"
-              aria-label="Select language">
-        <option value="en">English</option>
-        <option value="te">తెలుగు</option>
-      </select>
-    </nav>
-  </header>
-
-  <main id="home">
-
-    <section class="hero">
-      <div>
-        <span class="eyebrow"
-              data-en="✦ A WORLD OF IMAGINATION"
-              data-te="✦ ఊహలకు ఒక కొత్త ప్రపంచం">
-          ✦ A WORLD OF IMAGINATION
-        </span>
-
-        <h1>
-          <span data-en="Every story opens" data-te="ప్రతి కథ తెరుస్తుంది">
-            Every story opens
-          </span>
-          <br>
-          <span class="gradient-text"
-                data-en="a new world."
-                data-te="ఒక కొత్త ప్రపంచాన్ని.">
-            a new world.
-          </span>
-        </h1>
-
-        <p data-en="Discover unforgettable stories filled with mystery, love, adventure, wisdom and imagination. Read in Telugu or English, and find your next favourite story."
-           data-te="రహస్యం, ప్రేమ, సాహసం, జ్ఞానం మరియు ఊహలతో నిండిన అద్భుతమైన కథలను చదవండి. తెలుగు లేదా ఇంగ్లీష్‌లో మీకు నచ్చిన కథను కనుగొనండి.">
-          Discover unforgettable stories filled with mystery, love,
-          adventure, wisdom and imagination. Read in Telugu or English,
-          and find your next favourite story.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary"
-             href="#stories"
-             data-en="Explore Stories →"
-             data-te="కథలను చదవండి →">
-            Explore Stories →
-          </a>
-
-          <a class="btn btn-secondary"
-             href="#categories"
-             data-en="Browse Categories"
-             data-te="విభాగాలను చూడండి">
-            Browse Categories
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-art" aria-hidden="true">
-        <div class="moon">📖</div>
-        <div class="floating-label label-one">✨ Endless Imagination</div>
-        <div class="floating-label label-two">🌙 Stories for Every Mood</div>
-      </div>
-    </section>
-
-    <section class="search-section" aria-label="Search stories">
-      <div class="search-box">
-        <input id="searchInput"
-               type="search"
-               placeholder="Search stories, categories..."
-               aria-label="Search stories">
-
-        <button id="searchButton" type="button">
-          Search
-        </button>
-      </div>
-    </section>
-
-    <section class="section" id="categories">
-      <div class="section-heading">
-        <div>
-          <h2 data-en="Explore Categories"
-              data-te="కథల విభాగాలు">
-            Explore Categories
-          </h2>
-
-          <p data-en="Something wonderful for every reader."
-             data-te="ప్రతి పాఠకుడి కోసం ఒక అద్భుతమైన కథ.">
-            Something wonderful for every reader.
-          </p>
-        </div>
-      </div>
-
-      <div class="category-grid" id="categoryGrid"></div>
-    </section>
-
-    <section class="section" id="stories">
-      <div class="section-heading">
-        <div>
-          <h2 data-en="Stories to Discover"
-              data-te="మీరు చదవాల్సిన కథలు">
-            Stories to Discover
-          </h2>
-
-          <p data-en="Choose a story and enter another world."
-             data-te="ఒక కథను ఎంచుకుని మరో ప్రపంచంలోకి వెళ్లండి.">
-            Choose a story and enter another world.
-          </p>
-        </div>
-      </div>
-
-      <div class="filter-bar" id="filterBar"></div>
-
-      <div class="story-grid" id="storyGrid"></div>
-    </section>
-
-    <section class="reader" id="reader" aria-live="polite">
-      <div class="reader-actions">
-        <button class="btn btn-secondary"
-                id="backButton"
-                type="button">
-          ← Back to stories
-        </button>
-
-        <button class="btn btn-secondary"
-                id="bookmarkButton"
-                type="button">
-          ♡ Save story
-        </button>
-      </div>
-
-      <h2 id="readerTitle"></h2>
-      <div class="reader-meta" id="readerMeta"></div>
-      <article class="reader-body" id="readerBody"></article>
-    </section>
-
-    <section class="section" id="about">
-      <div class="about-box">
-        <h2 data-en="A home for every kind of story"
-            data-te="ప్రతి రకమైన కథకు ఒక వేదిక">
-          A home for every kind of story
-        </h2>
-
-        <p data-en="Stories is a growing collection of original and inspiring tales in Telugu and English. From spooky mysteries and beautiful love stories to timeless moral tales and exciting adventures, there is always another world to discover."
-           data-te="Stories అనేది తెలుగు మరియు ఇంగ్లీష్‌లోని కథల సమాహారం. భయానక రహస్యాల నుంచి అందమైన ప్రేమకథల వరకు, నీతి కథల నుంచి సాహస కథల వరకు ఎన్నో కథలను ఇక్కడ చదవవచ్చు.">
-          Stories is a growing collection of original and inspiring tales
-          in Telugu and English. From spooky mysteries and beautiful love
-          stories to timeless moral tales and exciting adventures, there
-          is always another world to discover.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>✦ STORIES — తెలుగు కథలు & English Stories</p>
-    <p>
-      <span data-en="Made for the love of storytelling."
-            data-te="కథలను ప్రేమించే ప్రతి ఒక్కరి కోసం.">
-        Made for the love of storytelling.
-      </span>
-    </p>
-    <p>© <span id="year"></span> Stories</p>
-  </footer>
-
-  <script>
-    "use strict";
-
-    /*
-      STORIES WEBSITE
-      Version 1.0
-
-      Add new stories to the storiesData array.
-      No database is required for this version.
-    */
-
-    const categories = [
-      {
-        id: "horror",
-        icon: "👻",
-        en: "Horror & Ghost",
-        te: "భూతాల కథలు",
-        descEn: "Ghosts and spooky mysteries",
-        descTe: "దెయ్యాలు మరియు భయానక రహస్యాలు"
-      },
-      {
-        id: "love",
-        icon: "❤️",
-        en: "Love & Romance",
-        te: "ప్రేమ కథలు",
-        descEn: "Love and heartfelt moments",
-        descTe: "ప్రేమ మరియు హృదయాన్ని తాకే కథలు"
-      },
-      {
-        id: "adventure",
-        icon: "🗺️",
-        en: "Adventure",
-        te: "సాహస కథలు",
-        descEn: "Journeys and discoveries",
-        descTe: "ప్రయాణాలు మరియు అన్వేషణలు"
-      },
-      {
-        id: "moral",
-        icon: "🌳",
-        en: "Moral Stories",
-        te: "నీతి కథలు",
-        descEn: "Lessons for life",
-        descTe: "జీవితానికి ఉపయోగపడే నీతులు"
-      },
-      {
-        id: "mystery",
-        icon: "🔎",
-        en: "Mystery & Thriller",
-        te: "రహస్య కథలు",
-        descEn: "Secrets and suspense",
-        descTe: "రహస్యాలు మరియు ఉత్కంఠ"
-      },
-      {
-        id: "mythology",
-        icon: "🪔",
-        en: "Mythology",
-        te: "పౌరాణిక కథలు",
-        descEn: "Legends and traditions",
-        descTe: "పురాణాలు మరియు సంప్రదాయాలు"
-      },
-      {
-        id: "comedy",
-        icon: "😂",
-        en: "Comedy",
-        te: "హాస్య కథలు",
-        descEn: "Stories to make you smile",
-        descTe: "నవ్వించే సరదా కథలు"
-      },
-      {
-        id: "inspiration",
-        icon: "🌟",
-        en: "Inspirational",
-        te: "స్ఫూర్తిదాయక కథలు",
-        descEn: "Dreams, courage and hope",
-        descTe: "కలలు, ధైర్యం మరియు ఆశ"
-      },
-      {
-        id: "family",
-        icon: "👨‍👩‍👦",
-        en: "Family Stories",
-        te: "కుటుంబ కథలు",
-        descEn: "Stories for everyone",
-        descTe: "అందరూ కలిసి చదివే కథలు"
-      },
-      {
-        id: "fantasy",
-        icon: "🧙",
-        en: "Fantasy",
-        te: "మాయాజాల కథలు",
-        descEn: "Magic and imaginary worlds",
-        descTe: "మాయాజాలం మరియు అద్భుత ప్రపంచాలు"
-      },
-      {
-        id: "historical",
-        icon: "🏰",
-        en: "Historical",
-        te: "చారిత్రక కథలు",
-        descEn: "Stories from the past",
-        descTe: "గతకాలపు కథలు"
-      },
-      {
-        id: "kids",
-        icon: "🧸",
-        en: "Kids Stories",
-        te: "పిల్లల కథలు",
-        descEn: "Fun stories for children",
-        descTe: "పిల్లల కోసం సరదా కథలు"
-      }
-    ];
-
-    /*
-      The sample stories below are original short examples.
-      Add more stories here as the website grows.
-    */
-
-    const storiesData = [
-      {
-        id: "s001",
-        category: "horror",
-        icon: "👻",
-        minutes: 3,
-        title: {
-          en: "The Light in the Empty House",
-          te: "ఖాళీ ఇంటిలో వెలుగు"
-        },
-        description: {
-          en: "Every night, a forgotten house lights up at exactly midnight.",
-          te: "ప్రతి రాత్రి సరిగ్గా అర్ధరాత్రి ఒక పాడుబడిన ఇంటిలో వెలుగు కనిపించేది."
-        },
-        body: {
-          en: [
-            "At the end of a quiet village stood an old house. Nobody had lived there for twenty years. Yet every night, exactly at midnight, a small yellow light appeared in its upstairs window.",
-            "One evening, a curious young man named Arjun decided to discover the truth. He walked through the rusty gate and entered the house. Dust covered the furniture, and the wooden staircase creaked beneath his feet.",
-            "Upstairs, he found a little lamp burning beside a photograph. The photograph showed a family standing in front of the very same house.",
-            "Suddenly, a gentle voice whispered, 'Thank you for coming back.' Arjun turned around. The room was empty, but the photograph now showed one additional person standing beside the family.",
-            "The next morning, villagers found the gate open. The light never appeared again. But sometimes, people passing the house say they see a new face in the old photograph."
-          ],
-          te: [
-            "ఒక నిశ్శబ్దమైన గ్రామం చివర ఒక పాత ఇల్లు ఉండేది. ఇరవై సంవత్సరాలుగా అక్కడ ఎవరూ నివసించలేదు. అయినప్పటికీ, ప్రతి రాత్రి సరిగ్గా అర్ధరాత్రి సమయంలో పై అంతస్తు కిటికీలో ఒక చిన్న పసుపు రంగు వెలుగు కనిపించేది.",
-            "ఒక రోజు అర్జున్ అనే యువకుడు ఆ రహస్యాన్ని తెలుసుకోవాలని నిర్ణయించుకున్నాడు. తుప్పుపట్టిన గేటు దాటి ఇంట్లోకి వెళ్లాడు. ఫర్నిచర్‌పై దుమ్ము పేరుకుపోయింది. చెక్క మెట్లు అతని అడుగులకు శబ్దం చేశాయి.",
-            "పై అంతస్తులో ఒక ఫోటో పక్కన చిన్న దీపం వెలుగుతూ కనిపించింది. ఆ ఫోటోలో ఒక కుటుంబం అదే ఇంటి ముందు నిలబడి ఉంది.",
-            "అకస్మాత్తుగా ఒక మృదువైన స్వరం, 'తిరిగి వచ్చినందుకు ధన్యవాదాలు' అని చెప్పింది. అర్జున్ వెనక్కి తిరిగాడు. గదిలో ఎవరూ లేరు. కానీ ఫోటోలో ఆ కుటుంబం పక్కన ఇప్పుడు మరో వ్యక్తి కనిపించాడు.",
-            "మరుసటి ఉదయం గ్రామస్థులకు గేటు తెరిచి కనిపించింది. ఆ రాత్రి తర్వాత ఆ వెలుగు మళ్లీ కనిపించలేదు. అయితే, ఆ ఇంటి పక్కగా వెళ్లేవారు పాత ఫోటోలో కొత్త ముఖాన్ని చూస్తున్నామని చెబుతుంటారు."
-          ]
-        }
-      },
-
-      {
-        id: "s002",
-        category: "love",
-        icon: "❤️",
-        minutes: 3,
-        title: {
-          en: "A Letter Never Sent",
-          te: "పంపని ఉత్తరం"
-        },
-        description: {
-          en: "A forgotten letter reveals a love story many years later.",
-          te: "ఎన్నో సంవత్సరాల తర్వాత ఒక పాత ఉత్తరం ప్రేమకథను బయటపెట్టింది."
-        },
-        body: {
-          en: [
-            "While cleaning her grandmother's house, Meera discovered a blue envelope hidden inside an old book.",
-            "The letter was written by someone named Ravi. He described a promise to meet beneath a banyan tree on the day the first monsoon rain arrived.",
-            "At the bottom, one sentence was underlined: 'Even if life takes us apart, I will remember this place.'",
-            "Meera asked her grandmother about the letter. For a long time, the old woman said nothing. Then she smiled and pointed toward the window. Beyond it stood the same banyan tree.",
-            "'He came that day,' her grandmother whispered. 'I was too afraid to leave home. I have wondered about that moment ever since.'",
-            "Meera folded the letter carefully. Some stories do not end when the pages stop. They wait for someone to listen."
-          ],
-          te: [
-            "తన అమ్మమ్మ ఇంటిని శుభ్రం చేస్తుండగా మీరాకు ఒక పాత పుస్తకంలో దాచిన నీలిరంగు కవరు కనిపించింది.",
-            "ఆ ఉత్తరం రవి అనే వ్యక్తి రాశాడు. మొదటి వర్షం పడిన రోజున మర్రిచెట్టు కింద కలుసుకుందామని ఇచ్చుకున్న మాట గురించి అందులో ఉంది.",
-            "చివరలో ఒక వాక్యానికి గీత గీసి ఉంది: 'జీవితం మనల్ని దూరం చేసినా, ఈ ప్రదేశాన్ని నేను గుర్తుంచుకుంటాను.'",
-            "మీరా ఆ ఉత్తరం గురించి అమ్మమ్మను అడిగింది. చాలాసేపు మౌనంగా ఉన్న ఆమె చివరకు కిటికీ వైపు చూపించింది. అక్కడ అదే మర్రిచెట్టు కనిపించింది.",
-            "'ఆ రోజు అతను వచ్చాడు,' అని అమ్మమ్మ మెల్లగా చెప్పింది. 'కానీ నేను ఇంటి నుంచి బయటకు రావడానికి భయపడ్డాను. అప్పటి నుంచి ఆ క్షణం గురించి ఆలోచిస్తూనే ఉన్నాను.'",
-            "మీరా ఆ ఉత్తరాన్ని జాగ్రత్తగా మడిచింది. కొన్ని కథలు పేజీలు ముగిసినంత మాత్రాన ముగియవు. ఎవరో వినేవారి కోసం ఎదురుచూస్తుంటాయి."
-          ]
-        }
-      },
-
-      {
-        id: "s003",
-        category: "moral",
-        icon: "🌳",
-        minutes: 2,
-        title: {
-          en: "The Honest Woodcutter",
-          te: "నిజాయితీగల కట్టెలు కొట్టేవాడు"
-        },
-        description: {
-          en: "An old tale about honesty and the rewards of telling the truth.",
-          te: "నిజం చెప్పడం వల్ల కలిగే మంచిని తెలిపే నీతి కథ."
-        },
-        body: {
-          en: [
-            "A poor woodcutter worked beside a river every day. One afternoon, his axe slipped from his hands and fell into the deep water.",
-            "He sat on the bank, worried because he had no money to buy another axe. A mysterious helper appeared and offered him a golden axe. The woodcutter shook his head. 'That is not mine,' he said.",
-            "Next came a silver axe. Again, he refused it. Finally, his own old iron axe appeared, and he happily accepted it.",
-            "The helper was pleased by his honesty and rewarded him. The woodcutter returned home grateful, knowing that telling the truth had been worth more than gold.",
-            "Moral: Honesty is valuable even when nobody is watching."
-          ],
-          te: [
-            "ఒక పేద కట్టెలు కొట్టేవాడు ప్రతిరోజూ నది పక్కన పని చేసేవాడు. ఒక రోజు అతని గొడ్డలి చేతిలో నుంచి జారి లోతైన నీటిలో పడిపోయింది.",
-            "మరో గొడ్డలి కొనడానికి డబ్బులు లేక అతను నది ఒడ్డున బాధగా కూర్చున్నాడు. అప్పుడు ఒక వింత వ్యక్తి వచ్చి బంగారు గొడ్డలిని చూపించాడు. 'ఇది నాది కాదు' అని కట్టెలు కొట్టేవాడు చెప్పాడు.",
-            "తర్వాత వెండి గొడ్డలిని చూపించాడు. దానిని కూడా అతను తిరస్కరించాడు. చివరకు తన పాత ఇనుప గొడ్డలిని చూపించగా సంతోషంగా తీసుకున్నాడు.",
-            "అతని నిజాయితీకి సంతోషించిన ఆ వ్యక్తి అతనికి బహుమతి ఇచ్చాడు. నిజం చెప్పడం బంగారం కంటే విలువైనదని తెలుసుకుని అతను ఇంటికి తిరిగివెళ్లాడు.",
-            "నీతి: ఎవరూ చూడకపోయినా నిజాయితీగా ఉండటం ఎంతో విలువైనది."
-          ]
-        }
-      },
-
-      {
-        id: "s004",
-        category: "adventure",
-        icon: "🗺️",
-        minutes: 3,
-        title: {
-          en: "The Map Under the Tree",
-          te: "చెట్టు కింద ఉన్న పటం"
-        },
-        description: {
-          en: "Two friends discover an old map and begin an unexpected adventure.",
-          te: "పాత పటాన్ని కనుగొన్న ఇద్దరు స్నేహితుల సాహసం."
-        },
-        body: {
-          en: [
-            "Kiran and Dev were exploring a hill near their village when they noticed a small metal box beneath the roots of a tree.",
-            "Inside the box was a hand-drawn map marked with a river, three hills and a mysterious symbol.",
-            "The friends followed the map until they reached a narrow path hidden behind tall grass. At the end stood an ancient stone arch.",
-            "They discovered no gold or jewels beyond the arch. Instead, they found a spring of clear water and a collection of old books carefully protected from the rain.",
-            "The greatest treasure, they realized, was the knowledge and history that had remained hidden for generations."
-          ],
-          te: [
-            "కిరణ్, దేవ్ అనే ఇద్దరు స్నేహితులు తమ గ్రామం దగ్గర ఉన్న కొండను అన్వేషిస్తుండగా ఒక చెట్టు వేర్ల కింద చిన్న లోహపు పెట్టెను గమనించారు.",
-            "పెట్టెలో ఒక చేతితో గీసిన పటం ఉంది. అందులో ఒక నది, మూడు కొండలు, ఒక రహస్య గుర్తు ఉన్నాయి.",
-            "వారు పటాన్ని అనుసరిస్తూ పొడవైన గడ్డి వెనుక దాగి ఉన్న సన్నని దారిని చేరుకున్నారు. దారి చివర ఒక పురాతన రాతి తోరణం కనిపించింది.",
-            "ఆ తోరణం దాటి వెళ్లినప్పుడు వారికి బంగారం, వజ్రాలు కనిపించలేదు. బదులుగా స్వచ్ఛమైన నీటి ఊట, వర్షం తగలకుండా భద్రపరిచిన పాత పుస్తకాలు కనిపించాయి.",
-            "తరతరాలుగా దాగి ఉన్న జ్ఞానం, చరిత్రే నిజమైన నిధి అని వారు తెలుసుకున్నారు."
-          ]
-        }
-      },
-
-      {
-        id: "s005",
-        category: "mystery",
-        icon: "🔎",
-        minutes: 3,
-        title: {
-          en: "The Clock That Stopped",
-          te: "ఆగిపోయిన గడియారం"
-        },
-        description: {
-          en: "A strange clock stops at the same time every evening.",
-          te: "ప్రతి సాయంత్రం ఒకే సమయానికి ఆగిపోయే వింత గడియారం."
-        },
-        body: {
-          en: [
-            "In an antique shop stood a clock that always stopped at 7:17 in the evening. The shopkeeper had repaired it many times, but the problem never disappeared.",
-            "One day, a young visitor noticed that the clock stopped whenever a particular old train passed behind the building.",
-            "The shopkeeper investigated and found a forgotten vibration in the wooden wall. The passing train shook the clock just enough to interrupt its delicate mechanism.",
-            "After the clock was moved to another shelf, it continued ticking through the evening.",
-            "The mystery was solved, but the shopkeeper kept telling customers that every old object had a story waiting to be discovered."
-          ],
-          te: [
-            "ఒక పాత వస్తువుల దుకాణంలో ఉన్న గడియారం ప్రతిరోజూ సాయంత్రం 7:17 గంటలకు ఆగిపోయేది. దుకాణదారుడు ఎన్నిసార్లు బాగుచేసినా సమస్య అలాగే ఉండేది.",
-            "ఒక రోజు వచ్చిన యువకుడు, దుకాణం వెనుక నుంచి ఒక పాత రైలు వెళ్లినప్పుడల్లా గడియారం ఆగిపోతున్నట్లు గమనించాడు.",
-            "దుకాణదారుడు పరిశీలించగా చెక్క గోడలో ప్రకంపనలు కలుగుతున్నాయని తెలుసుకున్నాడు. రైలు వెళ్లేటప్పుడు వచ్చే కంపనం గడియారంలోని సున్నితమైన యంత్రాంగాన్ని ప్రభావితం చేస్తోంది.",
-            "గడియారాన్ని మరో అరలో పెట్టిన తర్వాత అది సాయంత్రం అంతా సరిగ్గా పనిచేసింది.",
-            "రహస్యం పరిష్కారమైనా, ప్రతి పాత వస్తువులో తెలుసుకోవాల్సిన ఒక కథ ఉంటుందని దుకాణదారుడు చెబుతూనే ఉండేవాడు."
-          ]
-        }
-      },
-
-      {
-        id: "s006",
-        category: "inspiration",
-        icon: "🌟",
-        minutes: 2,
-        title: {
-          en: "One More Attempt",
-          te: "మరో ప్రయత్నం"
-        },
-        description: {
-          en: "A young inventor learns why failure is not the end.",
-          te: "ఓటమి అంతం కాదని తెలుసుకున్న యువ ఆవిష్కర్త కథ."
-        },
-        body: {
-          en: [
-            "A young inventor named Tara wanted to build a small machine that could help farmers save water.",
-            "Her first model leaked. The second consumed too much electricity. The third stopped working after an hour.",
-            "Her friends suggested that she choose an easier project. Tara decided to examine every failure instead.",
-            "After weeks of careful experiments, she created a simple device that released water only when the soil became dry.",
-            "When a farmer tested it, he smiled and said, 'This will help us.' Tara finally understood that every failed attempt had taught her something important.",
-            "Moral: Progress often begins with the courage to try again."
-          ],
-          te: [
-            "తారా అనే యువ ఆవిష్కర్త రైతులకు నీటిని ఆదా చేయడంలో సహాయపడే ఒక చిన్న యంత్రాన్ని తయారు చేయాలనుకుంది.",
-            "మొదటి యంత్రంలో నీరు కారింది. రెండోది ఎక్కువ విద్యుత్తు వాడింది. మూడోది గంటకే ఆగిపోయింది.",
-            "సులభమైన పని ఎంచుకోమని స్నేహితులు చెప్పినా, తారా ప్రతి తప్పును పరిశీలించాలని నిర్ణయించుకుంది.",
-            "కొన్ని వారాల ప్రయోగాల తర్వాత, నేల ఎండిపోయినప్పుడు మాత్రమే నీటిని విడుదల చేసే చిన్న పరికరాన్ని తయారు చేసింది.",
-            "ఒక రైతు దాన్ని పరీక్షించి, 'ఇది మాకు ఎంతో ఉపయోగపడుతుంది' అని నవ్వాడు. ప్రతి ప్రయత్నం తనకు ఏదో ఒక పాఠం నేర్పిందని తారా గ్రహించింది.",
-            "నీతి: మళ్లీ ప్రయత్నించే ధైర్యంతోనే పురోగతి మొదలవుతుంది."
-          ]
-        }
-      },
-
-      {
-        id: "s007",
-        category: "mythology",
-        icon: "🪔",
-        minutes: 2,
-        title: {
-          en: "The Lamp of Wisdom",
-          te: "జ్ఞాన దీపం"
-        },
-        description: {
-          en: "An imaginative traditional-style tale about wisdom and humility.",
-          te: "జ్ఞానం మరియు వినయం గురించి ఒక కల్పిత కథ."
-        },
-        body: {
-          en: [
-            "In a small kingdom, a young prince believed that having all the answers made him wise.",
-            "One day, an old teacher gave him an unlit lamp and asked him to find the brightest flame in the kingdom.",
-            "The prince visited palaces, markets and temples. He found beautiful lamps everywhere but could not decide which flame was the brightest.",
-            "Finally, a village child lit the lamp using a small flame and said, 'A light is useful when it helps someone see.'",
-            "The prince understood that wisdom was not about appearing important. It was about using knowledge to help others.",
-            "This is an original fictional tale inspired by traditional moral storytelling, not a historical scripture."
-          ],
-          te: [
-            "ఒక చిన్న రాజ్యంలో, అన్ని ప్రశ్నలకు సమాధానాలు తెలిసినవాడే జ్ఞాని అని ఒక యువరాజు నమ్మేవాడు.",
-            "ఒక రోజు ఒక వృద్ధ గురువు అతనికి వెలగని దీపాన్ని ఇచ్చి, రాజ్యంలో అత్యంత ప్రకాశవంతమైన జ్యోతిని కనుక్కోమన్నాడు.",
-            "యువరాజు రాజభవనాలు, మార్కెట్లు, దేవాలయాలు సందర్శించాడు. ఎన్నో అందమైన దీపాలు కనిపించాయి కానీ ఏది గొప్పదో నిర్ణయించలేకపోయాడు.",
-            "చివరకు ఒక గ్రామ బాలుడు చిన్న జ్యోతితో ఆ దీపాన్ని వెలిగించి, 'వెలుగు ఇతరులకు దారి చూపినప్పుడే ఉపయోగపడుతుంది' అన్నాడు.",
-            "జ్ఞానం అంటే గొప్పగా కనిపించడం కాదు, ఇతరులకు సహాయపడటానికి దాన్ని ఉపయోగించడమని యువరాజు తెలుసుకున్నాడు.",
-            "ఇది సంప్రదాయ నీతి కథల స్ఫూర్తితో రాసిన కల్పిత కథ మాత్రమే; చారిత్రక గ్రంథంలోని కథ కాదు."
-          ]
-        }
-      },
-
-      {
-        id: "s008",
-        category: "comedy",
-        icon: "😂",
-        minutes: 2,
-        title: {
-          en: "The Clever Shopkeeper",
-          te: "తెలివైన దుకాణదారుడు"
-        },
-        description: {
-          en: "A funny village misunderstanding ends with everyone laughing.",
-          te: "ఒక గ్రామంలో జరిగిన సరదా అపార్థం అందరినీ నవ్వించింది."
-        },
-        body: {
-          en: [
-            "Ramu ran a small shop in a village. One morning, a customer asked him for something that would make his memory stronger.",
-            "Ramu handed him a notebook and a pencil.",
-            "'Will these improve my memory?' the customer asked.",
-            "'No,' said Ramu. 'But you can write down what you forget!'",
-            "The customer thought for a moment, then laughed and bought both items.",
-            "From that day onward, Ramu kept notebooks near the counter and called them his 'never-forget collection.'"
-          ],
-          te: [
-            "రాము ఒక గ్రామంలో చిన్న దుకాణం నడిపేవాడు. ఒక ఉదయం ఒక కస్టమర్ వచ్చి జ్ఞాపకశక్తి పెరగడానికి ఏదైనా ఇవ్వమన్నాడు.",
-            "రాము అతనికి ఒక నోట్‌బుక్, పెన్సిల్ ఇచ్చాడు.",
-            "'ఇవి నా జ్ఞాపకశక్తిని పెంచుతాయా?' అని కస్టమర్ అడిగాడు.",
-            "'లేదు,' అన్నాడు రాము. 'కానీ మర్చిపోయిన విషయాలను రాసుకోవచ్చు కదా!'",
-            "కస్టమర్ కాసేపు ఆలోచించి నవ్వుతూ రెండింటినీ కొనుక్కున్నాడు.",
-            "ఆ రోజు నుంచి రాము తన దుకాణంలో నోట్‌బుక్‌లను 'మర్చిపోని సేకరణ' అని పిలవసాగాడు."
-          ]
-        }
-      },
-
-      {
-        id: "s009",
-        category: "family",
-        icon: "👨‍👩‍👦",
-        minutes: 2,
-        title: {
-          en: "Grandmother's Garden",
-          te: "అమ్మమ్మ తోట"
-        },
-        description: {
-          en: "A child discovers that the smallest acts of care can grow into something beautiful.",
-          te: "చిన్న చిన్న ప్రేమపూర్వక పనులు అందమైన ఫలితాలను ఇస్తాయని తెలిపే కథ."
-        },
-        body: {
-          en: [
-            "Every summer, Anu visited her grandmother, who grew flowers and vegetables in a little garden.",
-            "Anu wanted the plants to grow quickly, so she poured lots of water onto them every morning.",
-            "Her grandmother gently explained that plants needed the right amount of water, sunlight and patience.",
-            "Anu began caring for one small seedling each day. Weeks passed, and the seedling grew into a healthy plant.",
-            "When Anu returned home, she carried a little pot with her. She wanted to create a garden of her own.",
-            "Her grandmother smiled. The garden had taught Anu how to care for something beyond herself."
-          ],
-          te: [
-            "ప్రతి వేసవిలో అను తన అమ్మమ్మను కలవడానికి వెళ్లేది. అమ్మమ్మ ఇంటి దగ్గర పూలు, కూరగాయలతో చిన్న తోట ఉండేది.",
-            "మొక్కలు త్వరగా పెరగాలని అను ప్రతిరోజూ వాటికి చాలా నీరు పోసేది.",
-            "మొక్కలకు సరైన నీరు, సూర్యకాంతి, ఓపిక అవసరమని అమ్మమ్మ ప్రేమగా వివరించింది.",
-            "అను ప్రతిరోజూ ఒక చిన్న మొక్కను జాగ్రత్తగా చూసుకోవడం మొదలుపెట్టింది. కొన్ని వారాలకు అది ఆరోగ్యంగా పెరిగింది.",
-            "ఇంటికి తిరిగి వెళ్లేటప్పుడు అను ఒక చిన్న కుండీలో మొక్కను తీసుకెళ్లింది. తనకంటూ ఒక తోటను పెంచుకోవాలని అనుకుంది.",
-            "అమ్మమ్మ నవ్వింది. ఆ తోట తనకంటే ఇతరుల పట్ల కూడా శ్రద్ధ చూపడం అనుకు నేర్పింది."
-          ]
-        }
-      },
-
-      {
-        id: "s010",
-        category: "fantasy",
-        icon: "🧙",
-        minutes: 3,
-        title: {
-          en: "The Door Among the Stars",
-          te: "నక్షత్రాల మధ్య తలుపు"
-        },
-        description: {
-          en: "A curious child finds a door to an extraordinary imaginary world.",
-          te: "ఒక వింత ప్రపంచానికి దారి తీసే తలుపును కనుగొన్న బాలుడి కథ."
-        },
-        body: {
-          en: [
-            "One night, a child named Nikhil noticed a tiny silver door painted on the wall of his room.",
-            "When he touched its handle, the door opened into a sky filled with floating islands and rivers of light.",
-            "A tiny glowing bird explained that the world was losing its colours because everyone had stopped telling stories.",
-            "Nikhil shared a story about a brave little turtle. With every sentence, a flower appeared, a river brightened and a new star lit the sky.",
-            "When he returned to his room, the silver door had disappeared. But a tiny silver feather remained on his desk.",
-            "Nikhil began telling stories every evening, wondering what other worlds might be listening."
-          ],
-          te: [
-            "ఒక రాత్రి నిఖిల్ అనే బాలుడు తన గది గోడపై చిన్న వెండి తలుపును గమనించాడు.",
-            "దాని తలుపు గొళ్లెం తాకగానే, ఆకాశంలో తేలియాడే దీవులు, కాంతితో ప్రవహించే నదులు ఉన్న ప్రపంచంలోకి తలుపు తెరుచుకుంది.",
-            "ఒక చిన్న వెలుగుతున్న పక్షి, ఎవరూ కథలు చెప్పడం మానేయడంతో ఆ ప్రపంచంలోని రంగులు కనుమరుగవుతున్నాయని చెప్పింది.",
-            "నిఖిల్ ధైర్యమైన చిన్న తాబేలు గురించి ఒక కథ చెప్పాడు. ప్రతి వాక్యంతో ఒక పువ్వు వికసించింది, నది ప్రకాశించింది, కొత్త నక్షత్రం వెలిగింది.",
-            "తన గదికి తిరిగి వచ్చేసరికి వెండి తలుపు కనిపించలేదు. కానీ బల్లపై ఒక చిన్న వెండి ఈక మిగిలింది.",
-            "ఆ రోజు నుంచి నిఖిల్ ప్రతి సాయంత్రం కథలు చెప్పడం మొదలుపెట్టాడు. ఇంకా ఎన్ని ప్రపంచాలు తన కథల కోసం ఎదురుచూస్తున్నాయో అని ఆలోచించేవాడు."
-          ]
-        }
-      }
-    ];
-
-    const $ = (selector) => document.querySelector(selector);
-
-    let currentLanguage = "en";
-    let currentCategory = "all";
-    let currentSearch = "";
-    let currentStoryId = null;
-
-    const translations = {
-      en: {
-        searchPlaceholder: "Search stories, categories...",
-        search: "Search",
-        all: "All Stories",
-        latest: "Latest",
-        read: "Read Story →",
-        minutes: "min read",
-        save: "♡ Save story",
-        saved: "♥ Saved",
-        back: "← Back to stories",
-        empty: "No stories found. Try another search.",
-        savedMessage: "Story saved!",
-        removedMessage: "Story removed from favourites.",
-        savedCategory: "Saved Stories",
-        categoryCount: "stories",
-        readerTitle: "Your story"
-      },
-      te: {
-        searchPlaceholder: "కథలు, విభాగాల కోసం వెతకండి...",
-        search: "వెతకండి",
-        all: "అన్ని కథలు",
-        latest: "కొత్తవి",
-        read: "కథ చదవండి →",
-        minutes: "నిమిషాల చదువు",
-        save: "♡ కథను దాచండి",
-        saved: "♥ దాచబడింది",
-        back: "← కథల దగ్గరకు వెళ్లండి",
-        empty: "కథలు కనిపించలేదు. వేరే పదంతో వెతకండి.",
-        savedMessage: "కథ దాచబడింది!",
-        removedMessage: "ఇష్టమైన కథల నుంచి తొలగించబడింది.",
-        savedCategory: "దాచిన కథలు",
-        categoryCount: "కథలు",
-        readerTitle: "మీ కథ"
-      }
-    };
-
-    function t(key) {
-      return translations[currentLanguage][key];
-    }
-
-    function escapeHTML(value) {
-      return String(value).replace(/[&<>"']/g, (character) => {
-        const map = {
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;"
-        };
-
-        return map[character];
-      });
-    }
-
-    function getSavedStories() {
-      try {
-        const saved = JSON.parse(
-          localStorage.getItem("stories-favourites") || "[]"
-        );
-
-        return Array.isArray(saved) ? saved : [];
-      } catch (error) {
-        return [];
-      }
-    }
-
-    function saveFavouriteIds(ids) {
-      try {
-        localStorage.setItem(
-          "stories-favourites",
-          JSON.stringify(ids)
-        );
-
-        return true;
-      } catch (error) {
-        alert("Your browser could not save this story.");
-        return false;
-      }
-    }
-
-    function renderCategories() {
-      const grid = $("#categoryGrid");
-
-      grid.innerHTML = categories.map((category) => {
-        const name = category[currentLanguage];
-        const description = currentLanguage === "te"
-          ? category.descTe
-          : category.descEn;
-
-        return `
-          <button class="category-card"
-                  type="button"
-                  data-category="${escapeHTML(category.id)}"
-                  style="text-align:left;color:inherit;font:inherit;width:100%">
-            <div class="category-icon">${category.icon}</div>
-            <h3>${escapeHTML(name)}</h3>
-            <p>${escapeHTML(description)}</p>
-          </button>
-        `;
-      }).join("");
-
-      grid.querySelectorAll("[data-category]").forEach((button) => {
-        button.addEventListener("click", () => {
-          currentCategory = button.dataset.category;
-          renderFilters();
-          renderStories();
-
-          $("#stories").scrollIntoView({
-            behavior: "smooth"
-          });
-        });
-      });
-    }
-
-    function renderFilters() {
-      const bar = $("#filterBar");
-
-      const filters = [
-        {
-          id: "all",
-          label: t("all")
-        },
-        {
-          id: "latest",
-          label: t("latest")
-        },
-        {
-          id: "saved",
-          label: t("savedCategory")
-        },
-        ...categories.map((category) => ({
-          id: category.id,
-          label: category[currentLanguage]
-        }))
-      ];
-
-      bar.innerHTML = filters.map((filter) => `
-        <button
-          class="filter-btn ${
-            currentCategory === filter.id ? "active" : ""
-          }"
-          type="button"
-          data-filter="${escapeHTML(filter.id)}">
-          ${escapeHTML(filter.label)}
-        </button>
-      `).join("");
-
-      bar.querySelectorAll("[data-filter]").forEach((button) => {
-        button.addEventListener("click", () => {
-          currentCategory = button.dataset.filter;
-          renderFilters();
-          renderStories();
-        });
-      });
-    }
-
-    function matchesStory(story) {
-      if (currentCategory === "saved") {
-        if (!getSavedStories().includes(story.id)) {
-          return false;
-        }
-      } else if (
-        currentCategory !== "all" &&
-        currentCategory !== "latest" &&
-        story.category !== currentCategory
-      ) {
-        return false;
-      }
-
-      if (!currentSearch) {
-        return true;
-      }
-
-      const category = categories.find(
-        (item) => item.id === story.category
-      );
-
-      const searchFields = [
-        story.title.en,
-        story.title.te,
-        story.description.en,
-        story.description.te,
-        category ? category.en : "",
-        category ? category.te : ""
-      ].join(" ").toLowerCase();
-
-      return searchFields.includes(currentSearch);
-    }
-
-    function renderStories() {
-      const grid = $("#storyGrid");
-
-      let filtered = storiesData.filter(matchesStory);
-
-      if (currentCategory === "latest") {
-        filtered = [...filtered].reverse();
-      }
-
-      if (filtered.length === 0) {
-        grid.innerHTML = `
-          <div class="empty-state">
-            <div style="font-size:36px;margin-bottom:10px">📚</div>
-            <p>${escapeHTML(t("empty"))}</p>
-          </div>
-        `;
-
-        return;
-      }
-
-      grid.innerHTML = filtered.map((story) => {
-        const category = categories.find(
-          (item) => item.id === story.category
-        );
-
-        const title = story.title[currentLanguage];
-        const description = story.description[currentLanguage];
-
-        const categoryName = category
-          ? category[currentLanguage]
-          : "";
-
-        return `
-          <article class="story-card">
-            <div class="story-cover" aria-hidden="true">
-              ${story.icon}
-            </div>
-
-            <div class="story-content">
-              <div class="story-meta">
-                <span>${escapeHTML(categoryName)}</span>
-                <span>${story.minutes} ${escapeHTML(t("minutes"))}</span>
-              </div>
-
-              <h3>${escapeHTML(title)}</h3>
-
-              <p>${escapeHTML(description)}</p>
-
-              <button class="read-link"
-                      type="button"
-                      data-read="${escapeHTML(story.id)}">
-                ${escapeHTML(t("read"))}
-              </button>
-            </div>
-          </article>
-        `;
-      }).join("");
-
-      grid.querySelectorAll("[data-read]").forEach((button) => {
-        button.addEventListener("click", () => {
-          openStory(button.dataset.read);
-        });
-      });
-    }
-
-    function openStory(id) {
-      const story = storiesData.find(
-        (item) => item.id === id
-      );
-
-      if (!story) {
-        return;
-      }
-
-      currentStoryId = story.id;
-
-      $("#readerTitle").textContent =
-        story.title[currentLanguage];
-
-      const category = categories.find(
-        (item) => item.id === story.category
-      );
-
-      $("#readerMeta").textContent =
-        (category ? category[currentLanguage] + " · " : "") +
-        story.minutes + " " + t("minutes");
-
-      const body = $("#readerBody");
-      body.replaceChildren();
-
-      story.body[currentLanguage].forEach((paragraph) => {
-        const p = document.createElement("p");
-        p.textContent = paragraph;
-        body.appendChild(p);
-      });
-
-      updateBookmarkButton();
-
-      $("#reader").classList.add("visible");
-
-      $("#reader").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-      try {
-        localStorage.setItem(
-          "stories-last-read",
-          story.id
-        );
-      } catch (error) {
-        // Reading still works if browser storage is unavailable.
-      }
-    }
-
-    function updateBookmarkButton() {
-      const saved = getSavedStories().includes(currentStoryId);
-
-      $("#bookmarkButton").textContent = saved
-        ? t("saved")
-        : t("save");
-    }
-
-    function toggleBookmark() {
-      if (!currentStoryId) {
-        return;
-      }
-
-      const saved = getSavedStories();
-      const alreadySaved = saved.includes(currentStoryId);
-
-      const updated = alreadySaved
-        ? saved.filter((id) => id !== currentStoryId)
-        : [...saved, currentStoryId];
-
-      if (!saveFavouriteIds(updated)) {
-        return;
-      }
-
-      updateBookmarkButton();
-      renderStories();
-
-      if (currentCategory === "saved") {
-        renderFilters();
-      }
-    }
-
-    function updateLanguage() {
-      document.querySelectorAll("[data-en][data-te]").forEach((element) => {
-        element.textContent =
-          element.dataset[currentLanguage];
-      });
-
-      $("#searchInput").placeholder = t("searchPlaceholder");
-      $("#searchButton").textContent = t("search");
-      $("#backButton").textContent = t("back");
-
-      document.documentElement.lang = currentLanguage;
-
-      renderCategories();
-      renderFilters();
-      renderStories();
-
-      if (currentStoryId) {
-        openStory(currentStoryId);
-      }
-    }
-
-    $("#languageSelect").addEventListener("change", (event) => {
-      currentLanguage = event.target.value;
-      updateLanguage();
-    });
-
-    function performSearch() {
-      currentSearch = $("#searchInput").value
-        .trim()
-        .toLocaleLowerCase();
-
-      currentCategory = "all";
-
-      renderFilters();
-      renderStories();
-
-      $("#stories").scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-
-    $("#searchButton").addEventListener("click", performSearch);
-
-    $("#searchInput").addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        performSearch();
-      }
-    });
-
-    $("#backButton").addEventListener("click", () => {
-      $("#reader").classList.remove("visible");
-
-      $("#stories").scrollIntoView({
-        behavior: "smooth"
-      });
-    });
-
-    $("#bookmarkButton").addEventListener(
-      "click",
-      toggleBookmark
-    );
-
-    $("#year").textContent = new Date().getFullYear();
-
-    /* Start the website. */
-
-    renderCategories();
-    renderFilters();
-    renderStories();
-  </script>
-
-<!-- SUBMIT A STORY BUTTON AND FORM -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080609">
+<title>The Blood | Stories</title>
+<meta name="description" content="Enter The Blood, a dark supernatural saga. Read Telugu and English stories, episodes, fantasy, romance, horror and more.">
 <style>
-  #story-submit-btn {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 9999;
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 15px 22px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 5px 25px #8b5cf677;
-    transition: transform .25s;
-  }
-
-  #story-submit-btn:hover {
-    transform: translateY(-4px) scale(1.03);
-  }
-
-  #story-submit-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-    background: rgba(0, 0, 0, .82);
-    backdrop-filter: blur(7px);
-    overflow-y: auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  #story-submit-overlay.open {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #story-submit-form {
-    width: 100%;
-    max-width: 560px;
-    box-sizing: border-box;
-    background: #171322;
-    color: #fff;
-    border: 1px solid #8b5cf6;
-    border-radius: 20px;
-    padding: 25px;
-    position: relative;
-    margin: auto;
-    font-family: Arial, sans-serif;
-  }
-
-  #story-submit-form h2 {
-    margin: 0 35px 8px 0;
-    color: #d8b4fe;
-  }
-
-  #story-submit-form p {
-    color: #d1c5dc;
-    line-height: 1.5;
-  }
-
-  #story-submit-form label {
-    display: block;
-    margin: 15px 0 6px;
-    font-weight: bold;
-  }
-
-  #story-submit-form input,
-  #story-submit-form select,
-  #story-submit-form textarea {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px;
-    border-radius: 9px;
-    border: 1px solid #514563;
-    background: #241d32;
-    color: white;
-    font: inherit;
-  }
-
-  #story-submit-form textarea {
-    min-height: 180px;
-    resize: vertical;
-  }
-
-  #story-submit-form input:focus,
-  #story-submit-form select:focus,
-  #story-submit-form textarea:focus {
-    outline: 2px solid #a78bfa;
-  }
-
-  #story-submit-form .story-send {
-    width: 100%;
-    border: 0;
-    border-radius: 10px;
-    padding: 14px;
-    margin-top: 20px;
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  #story-submit-close {
-    position: absolute;
-    right: 15px;
-    top: 13px;
-    border: 0;
-    background: transparent;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-  }
-
-  #story-submit-note {
-    font-size: 13px;
-    color: #c4b5fd;
-  }
-
-  @media (max-width: 480px) {
-    #story-submit-btn {
-      right: 12px;
-      bottom: 12px;
-      padding: 13px 17px;
-    }
-
-    #story-submit-form {
-      padding: 20px 16px;
-    }
-  }
+:root{--bg:#080609;--panel:#151016;--red:#bd1731;--gold:#e8bd80;--muted:#b7aab4;--white:#fff7f5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Georgia,"Noto Serif Telugu",serif}
+button,input{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid #ffffff12;background:#080609ed;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+.logo{font-family:Georgia,serif;font-size:23px;letter-spacing:5px;color:#f1c5b0}
+nav{display:flex;gap:24px;font:13px Arial,sans-serif;color:#ddd}
+nav a:hover{color:var(--gold)}
+.hero{min-height:640px;position:relative;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,#080609 0%,#080609e8 42%,#08060940 100%),linear-gradient(0deg,#080609 0%,transparent 55%),url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:#b70d32;right:18%;top:15%;box-shadow:0 0 60px #b70d3270,0 0 140px #b70d3230;animation:moon 5s ease-in-out infinite alternate}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080609 0%,transparent 22%,#08060928 100%);pointer-events:none}
+@keyframes moon{to{box-shadow:0 0 85px #d21c4370,0 0 180px #b70d3240;transform:scale(1.04)}}
+@keyframes rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.hero-content{position:relative;z-index:2;padding:90px 8%;max-width:850px;animation:rise 1.1s ease both}
+.eyebrow{font:11px Arial,sans-serif;letter-spacing:5px;color:#ed7185;text-transform:uppercase}
+h1{font-size:clamp(64px,12vw,135px);letter-spacing:8px;line-height:.9;margin:25px 0;background:linear-gradient(180deg,#fff4e9,#c52d47 80%);color:transparent;background-clip:text;-webkit-background-clip:text;text-shadow:0 15px 70px #ab173b35}
+.tagline{font-size:clamp(17px,2.5vw,24px);font-style:italic;color:#e6d6d7;line-height:1.7}
+.hero p{color:#c8b9c1;line-height:1.9;max-width:510px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #75515a;padding:14px 21px;border-radius:3px;font:12px Arial,sans-serif;letter-spacing:1px;transition:.25s}
+.btn-primary{background:var(--red);border-color:var(--red);color:white}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.2)}
+main section{padding:65px 7%}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:27px}
+.section-heading h2{font-size:clamp(26px,4vw,39px);margin:0}
+.muted{color:var(--muted);font:13px Arial,sans-serif;line-height:1.8}
+.featured{background:linear-gradient(135deg,#1c1019,#100c11);border:1px solid #54212e;display:grid;grid-template-columns:1.05fr 1fr;gap:35px;padding:32px;align-items:center}
+.poster{min-height:330px;display:grid;place-items:center;text-align:center;padding:25px;background:linear-gradient(0deg,#10060c88,#10060c35),url('https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1000&q=85') center/cover;border:1px solid #ffffff20}
+.poster span{font-size:48px;letter-spacing:6px;color:#f3c8ba;text-shadow:0 4px 30px #000}
+.featured h3{font-size:31px;line-height:1.3;margin:12px 0}
+.pill{display:inline-block;border:1px solid #61313e;color:#f3a0ac;padding:6px 10px;font:10px Arial,sans-serif;letter-spacing:1px;margin:3px}
+.search{width:100%;max-width:420px;background:#151016;border:1px solid #40313c;color:white;padding:13px 15px;border-radius:3px;outline:none}
+.search:focus{border-color:#b74459}
+.categories,.story-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.category{background:linear-gradient(140deg,#24141f,#110d12);border:1px solid #39232e;padding:24px 18px;transition:.25s}
+.category:hover{border-color:#a63a50;transform:translateY(-4px)}
+.category .emoji{font-size:28px}
+.category h3{font-size:17px;margin:15px 0 7px}
+.story-card{background:#130e14;border:1px solid #33232e;overflow:hidden}
+.story-card .art{height:125px;background:radial-gradient(circle at 70% 30%,#782035,#25101c 45%,#100b12 75%);display:grid;place-items:center;font-size:38px}
+.story-card .card-body{padding:17px}
+.story-card h3{font-size:18px;line-height:1.4}
+.story-card button{background:none;border:0;color:#f2a0ae;padding:0;font-size:13px}
+.reader{display:none;min-height:70vh;padding:60px 7%}
+.reader.active{display:block;animation:rise .4s ease}
+.home.hidden{display:none}
+.reader-inner{max-width:850px;margin:auto}
+.reader h2{font-size:clamp(34px,6vw,58px);line-height:1.15;margin:20px 0}
+.reader h3{color:var(--gold);font-size:23px;margin-top:42px}
+.reader p{font-size:18px;line-height:2;color:#e4d9df;white-space:pre-line}
+.reader .telugu{font-family:"Noto Serif Telugu","Nirmala UI",serif}
+.reader-tools{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+.reader-tools button{background:#21141e;color:white;border:1px solid #583341;padding:10px 14px}
+.reader-tools button.selected{background:#8d1933;border-color:#8d1933}
+.notice{border-left:3px solid #b72c47;padding:12px 18px;background:#1b1119;color:#d6c1ca;line-height:1.8;margin:25px 0}
+footer{padding:35px 7%;border-top:1px solid #ffffff15;color:#9e8d99;font:12px Arial,sans-serif;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:750px){header{padding:0 5%;height:64px}nav{gap:12px;font-size:11px}.hero{min-height:570px;background-position:60% center}.hero:before{width:115px;height:115px;right:12%;top:14%}.hero-content{padding:75px 6%}.featured{grid-template-columns:1fr;padding:17px}.poster{min-height:230px}.categories,.story-grid{grid-template-columns:repeat(2,1fr)}main section{padding:45px 5%}.reader{padding:40px 6%}.reader p{font-size:17px}.section-heading{align-items:start;flex-direction:column}}
+@media(max-width:390px){nav{gap:8px}.logo{font-size:18px;letter-spacing:3px}.categories,.story-grid{grid-template-columns:1fr}}
 </style>
+</head>
+<body>
+<header>
+<a href="#" class="logo" onclick="showHome();return false">STORIES<span style="color:#bd1731">.</span></a>
+<nav>
+<a href="#featured" onclick="showHome()">Featured</a>
+<a href="#categories" onclick="showHome()">Categories</a>
+<a href="#library" onclick="showHome()">Library</a>
+</nav>
+</header>
 
-<button
-  id="story-submit-btn"
-  type="button"
-  aria-haspopup="dialog"
-  aria-controls="story-submit-overlay">
-  ✍️ Submit a Story
-</button>
+<div id="home" class="home">
+<section class="hero">
+<div class="hero-content">
+<div class="eyebrow">A universe of untold stories</div>
+<h1>THE<br>BLOOD</h1>
+<div class="tagline">“Some monsters are born. Others are created.”</div>
+<p>Three kingdoms. One forbidden prophecy. A power the world was never meant to witness. The night Vijay returned, the old world began to die.</p>
+<div class="actions">
+<button class="btn btn-primary" onclick="openEpisode()">▶ &nbsp; READ EPISODE 1</button>
+<a class="btn" href="#featured">DISCOVER THE SAGA ↓</a>
+</div>
+</div>
+</section>
 
-<div id="story-submit-overlay">
-  <form id="story-submit-form" aria-labelledby="story-form-title">
-    <button id="story-submit-close" type="button"
-      aria-label="Close form">&times;</button>
+<main>
+<section id="featured">
+<div class="section-heading"><div><div class="eyebrow">Featured original</div><h2>The Vampire Kingdom</h2></div><span class="pill">SEASON 1 · EPISODE 1</span></div>
+<div class="featured">
+<div class="poster"><span>THE<br>BLOOD</span></div>
+<div>
+<div class="eyebrow">The beginning of war</div>
+<h3>Twenty years ago, they buried his name.</h3>
+<p class="muted">Tonight, the Vampire King hears it again. Vijay has returned, and the three supernatural kingdoms are about to discover that the prophecy they feared was only the beginning.</p>
+<div style="margin:18px 0"><span class="pill">DARK FANTASY</span><span class="pill">SUPERNATURAL</span><span class="pill">TELUGU + ENGLISH</span></div>
+<button class="btn btn-primary" onclick="openEpisode()">ENTER THE STORY →</button>
+</div>
+</div>
+</section>
 
-    <h2 id="story-form-title">📚 Share Your Story</h2>
-    <p>Every story deserves to be told. Share yours in Telugu or English!</p>
+<section id="categories">
+<div class="section-heading"><div><div class="eyebrow">Find your next world</div><h2>Explore Stories</h2></div></div>
+<div class="categories">
+<a class="category" href="#library" onclick="filterStories('Horror')"><div class="emoji">🌑</div><h3>Horror</h3><div class="muted">Shadows, ghosts and fear.</div></a>
+<a class="category" href="#library" onclick="filterStories('Romance')"><div class="emoji">🥀</div><h3>Love & Romance</h3><div class="muted">Love that changes everything.</div></a>
+<a class="category" href="#library" onclick="filterStories('Fantasy')"><div class="emoji">🐉</div><h3>Fantasy</h3><div class="muted">Magic, kingdoms and legends.</div></a>
+<a class="category" href="#library" onclick="filterStories('Mystery')"><div class="emoji">🗝️</div><h3>Mystery & Thriller</h3><div class="muted">Secrets waiting to be found.</div></a>
+<a class="category" href="#library" onclick="filterStories('Adventure')"><div class="emoji">⚔️</div><h3>Adventure</h3><div class="muted">Journeys beyond the known.</div></a>
+<a class="category" href="#library" onclick="filterStories('Moral')"><div class="emoji">🪔</div><h3>Moral & Family</h3><div class="muted">Stories with a lasting meaning.</div></a>
+<a class="category" href="#library" onclick="filterStories('Mythology')"><div class="emoji">🔱</div><h3>Mythology</h3><div class="muted">Ancient tales and divine worlds.</div></a>
+<a class="category" href="#library" onclick="filterStories('All')"><div class="emoji">📚</div><h3>All Stories</h3><div class="muted">Discover every genre.</div></a>
+</div>
+</section>
 
-    <label for="story-author">Your name *</label>
-    <input id="story-author" name="author" required maxlength="100"
-      placeholder="Enter your name">
-
-    <label for="story-email">Your email *</label>
-    <input id="story-email" name="email" type="email" required maxlength="254"
-      placeholder="you@example.com">
-
-    <label for="story-title">Story title *</label>
-    <input id="story-title" name="title" required maxlength="180"
-      placeholder="Give your story a title">
-
-    <label for="story-language">Story language *</label>
-    <select id="story-language" name="language" required>
-      <option value="Telugu">తెలుగు (Telugu)</option>
-      <option value="English">English</option>
-      <option value="Both">Both Telugu and English</option>
-    </select>
-
-    <label for="story-category">Category *</label>
-    <select id="story-category" name="category" required>
-      <option value="Horror">Horror & Ghost Stories</option>
-      <option value="Romance">Love & Romance</option>
-      <option value="Adventure">Adventure & Fantasy</option>
-      <option value="Mystery">Mystery & Thriller</option>
-      <option value="Crime">Crime & Detective</option>
-      <option value="Comedy">Comedy</option>
-      <option value="Moral">Moral & Family Stories</option>
-      <option value="Mythology">Mythology & Historical</option>
-      <option value="Inspirational">Inspirational</option>
-      <option value="Science Fiction">Science Fiction</option>
-      <option value="Short Story">Short Stories</option>
-      <option value="Other">Other</option>
-    </select>
-
-    <label for="story-content">Your story *</label>
-    <textarea id="story-content" name="story" required
-      minlength="20" maxlength="30000"
-      placeholder="Write or paste your complete story here..."></textarea>
-
-    <label>
-      <input type="checkbox" id="story-permission" required
-        style="display:inline;width:auto;margin-right:8px">
-      I confirm this is my story or I have permission to submit it,
-      and I give the website owner permission to review it for publication.
-    </label>
-
-    <button class="story-send" type="submit">Continue to Email ✉️</button>
-
-    <p id="story-submit-note">
-      Your email app will open with your submission prepared.
-      Review it and press Send to submit it.
-    </p>
-  </form>
+<section id="library">
+<div class="section-heading"><div><div class="eyebrow">Your next obsession</div><h2>Story Library</h2></div><input id="search" class="search" placeholder="Search stories..." oninput="searchStories(this.value)" aria-label="Search stories"></div>
+<div class="story-grid" id="storyGrid">
+<article class="story-card" data-category="Fantasy Horror"><div class="art">🌕</div><div class="card-body"><span class="pill">THE BLOOD</span><h3>The Vampire Kingdom</h3><p class="muted">S1 · E1 — The Beginning of War</p><button onclick="openEpisode()">Read episode →</button></div></article>
+<article class="story-card" data-category="Mystery"><div class="art">🗝️</div><div class="card-body"><span class="pill">MYSTERY</span><h3>The Locked Room</h3><p class="muted">An original story coming soon.</p><button onclick="comingSoon()">Coming soon →</button></div></article>
+<article class="story-card" data-category="Romance"><div class="art">🥀</div><div class="card-body"><span class="pill">ROMANCE</span><h3>Letters Never Sent</h3><p class="muted">An original story coming soon.</p><button onclick="comingSoon()">Coming soon →</button></div></article>
+<article class="story-card" data-category="Adventure"><div class="art">⚔️</div><div class="card-body"><span class="pill">ADVENTURE</span><h3>Beyond the Last Kingdom</h3><p class="muted">An original story coming soon.</p><button onclick="comingSoon()">Coming soon →</button></div></article>
+</div>
+<p id="noResults" class="muted" hidden>No matching stories found.</p>
+</section>
+</main>
 </div>
 
+<section id="reader" class="reader">
+<div class="reader-inner">
+<button class="btn" onclick="showHome()">← BACK TO STORIES</button>
+<div style="margin-top:35px" class="eyebrow">THE BLOOD · SEASON 1 · EPISODE 1 OF 20</div>
+<h2 id="readerTitle">The Vampire Kingdom — The Beginning of War</h2>
+<div class="muted">Dark Fantasy · Supernatural · Original Series</div>
+<div class="reader-tools">
+<button id="enBtn" class="selected" onclick="setLanguage('en')">English</button>
+<button id="teBtn" onclick="setLanguage('te')">తెలుగు</button>
+<button onclick="window.print()">Print / Save PDF</button>
+</div>
+<div class="notice">“Some monsters are born. Others are created.”</div>
+<article id="englishStory">
+<h3>SCENE 1 — THE NIGHT OF FEAR</h3>
+<p>Twenty years ago, the three supernatural kingdoms witnessed a massacre so terrible that even the oldest vampires refused to speak its name.
+
+The kingdoms of vampires, werewolves, and witches believed the monster responsible had died.
+
+They were wrong.
+
+The sky turned crimson beneath a blood moon. Inside the Vampire Kingdom, soldiers rushed through the corridors of King Rudraveer's palace.
+
+“Your Majesty! Someone has crossed the northern boundary.”
+
+King Rudraveer rose from his black throne.
+
+“Who dares enter my kingdom without permission?”
+
+The guard whispered one name.
+
+“Vijay.”
+
+The hall fell silent.</p>
+<h3>SCENE 2 — THE NAME THEY BURIED</h3>
+<p>“Impossible. Vijay died twenty years ago,” the king declared.
+
+An elderly witch named Shakuni emerged from the shadows.
+
+“Some deaths are real, Your Majesty. Others are stories told to make the living feel safe.”
+
+“The prophecy never said Vijay would remain dead,” she warned. “It said the one who could destroy all three kingdoms might one day become their greatest protector.”
+
+Before the king could respond, the palace gates exploded.</p>
+<h3>SCENE 3 — THE RETURN</h3>
+<p>A lone figure walked through the smoke.
+
+Vijay.
+
+His eyes burned with an unnatural red light. Guards surrounded him, fangs exposed and weapons raised.
+
+Their captain attacked.
+
+In an instant, Vijay vanished and reappeared behind him. The captain's weapon fell to the floor. One by one, the soldiers stepped backward.
+
+“I did not come here to fight your soldiers,” Vijay said.
+
+“I came to speak to your king.”</p>
+<h3>SCENE 4 — THE VAMPIRE KING'S CHALLENGE</h3>
+<p>Rudraveer descended the throne steps.
+
+“You threaten my kingdom and expect me to listen?”
+
+“Your kingdom has been hiding behind fear for twenty years. Tonight, that ends.”
+
+The king attacked with supernatural speed. Vijay caught his wrist without turning his head.
+
+The palace trembled. Ancient windows shattered. Dark energy swept across the hall.
+
+For the first time in centuries, the Vampire King stood helpless before another being.
+
+“I could end your reign tonight,” Vijay said. “But I want you alive.”
+
+“Why?”
+
+“So you can tell every vampire what you saw.”
+
+Vijay turned away.
+
+“The war has already begun.”</p>
+<h3>SCENE 5 — THE THREE KINGDOMS</h3>
+<p>Far away, in the werewolf mountains, a pack leader felt the ground shake.
+
+In the witches' temple, every candle went out at once.
+
+Across all three kingdoms, the same ancient symbol appeared: three circles joined by a drop of blood.
+
+The witches panicked. The werewolves prepared for battle. The vampires locked their gates.
+
+Shakuni stood before an ancient book.
+
+“The prophecy has awakened,” she whispered.
+
+But a second page of the prophecy had been torn out long ago. Someone wanted its final words to remain hidden.</p>
+<h3>SCENE 6 — THE SECRET OF VIJAY</h3>
+<p>As Vijay left the palace, a voice spoke from the darkness.
+
+“You still believe they betrayed you because they feared your power?”
+
+Shakuni emerged.
+
+“Your mother may still be alive,” she said. “And your father's death may not be what you were told.”
+
+Vijay's expression hardened.
+
+“Speak carefully.”
+
+“There are truths even you are not ready to hear.”
+
+“If they are alive, I will find them. If someone lied to me, I will uncover the truth.”
+
+He disappeared into the darkness.</p>
+<h3>SCENE 7 — THE WRONG ENEMY</h3>
+<p>Beneath the palace, a vampire, a werewolf, and a witch gathered in a secret chamber.
+
+“The kingdoms must unite,” said the vampire.
+
+“To destroy Vijay?” asked the werewolf.
+
+“No,” replied the witch. “To discover what he really is.”
+
+A masked figure listened from the shadows.
+
+When the leaders left, the stranger removed the mask.
+
+The face was older—but unmistakably Vijay's.
+
+The stranger smiled.
+
+“You are hunting the wrong one.”</p>
+<h3>FINAL SCENE — THE BEGINNING OF WAR</h3>
+<p>Beneath the blood moon, Vijay stood at the edge of a ruined battlefield.
+
+He opened his hand. A dark flame flickered across his palm.
+
+“They took everything from me.”
+
+The wind carried his words into the night.
+
+“Now they will learn what they created.”
+
+The blood moon darkened.
+
+Somewhere beyond the three kingdoms, something ancient opened its eyes.
+
+END OF EPISODE 1
+
+The real monster has not even awakened yet.
+
+COMING NEXT: EPISODE 2 — THE SECRET OF THE THREE KINGDOMS</p>
+</article>
+<article id="teluguStory" hidden>
+<h3>సన్నివేశం 1 — భయానక రాత్రి</h3>
+<p class="telugu">ఇరవై సంవత్సరాల క్రితం, మూడు అతీంద్రియ రాజ్యాలు ఎన్నడూ చూడని భయంకరమైన మారణకాండను చూశాయి. ఆ ఘటన గురించి మాట్లాడటానికి పాత వాంపైర్లు కూడా భయపడేవారు.
+
+వాంపైర్లు, వేర్‌వుల్వ్స్, మంత్రగత్తెల రాజ్యాలు ఆ మారణకాండకు కారణమైన రాక్షసుడు చనిపోయాడని నమ్మాయి.
+
+కానీ వాళ్లు తప్పు చేశారు.
+
+రుధిరవన్ రాజ్యంలో రక్తచంద్రుడు ఆకాశాన్ని ఎర్రగా మార్చాడు. వాంపైర్ రాజు రుద్రవీర్ రాజభవనంలో సైనికులు పరుగులు తీశారు.
+
+“మహారాజా! ఉత్తర సరిహద్దును ఎవరో దాటి వచ్చారు!”
+
+“నా అనుమతి లేకుండా నా రాజ్యంలోకి ప్రవేశించే ధైర్యం ఎవడికి ఉంది?”
+
+సైనికుడు వణుకుతూ ఒక పేరు చెప్పాడు.
+
+“విజయ్.”
+
+రాజభవనం ఒక్కసారిగా నిశ్శబ్దమైంది.</p>
+<h3>సన్నివేశం 2 — పాతిపెట్టిన పేరు</h3>
+<p class="telugu">“అసాధ్యం! విజయ్ ఇరవై సంవత్సరాల క్రితమే చనిపోయాడు!” అని రాజు అరిచాడు.
+
+అప్పుడు చీకటిలో నుంచి వృద్ధ మంత్రగత్తె శకుని బయటకు వచ్చింది.
+
+“కొన్ని మరణాలు నిజం, మహారాజా. మరికొన్ని మరణాలు బతికున్నవారికి ధైర్యం చెప్పడానికి సృష్టించిన కథలు.”
+
+“విజయ్ ఎప్పటికీ చనిపోయి ఉంటాడని ప్రవచనం చెప్పలేదు. మూడు రాజ్యాలను నాశనం చేయగలవాడే ఒకరోజు వాటికి గొప్ప రక్షకుడిగా మారవచ్చని చెప్పింది.”
+
+రాజు స్పందించేలోపే రాజభవనం ప్రధాన ద్వారాలు పేలిపోయాయి.</p>
+<h3>సన్నివేశం 3 — విజయ్ తిరిగి వచ్చాడు</h3>
+<p class="telugu">పొగ మధ్య నుంచి ఒక వ్యక్తి నెమ్మదిగా ముందుకు నడిచాడు.
+
+విజయ్.
+
+అతని కళ్లలో అసాధారణమైన ఎర్రటి కాంతి మెరిసింది. వాంపైర్ సైనికులు అతన్ని చుట్టుముట్టారు.
+
+సైన్యాధిపతి దాడి చేశాడు. మరుసటి క్షణంలో విజయ్ కనిపించకుండా పోయి, అతని వెనుక ప్రత్యక్షమయ్యాడు. సైన్యాధిపతి చేతిలోని ఆయుధం నేలపై పడిపోయింది.
+
+“నేను నీ సైనికులతో యుద్ధం చేయడానికి రాలేదు,” అన్నాడు విజయ్.
+
+“నీ రాజుతో మాట్లాడటానికి వచ్చాను.”</p>
+<h3>సన్నివేశం 4 — వాంపైర్ రాజుకు సవాలు</h3>
+<p class="telugu">“నా రాజభవనంలోకి వచ్చి, నా రాజ్యాన్ని బెదిరించి, నేను నీ మాట వినాలని అనుకుంటున్నావా?” అని రుద్రవీర్ ప్రశ్నించాడు.
+
+“గత ఇరవై సంవత్సరాలుగా నీ రాజ్యం భయాన్ని అడ్డుపెట్టుకుని దాక్కుంది. ఈ రాత్రితో అది ముగుస్తుంది,” అన్నాడు విజయ్.
+
+రుద్రవీర్ వేగంగా దాడి చేశాడు. విజయ్ వెనక్కి కూడా తిరగకుండా అతని మణికట్టును పట్టుకున్నాడు.
+
+రాజభవనం కంపించింది. కిటికీలు పగిలిపోయాయి. చీకటి శక్తి రాజభవనం అంతటా వ్యాపించింది.
+
+“ఈ రాత్రే నీ పాలనను అంతం చేయగలను. కానీ నువ్వు బతకాలి.”
+
+“ఎందుకు?”
+
+“నువ్వు చూసింది ప్రతి వాంపైర్‌కు చెప్పడానికి.”
+
+“యుద్ధం ఇప్పటికే మొదలైంది.”</p>
+<h3>సన్నివేశం 5 — మూడు రాజ్యాలు</h3>
+<p class="telugu">దూరంగా ఉన్న వేర్‌వుల్వ్స్ పర్వతాల్లో ఒక నాయకుడు భూమి కంపించడాన్ని గమనించాడు.
+
+మంత్రగత్తెల ఆలయంలో ఒక్కసారిగా అన్ని దీపాలు ఆరిపోయాయి.
+
+మూడు రాజ్యాల్లో ఒకే పురాతన చిహ్నం ప్రత్యక్షమైంది. మూడు వలయాలు ఒక రక్తపు బిందువుతో కలిసిన గుర్తు.
+
+మంత్రగత్తెలు భయపడిపోయారు. వేర్‌వుల్వ్స్ యుద్ధానికి సిద్ధమయ్యారు. వాంపైర్లు తమ రాజభవన ద్వారాలను మూసివేశారు.
+
+“ప్రవచనం మేల్కొంది,” అని శకుని గుసగుసలాడింది.
+
+కానీ ఆ ప్రవచనంలోని రెండో పేజీని చాలా సంవత్సరాల క్రితమే ఎవరో చింపేశారు.</p>
+<h3>సన్నివేశం 6 — విజయ్ రహస్యం</h3>
+<p class="telugu">రాజభవనం నుంచి బయటకు వెళ్తున్న విజయ్‌కు చీకటిలో నుంచి ఒక గొంతు వినిపించింది.
+
+“వాళ్లు నీ శక్తికి భయపడి నిన్ను మోసం చేశారని ఇప్పటికీ నమ్ముతున్నావా?”
+
+శకుని బయటకు వచ్చింది.
+
+“నీ తల్లి ఇంకా బతికే ఉండవచ్చు. నీ తండ్రి మరణం గురించి నీకు చెప్పిన నిజం కూడా అబద్ధం కావచ్చు.”
+
+“మాట్లాడేటప్పుడు జాగ్రత్తగా మాట్లాడు,” అన్నాడు విజయ్.
+
+“నువ్వు కూడా తెలుసుకోవడానికి సిద్ధంగా లేని నిజాలు ఉన్నాయి.”
+
+“వాళ్లు బతికే ఉంటే నేను వెతుకుతాను. ఎవరైనా నాతో అబద్ధం చెప్పి ఉంటే ఆ నిజాన్ని బయటపెడతాను.”
+
+అతను చీకటిలో అదృశ్యమయ్యాడు.</p>
+<h3>సన్నివేశం 7 — తప్పు శత్రువు</h3>
+<p class="telugu">రాజభవనం కింద ఉన్న రహస్య గదిలో ఒక వాంపైర్, ఒక వేర్‌వుల్ఫ్, ఒక మంత్రగత్తె సమావేశమయ్యారు.
+
+“మూడు రాజ్యాలు ఏకం కావాలి,” అన్నాడు వాంపైర్.
+
+“విజయ్‌ను చంపడానికి?” అని వేర్‌వుల్ఫ్ అడిగాడు.
+
+“కాదు. అసలు విజయ్ ఎవరో తెలుసుకోవడానికి,” అంది మంత్రగత్తె.
+
+వారు వెళ్లిపోయిన తర్వాత ముసుగు ధరించిన వ్యక్తి తన ముసుగును తొలగించాడు.
+
+అతని ముఖం వయసు మీద పడినట్లుగా ఉన్నా, అది విజయ్ ముఖమే.
+
+అతను చిరునవ్వు నవ్వాడు.
+
+“మీరు వెతుకుతున్నది అసలైన విజయ్ కాదు.”</p>
+<h3>చివరి సన్నివేశం — యుద్ధానికి ఆరంభం</h3>
+<p class="telugu">రక్తచంద్రుడి కింద, శిథిలమైన యుద్ధభూమి అంచున విజయ్ నిలబడ్డాడు.
+
+అతను తన చేతిని తెరిచాడు. అతని అరచేతిలో చీకటి మంట వెలిగింది.
+
+“వాళ్లు నా నుంచి అన్నీ తీసుకున్నారు.”
+
+గాలి అతని మాటలను రాత్రి అంతటా తీసుకెళ్లింది.
+
+“ఇప్పుడు వాళ్లు తమ చేతులతో ఏం సృష్టించుకున్నారో తెలుసుకుంటారు.”
+
+రక్తచంద్రుడు మరింత చీకటిగా మారాడు.
+
+మూడు రాజ్యాలకు ఆవల, ఏదో పురాతనమైన శక్తి తన కళ్లను తెరిచింది.
+
+ఎపిసోడ్ 1 ముగింపు.
+
+అసలైన రాక్షసుడు ఇంకా మేల్కొననే లేదు.
+
+తర్వాతి ఎపిసోడ్: ఎపిసోడ్ 2 — మూడు రాజ్యాల రహస్యం</p>
+</article>
+<div class="notice">Episode 1 · The story continues in Episode 2.</div>
+<button class="btn btn-primary" onclick="showHome()">← RETURN TO STORY LIBRARY</button>
+</div>
+</section>
+
+<footer><span>© <span id="year"></span> STORIES · A universe of untold stories</span><span>Telugu • English • Every genre</span></footer>
+
 <script>
-(function () {
-  const overlay = document.getElementById("story-submit-overlay");
-  const form = document.getElementById("story-submit-form");
-  const openBtn = document.getElementById("story-submit-btn");
-  const closeBtn = document.getElementById("story-submit-close");
-
-  function openForm() {
-    overlay.classList.add("open");
-    document.body.style.overflow = "hidden";
-    document.getElementById("story-author").focus();
-  }
-
-  function closeForm() {
-    overlay.classList.remove("open");
-    document.body.style.overflow = "";
-    openBtn.focus();
-  }
-
-  openBtn.addEventListener("click", openForm);
-  closeBtn.addEventListener("click", closeForm);
-
-  overlay.addEventListener("click", function (event) {
-    if (event.target === overlay) closeForm();
-  });
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && overlay.classList.contains("open")) {
-      closeForm();
-    }
-  });
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    if (!form.reportValidity()) return;
-
-    const data = new FormData(form);
-    const recipient = "immigrantsguide@outlook.com";
-
-    const subject = "Story Submission: " + data.get("title");
-    const body = [
-      "NEW STORY SUBMISSION",
-      "",
-      "Author: " + data.get("author"),
-      "Author email: " + data.get("email"),
-      "Title: " + data.get("title"),
-      "Language: " + data.get("language"),
-      "Category: " + data.get("category"),
-      "",
-      "STORY:",
-      data.get("story"),
-      "",
-      "Permission confirmed by submitter."
-    ].join("\n");
-
-    const mailto = "mailto:" + recipient +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
-
-    window.location.href = mailto;
-  });
-})();
+const home=document.getElementById('home');
+const reader=document.getElementById('reader');
+function openEpisode(){home.classList.add('hidden');reader.classList.add('active');window.scrollTo(0,0);setLanguage('en')}
+function showHome(){reader.classList.remove('active');home.classList.remove('hidden');window.scrollTo(0,0)}
+function setLanguage(lang){
+ const en=lang==='en';
+ document.getElementById('englishStory').hidden=!en;
+ document.getElementById('teluguStory').hidden=en;
+ document.getElementById('enBtn').classList.toggle('selected',en);
+ document.getElementById('teBtn').classList.toggle('selected',!en);
+ document.getElementById('readerTitle').textContent=en?'The Vampire Kingdom — The Beginning of War':'వాంపైర్ రాజ్యం — యుద్ధానికి ఆరంభం';
+ document.documentElement.lang=en?'en':'te';
+}
+function searchStories(value){
+ let count=0;const q=value.toLowerCase();
+ document.querySelectorAll('.story-card').forEach(card=>{
+ const match=card.innerText.toLowerCase().includes(q);
+ card.hidden=!match;if(match)count++;
+ });
+ document.getElementById('noResults').hidden=count!==0;
+}
+function filterStories(category){
+ document.getElementById('search').value='';
+ let count=0;
+ document.querySelectorAll('.story-card').forEach(card=>{
+ const match=category==='All'||card.dataset.category.includes(category);
+ card.hidden=!match;if(match)count++;
+ });
+ document.getElementById('noResults').hidden=count!==0;
+}
+function comingSoon(){alert('This story is coming soon. Stay tuned!')}
+document.getElementById('year').textContent=new Date().getFullYear();
 </script>
-<!-- END SUBMIT A STORY -->
-
 </body>
 </html>
