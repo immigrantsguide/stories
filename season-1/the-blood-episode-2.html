@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#09060b">
+<title>The Blood — Episode 2 | Krishna Stories</title>
+<meta name="description" content="The Blood, Episode 2: The Secret of the Three Kingdoms.">
+<style>
+:root{color-scheme:dark;--bg:#09060b;--text:#f7edf0;--muted:#c7b7c0;--red:#b91c3b;--gold:#edc58a}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;background:transparent;color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.9;position:relative;isolation:isolate}
+/* Shared fixed title-card background: story text scrolls over the image. */
+body::before{content:"";position:fixed;inset:0;z-index:-2;background-image:url('/stories/assets/The%20Blood%20Title%20card.png');background-position:center center;background-size:cover;background-repeat:no-repeat;transform:translateZ(0)}body::after{content:"";position:fixed;inset:0;z-index:-1;background:rgba(9,6,11,.68);pointer-events:none}
+a{color:inherit;text-decoration:none}.topbar{position:sticky;top:0;z-index:5;background:rgba(9,6,11,.88);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff1a;padding:14px max(20px,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;font:13px Arial,sans-serif}.brand{font-weight:800;letter-spacing:2px;color:#f3d6dc}.back{color:#f1b3c1}.progress-wrap{height:3px;background:#2c202a;position:sticky;top:48px;z-index:4}.progress{height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--gold))}
+.banner{min-height:88vh;display:flex;align-items:end;padding:70px max(22px,calc((100% - 1000px)/2));background:linear-gradient(0deg,rgba(9,6,11,.78),rgba(9,6,11,.12) 55%,rgba(9,6,11,.22));position:relative;border-bottom:1px solid #55202f}.banner-content{max-width:760px;text-shadow:0 3px 20px #000}.eyebrow{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#f19aaa}.banner h1{font-size:clamp(42px,8vw,86px);line-height:1.02;margin:14px 0;color:#fff1eb}.banner p{color:#f0dfe4;max-width:620px}.tag{display:inline-block;border:1px solid #a34a5e;padding:5px 10px;margin-right:7px;font:10px Arial,sans-serif;letter-spacing:1px}.reader{max-width:860px;margin:0 auto;padding:40px 24px 80px;background:rgba(9,6,11,.30);box-shadow:0 0 70px rgba(0,0,0,.12)}.reader-top{border-bottom:1px solid #ffffff30;padding-bottom:22px;margin-bottom:28px}.reader-top h2{font-size:clamp(27px,5vw,42px);line-height:1.2;margin:0 0 8px}.meta{font:12px Arial,sans-serif;color:var(--muted)}.story p{font-size:clamp(17px,2vw,19px);line-height:2.05;color:#fff0f4;margin:0 0 24px;text-shadow:0 2px 8px #000}.story .dialogue{color:#fff3e8;font-size:clamp(19px,2.5vw,23px);font-style:italic;border-left:3px solid var(--red);padding:9px 0 9px 20px;margin:26px 0;background:linear-gradient(90deg,rgba(75,20,37,.65),transparent)}.story .rule-line{text-align:center;color:#ffe0a7;font-weight:bold;letter-spacing:.5px;padding:12px 15px;border:1px solid #a34a5e;background:rgba(25,9,17,.72);margin:22px 0}.chapter-heading{color:var(--gold);font: bold 22px Arial,sans-serif;letter-spacing:1px;margin:35px 0 16px}.end-card{margin-top:40px;padding:25px;border:1px solid #6a2c3c;background:rgba(26,14,23,.9);text-align:center}.end-card h3{color:var(--gold);letter-spacing:2px}.end-card p{font-size:16px}.footer-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:25px;font:13px Arial,sans-serif}.footer-nav a{border:1px solid #653142;padding:10px 14px;color:#f4b8c5}
+@media(max-width:600px){.banner{min-height:78vh;padding:38px 22px}.reader{padding:28px 19px 60px}.topbar{top:0}.progress-wrap{top:49px}}
+
+.character-gallery{max-width:1000px;margin:0 auto 36px;padding:0 24px}.character-gallery h3{font:700 13px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#edc58a;margin:0 0 15px}.character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.character-card{overflow:hidden;border:1px solid #653142;border-radius:12px;background:rgba(15,8,15,.82);box-shadow:0 8px 24px #0006}.character-card img{display:block;width:100%;height:230px;object-fit:cover;object-position:center top}.character-card figcaption{padding:11px 10px 13px;text-align:center;color:#f6d9df;font:700 12px/1.4 Arial,sans-serif;letter-spacing:.04em}.character-gallery .gallery-note{font:12px/1.6 Arial,sans-serif;color:#c7b7c0;margin:10px 0 0}@media(max-width:650px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.character-card img{height:190px}.character-gallery{padding:0 16px}}
+</style></head><body>
+<header class="topbar"><a class="brand" href="index.html">✦ KRISHNA STORIES</a><a class="back" href="index.html">← Back to stories</a></header>
+<div class="progress-wrap" aria-hidden="true"><div class="progress" id="progress"></div></div>
+<section class="banner"><div class="banner-content"><div class="eyebrow">Original supernatural saga</div><h1>THE BLOOD</h1><p>Three kings built a world together. Three kingdoms destroyed it apart.</p><span class="tag">SEASON 1</span><span class="tag">EPISODE 2</span><span class="tag">DARK FANTASY</span></div></section>
+<main class="reader"><div class="reader-top"><h2>The Secret of the Three Kingdoms</h2><div class="meta">The Blood · Season 1, Episode 2 · English · Created by Vijay Krishna</div></div>
+<section class="character-gallery" aria-label="The Blood characters"><h3>Meet the Characters</h3><div class="character-grid">
+<figure class="character-card"><img src="../assets/The%20Vampire%20King.png" alt="The Vampire King" loading="lazy"><figcaption>Rudraveer — Vampire King</figcaption></figure>
+<figure class="character-card"><img src="../assets/The%20Werewolf%20King.png" alt="The Werewolf King" loading="lazy"><figcaption>Bhairava — Werewolf King</figcaption></figure>
+<figure class="character-card"><img src="../assets/The%20Witch%20queen.png" alt="The Witch Queen" loading="lazy"><figcaption>Mahakaali — Witch King</figcaption></figure>
+<figure class="character-card"><img src="../assets/Vijay.png" alt="Vijay" loading="lazy"><figcaption>Vijay — The Forbidden Bloodline</figcaption></figure>
+</div><p class="gallery-note">Character portraits from The Blood universe.</p></section>
+<article class="story"><p>Three kings built a world together. Three kingdoms destroyed it apart.</p>
+<p>A thousand years ago, before the forests were divided by borders, before royal banners became symbols of hatred, and before children learned to fear the names of other clans, there existed a land unlike any other.</p>
+<p>Its name was Rudravan.</p>
+<p>A magnificent land of silver rivers, endless forests, towering mountains, and ancient temples, Rudravan was home to three supernatural clans.</p>
+<p>The vampires ruled the night.</p>
+<p>The werewolves protected the wild.</p>
+<p>The witches guarded the balance of magic.</p>
+<p>Yet, unlike other supernatural lands, Rudravan had never been ruled by a single crown.</p>
+<p>Instead, three powerful kings governed their people as equals.</p>
+<p>King Rudraveer, the Vampire King, ruled the Black Palace. He was intelligent, disciplined, and feared throughout the supernatural world. His command over blood and shadows made him one of the most dangerous warriors alive.</p>
+<p>King Bhairava, the Werewolf King, ruled the Ironwood Citadel. He possessed extraordinary strength, unmatched battlefield instincts, and the loyalty of every warrior who had ever fought beside him.</p>
+<p>King Mahakaali, the Witch King, ruled the Moonspire Kingdom. Though his name would later become a legend, Mahakaali was a king whose mastery of ancient magic rivalled the combined powers of entire armies.</p>
+<p>They were not brothers by blood.</p>
+<p>They were brothers by choice.</p>
+<p>Long before their coronations, when they were young warriors, the three had fought together against invading supernatural armies. They had saved one another from death, shared food during long campaigns, and stood shoulder to shoulder when their enemies surrounded them.</p>
+<p>Rudraveer had once taken a poisoned blade meant for Bhairava.</p>
+<p>Bhairava had carried a badly wounded Mahakaali through a burning battlefield.</p>
+<p>Mahakaali had sacrificed half his magical strength to save Rudraveer from a curse that would have destroyed his bloodline.</p>
+<p>None had forgotten those sacrifices.</p>
+<p>When the old rulers of their respective territories died, the three friends were crowned kings.</p>
+<p>They could have fought for supremacy.</p>
+<p>They could have divided the land through conquest.</p>
+<p>Instead, they chose unity.</p>
+<p>On the day of their coronations, they gathered in the central palace of Rudravan and made a promise before their people.</p>
+<p class="dialogue">&quot;No king shall stand above another. No clan shall suffer while another celebrates. No enemy shall destroy one kingdom without facing all three.&quot;</p>
+<p>The crowd erupted in cheers.</p>
+<p>For the first time in history, three supernatural kingdoms were united without one being forced to kneel.</p>
+<p>And the golden age of Rudravan began.</p>
+<p>Three days after their coronations, the kings gathered inside an ancient chamber beneath the central palace.</p>
+<p>The room contained no windows.</p>
+<p>Its walls were carved with symbols older than the three clans.</p>
+<p>At the centre stood a circular stone pedestal.</p>
+<p>Upon it rested a strange black stone, roughly the size of a human heart.</p>
+<p>Its surface was smooth, except for three symbols carved into its centre: a crimson fang, a silver claw, and a white flame.</p>
+<p>The stone had been discovered centuries earlier beneath Rudravan&#x27;s oldest temple. Nobody knew who had created it or how long it had existed.</p>
+<p>But the kings knew what it could do.</p>
+<p>When one king touched the stone during a genuine emergency, the other two would feel its call.</p>
+<p>The stone would reveal the direction of the danger, display visions of events unfolding across Rudravan, and guide the kings toward the place where their combined strength was needed.</p>
+<p>It did not summon them for ordinary disputes.</p>
+<p>It did not respond to wounded pride.</p>
+<p>It awakened only when the safety of their kingdoms—or the balance between them—was threatened.</p>
+<p>During their first joint expedition, the stone had guided them through a forest filled with invisible enemies.</p>
+<p>During a later battle, it had revealed a hidden passage beneath an enemy fortress.</p>
+<p>Once, when all three kings were trapped inside a collapsing temple, the stone had shown them a path that none of their scouts could find.</p>
+<p>But the stone had one mysterious limitation.</p>
+<p>It never explained everything.</p>
+<p>It showed what the kings needed to see, not necessarily what they wanted to know.</p>
+<p>Rudraveer examined its surface.</p>
+<p class="dialogue">&quot;Whoever created this knew our kingdoms before we existed.&quot;</p>
+<p>Bhairava folded his arms.</p>
+<p class="dialogue">&quot;Then perhaps the stone was meant for kings like us.&quot;</p>
+<p>Mahakaali studied the three symbols.</p>
+<p class="dialogue">&quot;Or perhaps it was created because one day, kings like us would fail.&quot;</p>
+<p>Neither of his friends liked that answer.</p>
+<p>Rudraveer placed his hand upon the stone.</p>
+<p>Bhairava placed his hand beside his.</p>
+<p>Mahakaali completed the circle.</p>
+<p>The stone glowed.</p>
+<p>Three streams of light rose from its surface and joined above their heads.</p>
+<p>A voice echoed through the chamber.</p>
+<p>Not a man&#x27;s voice.</p>
+<p>Not a woman&#x27;s voice.</p>
+<p>Something old enough that the kings could not determine whether it was speaking from the room or from inside their minds.</p>
+<p class="dialogue">&quot;Three powers may build a kingdom. Only three trusted hearts can preserve it.&quot;</p>
+<p>The glow faded.</p>
+<p>The chamber returned to darkness.</p>
+<p>Bhairava laughed nervously.</p>
+<p class="dialogue">&quot;Ancient stones should learn to speak more clearly.&quot;</p>
+<p>Rudraveer smiled.</p>
+<p class="dialogue">&quot;Perhaps they are wiser than kings.&quot;</p>
+<p>Mahakaali remained silent.</p>
+<p>He had noticed something none of them had discussed.</p>
+<p>For a fraction of a second, the stone had shown four shadows.</p>
+<p>But there were only three kings in the chamber.</p>
+<p>He decided not to mention it.</p>
+<p>Not yet.</p>
+<p>The kings understood that friendship alone could not protect Rudravan forever.</p>
+<p>They needed rules that would survive even if their friendship was tested.</p>
+<p>Therefore, they summoned their greatest scholars, warriors, healers, and magical advisers to create a sacred book.</p>
+<p>It became known as THE BOOK OF THREE BLOODS.</p>
+<p>Its pages were made from an ancient material that could not be burned by ordinary fire or destroyed by conventional weapons.</p>
+<p>The book was placed inside a protected chamber beneath the central palace.</p>
+<p>Only the three kings could open it together.</p>
+<p>The book contained the laws that governed their alliance.</p>
+<h3 class="chapter-heading">The Seven Sacred Rules</h3>
+<h3 class="chapter-heading">RULE I — NO CROWN ABOVE ANOTHER</h3>
+<p>The three kings shall remain equals. No ruler may claim authority over another kingdom or demand unconditional obedience from another king.</p>
+<h3 class="chapter-heading">RULE II — AN ATTACK ON ONE IS AN ATTACK ON ALL</h3>
+<p>If an outside enemy threatens any of the three clans, the other two must respond. No king may abandon an ally during a genuine war.</p>
+<h3 class="chapter-heading">RULE III — NO BLOOD SHALL BE SPILLED WITHOUT INVESTIGATION</h3>
+<p>An accusation is not proof. No king may declare war based solely on a rumour, an anonymous message, or evidence that has not been examined by all three kingdoms.</p>
+<h3 class="chapter-heading">RULE IV — THE STONE SHALL BE ANSWERED</h3>
+<p>When the ancient stone calls the kings during a true emergency, each must answer unless physically prevented from doing so. No king may knowingly conceal a danger that threatens all three kingdoms.</p>
+<h3 class="chapter-heading">RULE V — NO CLAN SHALL BE STARVED OR DENIED HEALING</h3>
+<p>Food, medicine, shelter, and safe passage must never be used as weapons against another clan. Civilians shall not be punished for the actions of rulers or soldiers.</p>
+<h3 class="chapter-heading">RULE VI — THE BOOK SHALL NEVER BE ALTERED IN SECRET</h3>
+<p>No king may secretly change the sacred laws, destroy their records, or use the book to justify an attack on another kingdom. Any amendment requires the agreement of all three kings.</p>
+<h3 class="chapter-heading">RULE VII — BROTHERHOOD SHALL PRECEDE REVENGE</h3>
+<p>When betrayal is suspected, the kings must meet before drawing their swords against one another. If one king is accused, the other two must give him an opportunity to answer.</p>
+<p>Beneath the seven rules, the kings wrote their final oath:</p>
+<p>If fear divides our minds, let the stone guide us.</p>
+<p>If anger divides our hearts, let the book remind us.</p>
+<p>If an enemy comes for one of us, let him face all three.</p>
+<p>And if one of us ever breaks this covenant, may the other two seek the truth before seeking revenge.</p>
+<p>The three kings signed the final page with their own blood.</p>
+<p>The stone beneath the palace glowed for the first time without being touched.</p>
+<p>The Book of Three Bloods was sealed.</p>
+<p>The people of Rudravan celebrated for seven days.</p>
+<p>And for generations, the sacred rules worked.</p>
+<p>Disputes were settled before they became wars.</p>
+<p>Enemies were defeated by combined armies.</p>
+<p>Famine in one territory was answered with food from the other two.</p>
+<p>The kings grew older.</p>
+<p>Their kingdoms grew stronger.</p>
+<p>And the Book of Three Bloods became the foundation of peace.</p>
+<p>They believed that as long as the stone remained and the book survived, nothing could separate them.</p>
+<p>That belief would become their greatest mistake.</p>
+<p>For nearly a century, Rudravan flourished.</p>
+<p>The vampire cities became centres of trade and craftsmanship.</p>
+<p>The werewolf forests produced food, medicine, and rare materials that could not be found anywhere else.</p>
+<p>The witch kingdom became famous for its healing temples, magical academies, and libraries.</p>
+<p>Children from the three clans studied together.</p>
+<p>Vampire physicians learned the healing arts of the witches.</p>
+<p>Werewolf warriors trained alongside vampire commanders.</p>
+<p>Witches studied the instincts and combat techniques of the werewolves.</p>
+<p>During the annual Festival of Three Bloods, the kings left their thrones and walked among ordinary citizens.</p>
+<p>Rudraveer would challenge young warriors to games of strategy.</p>
+<p>Bhairava would compete in strength contests and deliberately lose to children who needed encouragement.</p>
+<p>Mahakaali would fill the sky with magical creatures, allowing children to chase glowing birds through the gardens.</p>
+<p>At night, the three kings would gather on the balcony of the central palace.</p>
+<p>They would remove their crowns and place them on a table.</p>
+<p>For those few hours, they were not rulers.</p>
+<p>They were the three friends who had once shared a battlefield.</p>
+<p>One evening, Bhairava raised a cup.</p>
+<p class="dialogue">&quot;Look at what we have built.&quot;</p>
+<p>Rudraveer looked across the illuminated city.</p>
+<p class="dialogue">&quot;Peace.&quot;</p>
+<p>Mahakaali watched children from all three clans playing together beneath the palace tree.</p>
+<p class="dialogue">&quot;Something better than peace.&quot;</p>
+<p>Bhairava turned toward him.</p>
+<p class="dialogue">&quot;What could be better?&quot;</p>
+<p>Mahakaali smiled.</p>
+<p class="dialogue">&quot;A world where children do not need to understand why peace matters because they have never known war.&quot;</p>
+<p>The three kings sat quietly.</p>
+<p>They had fought for decades to create that world.</p>
+<p>Now they could see it growing before their eyes.</p>
+<p>Rudraveer raised his cup.</p>
+<p class="dialogue">&quot;To Rudravan.&quot;</p>
+<p>Bhairava joined him.</p>
+<p class="dialogue">&quot;To our people.&quot;</p>
+<p>Mahakaali completed the toast.</p>
+<p class="dialogue">&quot;To the friendship that made it possible.&quot;</p>
+<p>Their cups touched.</p>
+<p>Below them, the kingdom celebrated.</p>
+<p>Far away, beyond the borders, other supernatural rulers watched Rudravan&#x27;s prosperity with envy.</p>
+<p>Some feared its combined armies.</p>
+<p>Others feared its ancient stone.</p>
+<p>But one thing became clear to every rival kingdom.</p>
+<p>As long as the three kings remained united, Rudravan could not easily be conquered.</p>
+<p>And if Rudravan could not be conquered by force, someone would eventually try to destroy it from within.</p>
+<p>The first warning arrived on an ordinary winter night.</p>
+<p>Rudraveer was reviewing trade agreements when a sharp pain struck his palm.</p>
+<p>The black stone&#x27;s symbol had appeared upon his skin.</p>
+<p>At the same moment, Bhairava awoke in his mountain fortress.</p>
+<p>Mahakaali dropped a magical instrument in his private chamber.</p>
+<p>The stone was calling them.</p>
+<p>All three kings immediately travelled to the central palace.</p>
+<p>When they entered the ancient chamber, the stone was glowing crimson.</p>
+<p>A vision appeared above its surface.</p>
+<p>A village on the northern border stood in flames.</p>
+<p>Vampire soldiers were attacking its gates.</p>
+<p>Werewolf warriors were defending the streets.</p>
+<p>Witches were attempting to protect the civilians.</p>
+<p>The vision ended before the kings could identify who had attacked first.</p>
+<p>Bhairava struck the pedestal.</p>
+<p class="dialogue">&quot;We must move!&quot;</p>
+<p>Rudraveer summoned his royal guard.</p>
+<p>Mahakaali opened a magical passage.</p>
+<p>Within minutes, the three kings arrived at the village.</p>
+<p>They fought side by side.</p>
+<p>Rudraveer destroyed the attackers&#x27; weapons with shadows.</p>
+<p>Bhairava broke through their battle formation.</p>
+<p>Mahakaali raised barriers around the houses and carried wounded villagers to safety.</p>
+<p>By sunrise, the attackers had been defeated.</p>
+<p>The villagers survived.</p>
+<p>The kings returned to the palace believing that the stone had saved Rudravan from disaster.</p>
+<p>But during the investigation, something troubled them.</p>
+<p>The attackers carried no identifiable clan insignia.</p>
+<p>Their weapons bore markings that no royal scholar recognized.</p>
+<p>And every soldier who had been captured died before he could reveal who had sent them.</p>
+<p>The bodies disappeared before the royal investigators returned.</p>
+<p>The village&#x27;s surviving witnesses remembered different faces.</p>
+<p>Some claimed the attackers had worn vampire armour.</p>
+<p>Others swore they had seen werewolf weapons.</p>
+<p>A few insisted that the soldiers had moved like neither species.</p>
+<p>The kings ordered a full investigation.</p>
+<p>The Book of Three Bloods was consulted.</p>
+<p>No rule had been broken by any of the three rulers.</p>
+<p>No evidence implicated their armies.</p>
+<p>For a time, the matter was considered resolved.</p>
+<p>But the stone had revealed one final image just before its light faded.</p>
+<p>A black figure standing on a hill beyond the burning village.</p>
+<p>Watching.</p>
+<p>Waiting.</p>
+<p>And smiling.</p>
+<p>The attacks became more frequent.</p>
+<p>A werewolf settlement was destroyed near the eastern mountains.</p>
+<p>A vampire convoy carrying medicine vanished on a road protected by ancient spells.</p>
+<p>A witch sanctuary collapsed after its magical barriers failed.</p>
+<p>Every attack caused suffering.</p>
+<p>Every investigation produced contradictory evidence.</p>
+<p>And every time the kings believed they were close to discovering the truth, the trail ended.</p>
+<p>Rudraveer became increasingly suspicious.</p>
+<p>He ordered his commanders to question anyone who crossed the vampire borders.</p>
+<p>Bhairava responded by increasing patrols throughout the forests.</p>
+<p>Mahakaali restricted access to the oldest magical archives.</p>
+<p>Their actions were intended to protect their people.</p>
+<p>But the consequences were devastating.</p>
+<p>Trade slowed.</p>
+<p>Food supplies dwindled.</p>
+<p>Medicine became scarce.</p>
+<p>Refugees crowded the border settlements.</p>
+<p>Families who had once depended on their neighbours were forced to survive alone.</p>
+<p>The kings continued meeting through the Book of Three Bloods and the ancient stone.</p>
+<p>Yet their conversations became shorter.</p>
+<p>Their trust became weaker.</p>
+<p>They no longer shared every piece of information.</p>
+<p>Rudraveer believed Bhairava was hiding evidence.</p>
+<p>Bhairava believed Rudraveer was preparing for a secret invasion.</p>
+<p>Mahakaali suspected that both were making decisions based on fear.</p>
+<p>He repeatedly reminded them of Rule Three.</p>
+<p class="dialogue">&quot;No blood shall be spilled without investigation.&quot;</p>
+<p>But the kings had begun to interpret the same rule differently.</p>
+<p>Rudraveer argued that waiting too long could cost thousands of lives.</p>
+<p>Bhairava insisted that hesitation would invite further attacks.</p>
+<p>Mahakaali warned that the enemy wanted them to abandon their own laws.</p>
+<p>None of them was entirely wrong.</p>
+<p>And that was precisely why the situation became so dangerous.</p>
+<p>The enemy did not need to defeat the three kings.</p>
+<p>It only needed to make each king believe that the other two were becoming a threat.</p>
+<p>One night, the ancient stone called all three kings to the central palace.</p>
+<p>They arrived to find the chamber sealed.</p>
+<p>The protective runes had been damaged.</p>
+<p>The guards lay unconscious outside the entrance.</p>
+<p>Inside, the Book of Three Bloods rested open upon the pedestal.</p>
+<p>Several pages had been removed.</p>
+<p>The seven sacred rules remained.</p>
+<p>But the final oath had been scratched out.</p>
+<p>Rudraveer examined the damage.</p>
+<p class="dialogue">&quot;Who entered this chamber?&quot;</p>
+<p>Bhairava knelt beside the broken seal.</p>
+<p class="dialogue">&quot;Nobody should have been able to enter without all three royal signatures.&quot;</p>
+<p>Mahakaali touched the damaged runes.</p>
+<p class="dialogue">&quot;They were not broken.&quot;</p>
+<p>The other kings turned toward him.</p>
+<p class="dialogue">&quot;They were made to believe the intruder was one of us.&quot;</p>
+<p>The stone suddenly glowed.</p>
+<p>A vision appeared above it.</p>
+<p>Three figures stood inside the chamber.</p>
+<p>One wore vampire armour.</p>
+<p>One carried a werewolf weapon.</p>
+<p>One was surrounded by witch magic.</p>
+<p>They approached the book together.</p>
+<p>The vision showed them altering the sacred records.</p>
+<p>Then the image changed.</p>
+<p>The three figures turned toward the kings.</p>
+<p>Their faces were identical to those of Rudraveer, Bhairava, and Mahakaali.</p>
+<p>The vision vanished.</p>
+<p>Silence filled the chamber.</p>
+<p>Bhairava rose slowly.</p>
+<p class="dialogue">&quot;That was not us.&quot;</p>
+<p>Rudraveer stared at the stone.</p>
+<p class="dialogue">&quot;Someone wants us to believe it was.&quot;</p>
+<p>Mahakaali examined the pedestal.</p>
+<p class="dialogue">&quot;Or someone wants us to believe that our own memories can be trusted.&quot;</p>
+<p>Rudraveer turned sharply.</p>
+<p class="dialogue">&quot;What does that mean?&quot;</p>
+<p>Mahakaali looked at the open book.</p>
+<p class="dialogue">&quot;If an enemy can enter this chamber, alter the records, and imitate our appearances, how can we know what else has been changed?&quot;</p>
+<p>Nobody answered.</p>
+<p>The stone&#x27;s light faded.</p>
+<p>For the first time since the covenant was created, the three kings left the chamber without renewing their oath.</p>
+<p>The book remained open.</p>
+<p>Its final page was blank.</p>
+<p>And the ancient stone, which had guided them through countless emergencies, offered no further vision.</p>
+<p>The final break began with a massacre.</p>
+<p>A convoy carrying wounded werewolf warriors was attacked near the vampire border.</p>
+<p>The survivors claimed that vampire soldiers had killed the wounded and burned the medical supplies.</p>
+<p>Rudraveer denied ordering the attack.</p>
+<p>Bhairava demanded that the responsible commanders be surrendered for trial.</p>
+<p>Rudraveer refused.</p>
+<p class="dialogue">&quot;I will not hand over my soldiers based on accusations from another kingdom.&quot;</p>
+<p>Bhairava&#x27;s eyes burned.</p>
+<p class="dialogue">&quot;They were transporting wounded warriors, Rudraveer! They were not carrying weapons!&quot;</p>
+<p class="dialogue">&quot;And I have not been shown proof that my soldiers committed this crime.&quot;</p>
+<p class="dialogue">&quot;You want proof while my people are dying?&quot;</p>
+<p class="dialogue">&quot;I want the truth!&quot;</p>
+<p>Bhairava struck the council table.</p>
+<p class="dialogue">&quot;The truth is that every time we ask for your cooperation, you hide behind your throne!&quot;</p>
+<p>Rudraveer stood.</p>
+<p class="dialogue">&quot;And every time you lose control, you call it courage!&quot;</p>
+<p>The chamber fell silent.</p>
+<p>Mahakaali stepped between them.</p>
+<p class="dialogue">&quot;Remember the book.&quot;</p>
+<p>Bhairava turned toward him.</p>
+<p class="dialogue">&quot;The book is useless if nobody follows it.&quot;</p>
+<p>Rudraveer pointed toward the door.</p>
+<p class="dialogue">&quot;Then perhaps your kingdom should stop demanding that mine surrender its authority.&quot;</p>
+<p>Bhairava looked at his oldest friend.</p>
+<p>Something changed in his expression.</p>
+<p>Not anger alone.</p>
+<p>Disappointment.</p>
+<p>&quot;You know what hurts the most?&quot; he whispered.</p>
+<p>Rudraveer said nothing.</p>
+<p class="dialogue">&quot;I would have died for you.&quot;</p>
+<p>For a moment, the vampire king looked as though he might answer.</p>
+<p>Then he turned away.</p>
+<p>Bhairava walked out.</p>
+<p>Mahakaali remained beside Rudraveer.</p>
+<p class="dialogue">&quot;Tell me you still trust him.&quot;</p>
+<p>Rudraveer stared at the empty doorway.</p>
+<p class="dialogue">&quot;I don&#x27;t know what I believe anymore.&quot;</p>
+<p>Mahakaali looked at him with sorrow.</p>
+<p class="dialogue">&quot;That is exactly what our enemy wanted.&quot;</p>
+<p>But even Mahakaali could no longer be certain that the enemy was the only one responsible.</p>
+<p>Because earlier that day, he had received a message hidden inside the oldest magical archive.</p>
+<p>The message claimed that one of the kings had secretly ordered the original attacks.</p>
+<p>It included a royal seal.</p>
+<p>It included a date.</p>
+<p>And it included a signature.</p>
+<p>Mahakaali had recognized the handwriting.</p>
+<p>It belonged to one of his friends.</p>
+<p>He had not told the others.</p>
+<p>He had wanted to investigate first.</p>
+<p>But by keeping the message secret, he had already broken the spirit of Rule Three.</p>
+<p>The three friends were no longer simply being deceived.</p>
+<p>They were beginning to deceive one another.</p>
+<p>Within months, the ancient alliance collapsed.</p>
+<p>Rudraveer returned to the Black Palace and addressed his people.</p>
+<p class="dialogue">&quot;For generations, we have protected Rudravan through cooperation. But cooperation cannot survive when our neighbours refuse to respect our sovereignty.&quot;</p>
+<p>He ordered the construction of fortified borders.</p>
+<p>He closed the roads connecting his kingdom to the other two.</p>
+<p>He declared the Kingdom of the Night independent.</p>
+<p>Bhairava responded from the Ironwood Citadel.</p>
+<p class="dialogue">&quot;My people will never kneel before another crown. We will defend our forests, our families, and our freedom.&quot;</p>
+<p>His warriors raised their weapons.</p>
+<p>The Kingdom of the Wild became independent.</p>
+<p>Mahakaali made his declaration last.</p>
+<p class="dialogue">&quot;The witches will no longer allow their knowledge to be used in wars they did not begin. Our temples will remain protected, and our magic will answer only to our own laws.&quot;</p>
+<p>The magical barriers rose.</p>
+<p>The Kingdom of the Arcane closed its gates.</p>
+<p>Three declarations.</p>
+<p>Three crowns.</p>
+<p>Three kingdoms.</p>
+<p>The borders that had once been open became fortified walls.</p>
+<p>The trade routes disappeared.</p>
+<p>The royal palace was abandoned.</p>
+<p>The Book of Three Bloods was sealed away, and the ancient stone was returned to its chamber beneath the ruins.</p>
+<p>The people celebrated their independence in each capital.</p>
+<p>They believed their kings had protected them.</p>
+<p>But the celebrations did not last.</p>
+<p>The vampire kingdom suffered from food shortages.</p>
+<p>The werewolf kingdom lost access to medicines and magical healing.</p>
+<p>The witch kingdom struggled to maintain its barriers without materials supplied by the other clans.</p>
+<p>Thousands died from hunger, disease, and border conflicts.</p>
+<p>The kings had won their independence.</p>
+<p>Their people had lost the world they once shared.</p>
+<p>A thousand years passed.</p>
+<p>The three kingdoms became stronger, wealthier, and more isolated.</p>
+<p>Rudraveer remained upon the Black Throne.</p>
+<p>Bhairava continued to command the forests and mountains.</p>
+<p>Mahakaali ruled from the Moonspire Temple.</p>
+<p>Each king had survived wars, rebellions, and countless attempts on his life.</p>
+<p>But none had forgotten the golden age of Rudravan.</p>
+<p>Rudraveer still kept an old silver cup in his private chamber—the cup he had shared with his friends during their final festival together.</p>
+<p>Bhairava kept a broken chess piece from the game they had played as young warriors.</p>
+<p>Mahakaali preserved a faded page containing the original seven rules of the Book of Three Bloods.</p>
+<p>They never spoke about these objects.</p>
+<p>They never admitted that they missed one another.</p>
+<p>Their kingdoms had taught generations to hate.</p>
+<p>Their histories had turned old friends into legendary enemies.</p>
+<p>And the truth behind the separation remained buried.</p>
+<p>Every few decades, rumours surfaced that the ancient stone had begun to glow.</p>
+<p>Every time, the kings sent secret investigators.</p>
+<p>Every time, the reports disappeared.</p>
+<p>Every time, the three rulers came close to meeting again.</p>
+<p>And every time, something prevented them from doing so.</p>
+<p>Their greatest fear was no longer that one kingdom would conquer another.</p>
+<p>It was that the past might return.</p>
+<p>Because if the three kings ever stood together again, they might discover that the war they had fought for a thousand years had never been the war they thought it was.</p>
+<p>On a cold night beneath a blood-red moon, the ancient stone awakened.</p>
+<p>It had remained silent for centuries.</p>
+<p>Now its three symbols glowed simultaneously.</p>
+<p>A crimson light appeared in the Black Palace.</p>
+<p>A silver light spread through the Ironwood Citadel.</p>
+<p>A white flame ignited inside the Moonspire Temple.</p>
+<p>Rudraveer dropped his sword.</p>
+<p>Bhairava stopped in the middle of a battle briefing.</p>
+<p>Mahakaali felt his magic disappear for one terrifying second.</p>
+<p>All three kings knew what the light meant.</p>
+<p>A genuine emergency.</p>
+<p>An emergency so great that the stone had broken a thousand years of silence.</p>
+<p>Each king travelled alone to the ruins of Rudravan.</p>
+<p>Rudraveer arrived first.</p>
+<p>Bhairava emerged from the forest shortly afterward.</p>
+<p>Mahakaali appeared through a magical passage.</p>
+<p>They stood before one another in silence.</p>
+<p>Their faces had changed.</p>
+<p>Their voices had grown colder.</p>
+<p>Their hearts carried centuries of resentment.</p>
+<p>But the stone did not care about their hatred.</p>
+<p>It glowed brighter.</p>
+<p>A vision appeared above the pedestal.</p>
+<p>The three kings saw their kingdoms burning.</p>
+<p>The Black Palace was surrounded by an army with no banners.</p>
+<p>The Ironwood forests were filled with smoke.</p>
+<p>The Moonspire temples were collapsing beneath waves of dark energy.</p>
+<p>In every vision, the enemy remained hidden.</p>
+<p>The kings watched their soldiers fall.</p>
+<p>They saw civilians fleeing their homes.</p>
+<p>They saw children crying beside the bodies of their parents.</p>
+<p>And they saw their three kingdoms suffering the same fate.</p>
+<p>Then the vision changed.</p>
+<p>A single figure stood before the three thrones.</p>
+<p>Its face was hidden.</p>
+<p>Its hands rested upon a copy of the Book of Three Bloods.</p>
+<p>The figure turned a page.</p>
+<p>Every sacred rule had been rewritten.</p>
+<p>The first rule now read:</p>
+<p class="rule-line">NO KING SHALL TRUST ANOTHER.</p>
+<p>Bhairava&#x27;s claws emerged.</p>
+<p>Rudraveer&#x27;s shadows spread across the chamber.</p>
+<p>Mahakaali prepared a spell.</p>
+<p>The figure raised its head.</p>
+<p>The vision ended.</p>
+<p>For several seconds, nobody spoke.</p>
+<p>Then Rudraveer turned toward his old friend.</p>
+<p class="dialogue">&quot;Did you know about this?&quot;</p>
+<p>Bhairava stared at him.</p>
+<p class="dialogue">&quot;After a thousand years, that is still your first question?&quot;</p>
+<p>Mahakaali stepped between them.</p>
+<p class="dialogue">&quot;Stop. We have no time for this.&quot;</p>
+<p>Rudraveer looked at the stone.</p>
+<p class="dialogue">&quot;Then tell us what it wants.&quot;</p>
+<p>The stone glowed.</p>
+<p>Three symbols appeared above it.</p>
+<p>One vampire.</p>
+<p>One werewolf.</p>
+<p>One witch.</p>
+<p>Beneath them, words emerged.</p>
+<p class="rule-line">THE COVENANT MUST BE RESTORED BEFORE THE FINAL BELL.</p>
+<p>A second line appeared.</p>
+<p class="rule-line">IF THE THREE KINGS REFUSE, RUDRAVAN SHALL FALL.</p>
+<p>The kings looked at one another.</p>
+<p>They had spent centuries preparing to defeat each other.</p>
+<p>Now they were being asked to stand together against an enemy they could not identify.</p>
+<p>Bhairava stepped toward the pedestal.</p>
+<p class="dialogue">&quot;I will protect my people.&quot;</p>
+<p>Rudraveer replied, &quot;So will I.&quot;</p>
+<p>Mahakaali looked at both of them.</p>
+<p class="dialogue">&quot;Then we must decide whether we are still capable of protecting one another.&quot;</p>
+<p>Neither king answered.</p>
+<p>The stone&#x27;s light began to fade.</p>
+<p>Before it went dark, a final message appeared.</p>
+<p class="rule-line">THE ENEMY IS ALREADY INSIDE YOUR KINGDOMS.</p>
+<p>The chamber trembled.</p>
+<p>The kings turned toward the exits.</p>
+<p>For the first time in a thousand years, they were afraid to return home.</p>
+<p>Because each of them knew that the warning could mean the same terrible thing.</p>
+<p>The enemy was not waiting at the borders.</p>
+<p>It was not gathering an army in the mountains.</p>
+<p>It was already among their people.</p>
+<p>And one of the three kings might unknowingly be protecting it.</p>
+<p>After the kings departed, the ancient chamber fell silent.</p>
+<p>The stone went dark.</p>
+<p>The pedestal stopped vibrating.</p>
+<p>Dust settled upon the ruined walls.</p>
+<p>Then the sealed chamber containing the Book of Three Bloods opened by itself.</p>
+<p>The book rose into the air.</p>
+<p>Its pages turned without a breeze.</p>
+<p>The seven sacred rules appeared.</p>
+<p>One by one, the words began to change.</p>
+<p>NO CROWN ABOVE ANOTHER became THE FIRST CROWN MUST FALL.</p>
+<p>AN ATTACK ON ONE IS AN ATTACK ON ALL became LET EACH KING FIGHT ALONE.</p>
+<p>NO BLOOD SHALL BE SPILLED WITHOUT INVESTIGATION became LET BLOOD BECOME THE ONLY PROOF.</p>
+<p>The final rule remained unchanged for several seconds.</p>
+<p>Brotherhood shall precede revenge.</p>
+<p>Then a black mark spread across the page.</p>
+<p>The words disappeared.</p>
+<p>In their place appeared a single sentence.</p>
+<p class="rule-line">THE FIRST BETRAYAL WAS NOT COMMITTED BY A KING.</p>
+<p>A pause.</p>
+<p>Then another sentence emerged.</p>
+<p class="rule-line">IT WAS COMMITTED BY THE PERSON EACH KING TRUSTED MOST.</p>
+<p>The book closed.</p>
+<p>A shadow moved behind the pedestal.</p>
+<p>A hand reached forward and placed three objects upon the stone.</p>
+<p>A vampire ring.</p>
+<p>A werewolf fang.</p>
+<p>A witch&#x27;s crystal.</p>
+<p>The same three objects that had once represented the alliance of Rudravan.</p>
+<p>The shadow withdrew.</p>
+<p>And from the darkness came a quiet voice.</p>
+<p class="dialogue">&quot;The kings have finally returned.&quot;</p>
+<p>A second voice answered.</p>
+<p class="dialogue">&quot;Will they restore the covenant?&quot;</p>
+<p>The first voice laughed.</p>
+<p class="dialogue">&quot;No.&quot;</p>
+<p class="dialogue">&quot;Why?&quot;</p>
+<p class="dialogue">&quot;Because they still believe the greatest enemy is the one standing before them.&quot;</p>
+<p>The chamber fell silent.</p>
+<p>Then came the final words.</p>
+<p class="dialogue">&quot;Let them discover what happens when the three strongest kingdoms in the world are forced to fight an enemy they cannot see—and cannot trust themselves to recognize.&quot;</p>
+<p>Far above the chamber, the blood moon darkened.</p>
+<p>In the Black Palace, Rudraveer ordered his royal guards to investigate every adviser.</p>
+<p>In the Ironwood Citadel, Bhairava ordered his warriors to search every village.</p>
+<p>In the Moonspire Temple, Mahakaali sealed the oldest magical archive.</p>
+<p>Each king believed he was protecting his kingdom.</p>
+<p>Each king believed the enemy was hiding among the others.</p>
+<p>And each king had begun to suspect the one friend who had once saved his life.</p>
+<p>The stone had warned them.</p>
+<p>The book had given them rules.</p>
+<p>Their friendship had given them strength.</p>
+<p>Yet none of those things could protect them if they continued to fear one another more than they feared the enemy.</p>
+<div class="end-card"><h3>END OF EPISODE 2</h3><p>The Secret of the Three Kingdoms</p><p>Next episode: The Enemy with Three Faces</p></div>
+<div class="footer-nav"><a href="the-blood-episode-1.html">← Previous: Episode 1</a><a href="index.html">Back to all stories ↑</a></div>
+</article></main><script>
+(function(){const p=document.getElementById('progress');function update(){const d=document.documentElement;const max=d.scrollHeight-d.clientHeight;p.style.width=(max>0?(d.scrollTop/max)*100:0)+'%'}window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update()})();
+</script></body></html>
