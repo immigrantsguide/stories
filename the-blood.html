@@ -4,43 +4,45 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Blood — Episodes | Stories</title>
 <style>
-:root{color-scheme:dark;--bg:#09060b;--panel:#151019;--text:#f7edf0;--muted:#c7b7c0;--red:#b91c3b;--gold:#edc58a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{margin:0;background:transparent;color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.9;position:relative;isolation:isolate}
-/* Fixed full-page title-card background: story text scrolls over it */
-body::before{content:"";position:fixed;inset:0;z-index:-2;background:url('/stories/assets/The%20Blood%20Title%20card.png') center center/cover no-repeat;transform:translateZ(0)}
-body::after{content:"";position:fixed;inset:0;z-index:-1;background:rgba(9,6,11,.66);pointer-events:none}
-a{color:inherit;text-decoration:none}
-.topbar{position:sticky;top:0;z-index:5;background:rgba(9,6,11,.88);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff1a;padding:14px max(20px,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;font:13px Arial,sans-serif}
-.brand{font-weight:800;letter-spacing:2px;color:#f3d6dc}.back{color:#f1b3c1}
-.banner{min-height:78vh;display:flex;align-items:end;padding:70px max(22px,calc((100% - 1000px)/2));background:linear-gradient(0deg,rgba(9,6,11,.76),rgba(9,6,11,.10) 55%,rgba(9,6,11,.20));background-attachment:scroll;position:relative;border-bottom:1px solid #55202f}
-.banner-content{max-width:760px;text-shadow:0 3px 20px #000}.eyebrow{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#f19aaa}
-.banner h1{font-size:clamp(42px,8vw,86px);line-height:1.02;margin:14px 0;color:#fff1eb}.banner p{color:#f0dfe4;max-width:620px}
-.tag{display:inline-block;border:1px solid #a34a5e;padding:5px 10px;margin-right:7px;font:10px Arial,sans-serif;letter-spacing:1px}
-.reader{max-width:800px;margin:0 auto;padding:40px 24px 80px;background:rgba(9,6,11,.34);box-shadow:0 0 70px rgba(0,0,0,.12)}
-.reader-top{border-bottom:1px solid #ffffff30;padding-bottom:22px;margin-bottom:28px}.reader-top h2{font-size:clamp(27px,5vw,42px);line-height:1.2;margin:0 0 8px}.meta{font:12px Arial,sans-serif;color:var(--muted)}
-.progress-wrap{height:3px;background:#2c202a;position:sticky;top:51px;z-index:4}.progress{height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--gold))}
-.story p{font-size:clamp(17px,2vw,19px);line-height:2.05;color:#fff0f4;margin:0 0 24px;text-shadow:0 2px 8px #000}
-.story .dialogue{color:#fff3e8;font-size:clamp(19px,2.5vw,23px);font-style:italic;border-left:3px solid var(--red);padding:9px 0 9px 20px;margin:26px 0;background:linear-gradient(90deg,rgba(75,20,37,.65),transparent)}
-.story .sound-effect{text-align:center;color:var(--gold);font:bold 25px Arial,sans-serif;letter-spacing:5px;margin:30px 0}
-.end-card{margin-top:40px;padding:25px;border:1px solid #6a2c3c;background:rgba(26,14,23,.88);text-align:center}.end-card h3{color:var(--gold);letter-spacing:2px}.end-card p{font-size:16px}
-.footer-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:25px;font:13px Arial,sans-serif}.footer-nav a{border:1px solid #653142;padding:10px 14px;color:#f4b8c5}
-@media(max-width:600px){.banner{min-height:72vh;padding:35px 22px}.reader{padding:28px 19px 60px}.topbar{top:0}.progress-wrap{top:49px}}
-</style>
-</head>
+:root{color-scheme:dark;--gold:#e6bd72;--panel:#151117;--muted:#c9bdc6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#09070a;color:#fff;font-family:Georgia,'Times New Roman',serif}.hero{min-height:390px;position:relative;display:flex;align-items:end;justify-content:center;text-align:center;padding:42px 20px;background-image:linear-gradient(0deg,#09070a 0%,rgba(9,7,10,.32) 55%,rgba(9,7,10,.25) 100%),url('assets/The%20Blood%20Title%20card.png');background-size:cover;background-position:center 35%;border-bottom:1px solid #6b3c43}.hero-content{max-width:900px;text-shadow:0 3px 15px #000}.eyebrow{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font:700 12px Arial,sans-serif}.hero h1{font-size:clamp(42px,8vw,82px);line-height:.95;margin:14px 0;color:#fff;letter-spacing:.06em;text-transform:uppercase}.hero p{font:16px/1.6 Arial,sans-serif;color:#f3e9ed;margin:0 auto;max-width:680px}.wrap{width:min(1100px,92%);margin:0 auto;padding:35px 0 65px}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.back{color:var(--gold);text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.08em}
+.section-title{font-size:clamp(25px,4vw,36px);margin:0 0 8px;text-shadow:0 2px 12px #000}
+.sub{color:#f0dfe4;font:15px/1.6 Arial,sans-serif;margin:0 0 26px;text-shadow:0 2px 8px #000}
+.character-gallery{margin:0 0 34px;padding:22px;background:rgba(9,6,11,.72);border:1px solid rgba(237,197,138,.35);border-radius:16px;box-shadow:0 14px 36px #0006;backdrop-filter:blur(5px)}
+.character-gallery h3{font:700 13px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#edc58a;margin:0 0 17px}
+.character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.character-card{min-width:0;margin:0;overflow:hidden;border:1px solid #653142;border-radius:12px;background:linear-gradient(180deg,rgba(37,15,25,.92),rgba(10,7,12,.96));box-shadow:0 8px 24px #0007;transition:transform .2s ease,border-color .2s ease}
+.character-card:hover{transform:translateY(-4px);border-color:#edc58a}
+.character-card img{display:block;width:100%;height:clamp(180px,22vw,270px);object-fit:cover;object-position:center top}
+.character-card figcaption{min-height:58px;display:flex;align-items:center;justify-content:center;padding:12px 10px;text-align:center;color:#f6d9df;font:700 12px/1.5 Arial,sans-serif;letter-spacing:.04em}
+.character-gallery .gallery-note{font:12px/1.6 Arial,sans-serif;color:#c7b7c0;margin:14px 0 0}
+.episodes, .season-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.episode{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(35,12,23,.96),rgba(10,8,13,.94));border:1px solid #754052;border-radius:15px;padding:25px;display:flex;flex-direction:column;min-height:245px;box-shadow:0 12px 30px #0007;backdrop-filter:blur(5px);transition:transform .2s ease,border-color .2s ease}
+.episode:hover{transform:translateY(-3px);border-color:#edc58a}
+.number{color:var(--gold);font:700 12px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.episode h3{font-size:clamp(21px,2.5vw,27px);line-height:1.25;margin:13px 0 10px;color:#fff1eb}
+.episode p{font:15px/1.7 Arial,sans-serif;color:#d7c8d0;margin:0 0 24px}
+.open{display:inline-block;margin-top:auto;align-self:flex-start;text-decoration:none;background:var(--gold);color:#160e10;border-radius:7px;padding:12px 16px;font:700 13px Arial,sans-serif;letter-spacing:.05em;transition:background .2s ease,transform .2s ease}
+.open:hover{background:#f4d69d;transform:translateX(2px)}
+.footer{text-align:center;color:#877b85;font:12px Arial,sans-serif;border-top:1px solid #2d222c;padding:22px}
+
+.character-gallery{max-width:1000px;margin:0 auto 36px;padding:0 24px}.character-gallery h3{font:700 13px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#edc58a;margin:0 0 15px}.character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.character-card{overflow:hidden;border:1px solid #653142;border-radius:12px;background:rgba(15,8,15,.82);box-shadow:0 8px 24px #0006}.character-card img{display:block;width:100%;height:230px;object-fit:cover;object-position:center top}.character-card figcaption{padding:11px 10px 13px;text-align:center;color:#f6d9df;font:700 12px/1.4 Arial,sans-serif;letter-spacing:.04em}.character-gallery .gallery-note{font:12px/1.6 Arial,sans-serif;color:#c7b7c0;margin:10px 0 0}@media(max-width:650px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.character-card img{height:190px}.character-gallery{padding:0 16px}}
+@media(max-width:700px){.wrap{width:min(100% - 28px,1100px);padding-top:25px}.character-gallery{padding:16px}.character-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.character-card img{height:190px}.episodes, .season-list{grid-template-columns:1fr}.episode{min-height:210px}.topline{align-items:flex-start}.topline .eyebrow{letter-spacing:2px}}
+@media(max-width:380px){.character-card img{height:155px}.character-card figcaption{font-size:11px;padding:10px 7px}.section-title{font-size:25px}}
+.season-list{display:grid;grid-template-columns:minmax(0,760px);justify-content:center;gap:18px;margin:24px 0 48px}.season-card{min-height:220px}.season-card .open{display:inline-block;margin-top:8px}
+</style></head>
 <body>
 <header class="hero"><div class="hero-content"><div class="eyebrow">An Original Supernatural Saga</div><h1>The Blood</h1><p>Three kingdoms. Ancient promises. A secret that could destroy them all. Choose an episode and enter the world of Rudravan.</p></div></header>
-<main class="wrap"><div class="topline"><a class="back" href="index.html">← BACK TO STORY LIBRARY</a><span class="eyebrow">The Blood · Created By Vijay Krishna - Episode Guide</span></div><h2 class="section-title">Choose Your Episode</h2><p class="sub">All available episodes are listed here. Select an episode to read the full story.</p>
+<main class="wrap"><div class="topline"><a class="back" href="index.html">← BACK TO STORY LIBRARY</a><span class="eyebrow">The Blood · Episode Guide</span></div><h2 class="section-title">Choose Your Episode</h2><p class="sub">All available episodes are listed here. Select an episode to read the full story.</p>
 
 <section class="character-gallery" aria-label="The Blood characters"><h3>Meet the Characters</h3><div class="character-grid">
 <figure class="character-card"><img src="assets/The%20Vampire%20King.png" alt="The Vampire King" loading="lazy"><figcaption>Rudraveer — Vampire King</figcaption></figure>
-<figure class="character-card"><img src="assets/The%20Warewolf%20King.png" alt="The Warewolf King" loading="lazy"><figcaption>Bhairava — Warewolf King</figcaption></figure>
+<figure class="character-card"><img src="assets/The%20Werewolf%20King.png" alt="The Werewolf King" loading="lazy"><figcaption>Bhairava — Werewolf King</figcaption></figure>
 <figure class="character-card"><img src="assets/The%20Witch%20queen.png" alt="The Witch Queen" loading="lazy"><figcaption>Mahakaali — Witch King</figcaption></figure>
 <figure class="character-card"><img src="assets/Vijay.png" alt="Vijay" loading="lazy"><figcaption>Vijay — The Forbidden Bloodline</figcaption></figure>
 </div><p class="gallery-note">Character portraits from The Blood universe.</p></section>
-<section class="episodes" aria-label="The Blood episodes">
-<article class="episode"><div class="number">Episode 01</div><h3>The Beginning of War</h3><p>Three kingdoms, one forbidden bloodline, and a child whose return threatens to awaken an ancient evil.</p><a class="open" href="the-blood-episode-1.html">READ EPISODE 1 →</a></article>
-<article class="episode"><div class="number">Episode 02</div><h3>The Secret of the Three Kingdoms</h3><p>Three kings, an ancient guiding stone, and the Book of Three Bloods. Can their broken covenant be restored?</p><a class="open" href="the-blood-episode-2.html">READ EPISODE 2 →</a></article>
+<section class="season-list" aria-label="The Blood seasons">
+<article class="episode season-card"><div class="number">SEASON 01</div><h3>Season 1 — The Awakening</h3><p>Enter the first season of The Blood. Explore the episodes in order and follow the secrets of Rudravan.</p><a class="open" href="season-1/index.html">OPEN SEASON 1 →</a></article>
 </section></main><footer class="footer">© <span id="year"></span> STORIES · THE BLOOD · Created by Vijay Krishna</footer><script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body></html>
