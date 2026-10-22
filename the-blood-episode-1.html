@@ -8,35 +8,24 @@
 <meta name="description" content="The Blood, Episode 1: a dark supernatural fantasy about Vijay and the three kingdoms.">
 <style>
 :root{color-scheme:dark;--bg:#09060b;--panel:#151019;--text:#f7edf0;--muted:#c7b7c0;--red:#b91c3b;--gold:#edc58a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{margin:0;background:transparent;color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.9;position:relative;isolation:isolate}
-/* Fixed full-page title-card background: story text scrolls over it */
-body::before{content:"";position:fixed;inset:0;z-index:-2;background:url('/stories/assets/The%20Blood%20Title%20card.png') center center/cover no-repeat;transform:translateZ(0)}
-body::after{content:"";position:fixed;inset:0;z-index:-1;background:rgba(9,6,11,.66);pointer-events:none}
-a{color:inherit;text-decoration:none}
-.topbar{position:sticky;top:0;z-index:5;background:rgba(9,6,11,.88);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff1a;padding:14px max(20px,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;font:13px Arial,sans-serif}
-.brand{font-weight:800;letter-spacing:2px;color:#f3d6dc}.back{color:#f1b3c1}
-.banner{min-height:78vh;display:flex;align-items:end;padding:70px max(22px,calc((100% - 1000px)/2));background:linear-gradient(0deg,rgba(9,6,11,.76),rgba(9,6,11,.10) 55%,rgba(9,6,11,.20));background-attachment:scroll;position:relative;border-bottom:1px solid #55202f}
-.banner-content{max-width:760px;text-shadow:0 3px 20px #000}.eyebrow{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#f19aaa}
-.banner h1{font-size:clamp(42px,8vw,86px);line-height:1.02;margin:14px 0;color:#fff1eb}.banner p{color:#f0dfe4;max-width:620px}
-.tag{display:inline-block;border:1px solid #a34a5e;padding:5px 10px;margin-right:7px;font:10px Arial,sans-serif;letter-spacing:1px}
-.reader{max-width:800px;margin:0 auto;padding:40px 24px 80px;background:rgba(9,6,11,.34);box-shadow:0 0 70px rgba(0,0,0,.12)}
-.reader-top{border-bottom:1px solid #ffffff30;padding-bottom:22px;margin-bottom:28px}.reader-top h2{font-size:clamp(27px,5vw,42px);line-height:1.2;margin:0 0 8px}.meta{font:12px Arial,sans-serif;color:var(--muted)}
-.progress-wrap{height:3px;background:#2c202a;position:sticky;top:51px;z-index:4}.progress{height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--gold))}
-.story p{font-size:clamp(17px,2vw,19px);line-height:2.05;color:#fff0f4;margin:0 0 24px;text-shadow:0 2px 8px #000}
-.story .dialogue{color:#fff3e8;font-size:clamp(19px,2.5vw,23px);font-style:italic;border-left:3px solid var(--red);padding:9px 0 9px 20px;margin:26px 0;background:linear-gradient(90deg,rgba(75,20,37,.65),transparent)}
-.story .sound-effect{text-align:center;color:var(--gold);font:bold 25px Arial,sans-serif;letter-spacing:5px;margin:30px 0}
-.end-card{margin-top:40px;padding:25px;border:1px solid #6a2c3c;background:rgba(26,14,23,.88);text-align:center}.end-card h3{color:var(--gold);letter-spacing:2px}.end-card p{font-size:16px}
-.footer-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:25px;font:13px Arial,sans-serif}.footer-nav a{border:1px solid #653142;padding:10px 14px;color:#f4b8c5}
-@media(max-width:600px){.banner{min-height:72vh;padding:35px 22px}.reader{padding:28px 19px 60px}.topbar{top:0}.progress-wrap{top:49px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.9}
+a{color:inherit;text-decoration:none}.topbar{position:sticky;top:0;z-index:5;background:#09060be8;backdrop-filter:blur(12px);border-bottom:1px solid #ffffff1a;padding:14px max(20px,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;font:13px Arial,sans-serif}.brand{font-weight:800;letter-spacing:2px;color:#f3d6dc}.back{color:#f1b3c1}.banner{min-height:430px;display:flex;align-items:end;padding:55px max(22px,calc((100% - 1000px)/2));background:linear-gradient(0deg,#09060b 0%,#09060b55 55%,#09060b25 100%),url('/stories/assets/The%20Blood%20Title%20card.png') center/cover no-repeat;position:relative;border-bottom:1px solid #55202f}.banner-content{max-width:760px;text-shadow:0 3px 20px #000}.eyebrow{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#f19aaa}.banner h1{font-size:clamp(42px,8vw,86px);line-height:1.02;margin:14px 0;color:#fff1eb}.banner p{color:#f0dfe4;max-width:620px}.tag{display:inline-block;border:1px solid #a34a5e;padding:5px 10px;margin-right:7px;font:10px Arial,sans-serif;letter-spacing:1px}.reader{max-width:800px;margin:0 auto;padding:40px 24px 80px}.reader-top{border-bottom:1px solid #ffffff20;padding-bottom:22px;margin-bottom:28px}.reader-top h2{font-size:clamp(27px,5vw,42px);line-height:1.2;margin:0 0 8px}.meta{font:12px Arial,sans-serif;color:var(--muted)}.progress-wrap{height:3px;background:#2c202a;position:sticky;top:51px;z-index:4}.progress{height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--gold))}.story p{font-size:clamp(17px,2vw,19px);line-height:2.05;color:#e9dfe4;margin:0 0 24px}.story .dialogue{color:#fff3e8;font-size:clamp(19px,2.5vw,23px);font-style:italic;border-left:3px solid var(--red);padding:9px 0 9px 20px;margin:26px 0;background:linear-gradient(90deg,#4b142540,transparent)}.story .sound-effect{text-align:center;color:var(--gold);font:bold 25px Arial,sans-serif;letter-spacing:5px;margin:30px 0}.end-card{margin-top:40px;padding:25px;border:1px solid #6a2c3c;background:#1a0e17;text-align:center}.end-card h3{color:var(--gold);letter-spacing:2px}.end-card p{font-size:16px}.footer-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:25px;font:13px Arial,sans-serif}.footer-nav a{border:1px solid #653142;padding:10px 14px;color:#f4b8c5}@media(max-width:600px){.banner{min-height:360px;padding-bottom:35px}.reader{padding:28px 19px 60px}.topbar{top:0}.progress-wrap{top:49px}}
+
+.character-gallery{max-width:1000px;margin:0 auto 36px;padding:0 24px}.character-gallery h3{font:700 13px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#edc58a;margin:0 0 15px}.character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.character-card{overflow:hidden;border:1px solid #653142;border-radius:12px;background:rgba(15,8,15,.82);box-shadow:0 8px 24px #0006}.character-card img{display:block;width:100%;height:230px;object-fit:cover;object-position:center top}.character-card figcaption{padding:11px 10px 13px;text-align:center;color:#f6d9df;font:700 12px/1.4 Arial,sans-serif;letter-spacing:.04em}.character-gallery .gallery-note{font:12px/1.6 Arial,sans-serif;color:#c7b7c0;margin:10px 0 0}@media(max-width:650px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.character-card img{height:190px}.character-gallery{padding:0 16px}}
 </style>
 </head>
 <body>
-<header class="topbar"><a class="brand" href="index.html">✦ KRISHNA STORIES</a><a class="back" href="index.html#stories">← Back to stories</a></header>
+<header class="topbar"><a class="brand" href="index.html">✦ KRISHNA STORIES</a><a class="back" href="index.html">← Back to stories</a></header>
 <div class="progress-wrap" aria-hidden="true"><div class="progress" id="progress"></div></div>
 <section class="banner"><div class="banner-content"><div class="eyebrow">Original supernatural saga</div><h1>THE BLOOD</h1><p>Three kingdoms. One forbidden bloodline. A child they tried to erase has returned—and the war they feared is only beginning.</p><span class="tag">SEASON 1</span><span class="tag">EPISODE 1</span><span class="tag">DARK FANTASY</span></div></section>
-<main class="reader"><div class="reader-top"><h2>The Beginning of War</h2><div class="meta">The Blood · Season 1, Episode 1 · English</div></div><article class="story">
+<main class="reader"><div class="reader-top"><h2>The Beginning of War</h2><div class="meta">The Blood · Season 1, Episode 1 · English</div></div>
+<section class="character-gallery" aria-label="The Blood characters"><h3>Meet the Characters</h3><div class="character-grid">
+<figure class="character-card"><img src="assets/The%20Vampire%20King.png" alt="The Vampire King" loading="lazy"><figcaption>Rudraveer — Vampire King</figcaption></figure>
+<figure class="character-card"><img src="assets/The%20Werewolf%20King.png" alt="The Werewolf King" loading="lazy"><figcaption>Bhairava — Werewolf King</figcaption></figure>
+<figure class="character-card"><img src="assets/The%20Witch%20queen.png" alt="The Witch Queen" loading="lazy"><figcaption>Mahakaali — Witch King</figcaption></figure>
+<figure class="character-card"><img src="assets/Vijay.png" alt="Vijay" loading="lazy"><figcaption>Vijay — The Forbidden Bloodline</figcaption></figure>
+</div><p class="gallery-note">Character portraits from The Blood universe.</p></section>
+<article class="story">
 <p>The night sky turned red.</p>
 <p>A blood moon appeared above Rudhiravan, the forbidden village where three supernatural kingdoms shared one land.</p>
 <p>That night, the vampire king, the werewolf lord, and the witch queen had gathered inside an ancient temple. They had not come to fight each other. For the first time in a thousand years, they had come together for one purpose.</p>
@@ -543,7 +532,7 @@ a{color:inherit;text-decoration:none}
 <p>Vijay turned toward the forest.</p>
 <p>He smiled.</p>
 <p class="dialogue">“Come find me.”</p>
-</article><div class="end-card"><h3>END OF EPISODE 1</h3><p>The first blood has returned. The seal of the fourth kingdom is breaking.</p><p><strong>Coming next: Episode 2 — The Secret of the Three Kingdoms</strong></p></div><div class="footer-nav"><a href="index.html#stories">← Return to Story Library</a><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Back to top ↑</a></div></main>
+</article><div class="end-card"><h3>END OF EPISODE 1</h3><p>The first blood has returned. The seal of the fourth kingdom is breaking.</p><p><strong>Coming next: Episode 2 — The Secret of the Three Kingdoms</strong></p></div><div class="footer-nav"><a href="index.html">← Return to Story Library</a><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Back to top ↑</a></div></main>
 <script>
 const progress=document.getElementById('progress');function updateProgress(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%'}window.addEventListener('scroll',updateProgress,{passive:true});window.addEventListener('resize',updateProgress);updateProgress();
 </script>
