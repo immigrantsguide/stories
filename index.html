@@ -671,6 +671,38 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
         transition: none !important;
       }
     }
+
+    /* Featured story banner — added without removing the existing design */
+    .featured-story-banner{
+      max-width:1200px;margin:0 auto 48px;padding:0 20px;
+    }
+    .featured-banner-inner{
+      position:relative;min-height:310px;overflow:hidden;display:grid;
+      grid-template-columns:1.1fr .9fr;align-items:center;gap:25px;
+      padding:34px;border:1px solid rgba(255,255,255,.18);border-radius:22px;
+      background:linear-gradient(90deg,rgba(7,8,18,.97) 0%,rgba(7,8,18,.82) 48%,rgba(7,8,18,.1) 100%),
+      url('assets/The%20Blood%20Title%20card.png') center/cover no-repeat;
+      box-shadow:0 22px 55px rgba(0,0,0,.3);
+    }
+    .featured-banner-copy{position:relative;z-index:1;max-width:600px}
+    .featured-banner-kicker{display:inline-block;color:#fecdd3;font-size:11px;letter-spacing:2px;font-weight:800;margin-bottom:13px}
+    .featured-banner-copy h2{font-size:clamp(32px,5vw,54px);line-height:1.05;margin-bottom:14px}
+    .featured-banner-copy p{max-width:520px;color:#e1dce9;margin-bottom:20px}
+    .featured-banner-art{display:flex;justify-content:center;align-items:center;gap:10px}
+    .featured-banner-art img{width:30%;max-height:210px;object-fit:cover;border-radius:14px;border:1px solid #ffffff55;box-shadow:0 12px 32px #0008}
+    .featured-banner-art img:nth-child(2){transform:translateY(-13px);width:36%;max-height:245px}
+    .story-cover.has-image{height:190px;position:relative;overflow:hidden;background:#101322}
+    .story-cover.has-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+    .story-card:hover .story-cover.has-image img{transform:scale(1.05)}
+    .story-cover.has-image:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#080b14aa);pointer-events:none}
+    @media(max-width:700px){
+      .featured-story-banner{padding:0 15px}
+      .featured-banner-inner{grid-template-columns:1fr;padding:25px;gap:20px;background-position:60% center}
+      .featured-banner-art{justify-content:flex-start}
+      .featured-banner-art img{max-height:130px}
+      .featured-banner-art img:nth-child(2){max-height:155px}
+    }
+
   </style>
 </head>
 
@@ -751,6 +783,23 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
         <div class="moon">📖</div>
         <div class="floating-label label-one">✨ Endless Imagination</div>
         <div class="floating-label label-two">🌙 Stories for Every Mood</div>
+      </div>
+    </section>
+
+
+    <section class="featured-story-banner" aria-label="Featured original story">
+      <div class="featured-banner-inner">
+        <div class="featured-banner-copy">
+          <span class="featured-banner-kicker">✦ FEATURED SUPERNATURAL SAGA</span>
+          <h2>THE <span class="gradient-text">BLOOD</span></h2>
+          <p>Three kingdoms. One forbidden prophecy. A hybrid whose return could destroy the supernatural world—or become its only hope.</p>
+          <a class="btn btn-primary" href="#stories" id="bloodBannerRead">Read The Blood →</a>
+        </div>
+        <div class="featured-banner-art" aria-label="The Vampire King, Vijay, and the Witch Queen">
+          <img src="assets/The%20Vampire%20King.png" alt="The Vampire King" loading="lazy">
+          <img src="assets/Vijay.png" alt="Vijay, the mysterious hybrid" loading="lazy">
+          <img src="assets/The%20Witch%20queen.png" alt="The Witch Queen" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -971,6 +1020,56 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
     */
 
     const storiesData = [
+
+      {
+        id: "blood-s1e1",
+        category: "fantasy",
+        icon: "🩸",
+        coverImage: "assets/The%20Blood%20Title%20card.png",
+        minutes: 6,
+        title: {
+          en: "The Blood — The Beginning of War",
+          te: "ది బ్లడ్ — యుద్ధానికి ఆరంభం"
+        },
+        description: {
+          en: "Vijay returns beneath a blood moon, and three kingdoms discover that the prophecy they feared is only the beginning.",
+          te: "రక్తచంద్రుడి కింద విజయ్ తిరిగి వస్తాడు. మూడు రాజ్యాలు భయపడిన ప్రవచనం అసలు కథకు ఆరంభం మాత్రమేనని తెలుసుకుంటాయి."
+        },
+        body: {
+          en: [
+            "Twenty years ago, the three supernatural kingdoms witnessed a massacre so terrible that even the oldest vampires refused to speak its name. The vampires, werewolves, and witches believed the monster responsible had died. They were wrong.",
+            "Beneath a crimson blood moon, soldiers raced through King Rudraveer's palace. A guard fell to one knee. “Your Majesty! Someone has crossed the northern boundary.”",
+            "The king rose from his black throne. “Who dares enter my kingdom?” The guard swallowed hard and whispered one name: “Vijay.” The hall fell silent.",
+            "An elderly witch named Shakuni stepped from the shadows. “Some deaths are real, Your Majesty. Others are stories told to make the living feel safe.” Before the king could answer, the palace gates burst open.",
+            "A lone figure walked through the smoke. Vijay's eyes burned red. Guards surrounded him, but their captain's attack ended in a blink. Vijay stood behind him before the weapon hit the floor.",
+            "“I did not come here to fight your soldiers,” Vijay said. “I came to speak to your king.”",
+            "Rudraveer attacked with supernatural speed. Vijay caught his wrist without turning his head. The palace shook, windows shattered, and dark energy swept through the hall. For the first time in centuries, the Vampire King stood helpless.",
+            "“I could end your reign tonight,” Vijay said, “but I want you alive.”",
+            "Far away, every candle in the witches' temple went out. In the werewolf mountains, the ground trembled. Across all three kingdoms, the same ancient symbol appeared: three circles joined by a drop of blood.",
+            "Shakuni warned Vijay that his mother might still be alive—and that the truth about his father's death might be a lie. Vijay's expression hardened. “If someone lied to me, I will uncover the truth.”",
+            "Beneath the palace, a vampire, a werewolf, and a witch gathered to discuss the prophecy. A masked stranger listened from the shadows. When the leaders left, the stranger removed the mask. The face was older, but unmistakably Vijay's.",
+            "The stranger smiled. “You are hunting the wrong one.”",
+            "Beneath the blood moon, Vijay opened his hand. A dark flame flickered across his palm. “They took everything from me. Now they will learn what they created.” Somewhere beyond the three kingdoms, something ancient opened its eyes.",
+            "END OF EPISODE 1. Coming next: Episode 2 — The Secret of the Three Kingdoms."
+          ],
+          te: [
+            "ఇరవై సంవత్సరాల క్రితం మూడు అతీంద్రియ రాజ్యాలు భయంకరమైన మారణకాండను చూశాయి. ఆ ఘటన గురించి మాట్లాడటానికి పాత వాంపైర్లు కూడా భయపడేవారు. ఆ మారణకాండకు కారణమైన రాక్షసుడు చనిపోయాడని వాంపైర్లు, వేర్‌వుల్వ్స్, మంత్రగత్తెలు నమ్మారు. కానీ వాళ్లు తప్పు చేశారు.",
+            "రక్తచంద్రుడి కింద రుద్రవీర్ రాజభవనంలో సైనికులు పరుగులు తీశారు. ఒక సైనికుడు మోకాళ్లపై కూర్చుని, “మహారాజా! ఉత్తర సరిహద్దును ఎవరో దాటి వచ్చారు!” అని చెప్పాడు.",
+            "రాజు తన నల్లని సింహాసనం నుంచి లేచాడు. “నా రాజ్యంలోకి ప్రవేశించే ధైర్యం ఎవడికి ఉంది?” సైనికుడు వణుకుతూ ఒక పేరు చెప్పాడు. “విజయ్.” రాజభవనం నిశ్శబ్దమైంది.",
+            "వృద్ధ మంత్రగత్తె శకుని చీకటిలో నుంచి బయటకు వచ్చింది. “కొన్ని మరణాలు నిజం, మహారాజా. మరికొన్ని బతికున్నవారికి ధైర్యం చెప్పడానికి సృష్టించిన కథలు.” రాజు స్పందించేలోపే రాజభవనం ద్వారాలు పేలిపోయాయి.",
+            "పొగ మధ్య నుంచి విజయ్ ముందుకు నడిచాడు. అతని కళ్లలో ఎర్రటి కాంతి మెరిసింది. సైనికులు అతన్ని చుట్టుముట్టారు. సైన్యాధిపతి దాడి చేసిన మరుక్షణంలో విజయ్ అతని వెనుక ప్రత్యక్షమయ్యాడు.",
+            "“నేను నీ సైనికులతో యుద్ధం చేయడానికి రాలేదు,” అన్నాడు విజయ్. “నీ రాజుతో మాట్లాడటానికి వచ్చాను.”",
+            "రుద్రవీర్ అతీంద్రియ వేగంతో దాడి చేశాడు. విజయ్ వెనక్కి కూడా తిరగకుండా అతని మణికట్టును పట్టుకున్నాడు. రాజభవనం కంపించింది, కిటికీలు పగిలిపోయాయి. శతాబ్దాల తర్వాత వాంపైర్ రాజు మరొకరి ముందు నిస్సహాయంగా నిలబడ్డాడు.",
+            "“ఈ రాత్రే నీ పాలనను అంతం చేయగలను,” అన్నాడు విజయ్, “కానీ నువ్వు బతకాలి.”",
+            "దూరంగా మంత్రగత్తెల ఆలయంలో అన్ని దీపాలు ఆరిపోయాయి. వేర్‌వుల్వ్స్ పర్వతాల్లో భూమి కంపించింది. మూడు రాజ్యాల్లో ఒకే పురాతన చిహ్నం ప్రత్యక్షమైంది: మూడు వలయాలను కలిపిన రక్తపు బిందువు.",
+            "విజయ్ తల్లి ఇంకా బతికే ఉండవచ్చని, అతని తండ్రి మరణం గురించి చెప్పిన నిజం అబద్ధం కావచ్చని శకుని హెచ్చరించింది. “ఎవరైనా నాతో అబద్ధం చెప్పి ఉంటే ఆ నిజాన్ని బయటపెడతాను,” అన్నాడు విజయ్.",
+            "రాజభవనం కింద ఒక వాంపైర్, ఒక వేర్‌వుల్ఫ్, ఒక మంత్రగత్తె ప్రవచనం గురించి చర్చించారు. చీకటిలో ఒక ముసుగు ధరించిన వ్యక్తి వారి మాటలు విన్నాడు. వారు వెళ్లిపోయాక అతను ముసుగు తొలగించాడు. వయసు మీద పడినా, ఆ ముఖం విజయ్‌దే.",
+            "ఆ వ్యక్తి చిరునవ్వుతో, “మీరు వెతుకుతున్నది అసలైన విజయ్ కాదు,” అన్నాడు.",
+            "రక్తచంద్రుడి కింద విజయ్ తన అరచేతిని తెరిచాడు. అందులో చీకటి మంట వెలిగింది. “వాళ్లు నా నుంచి అన్నీ తీసుకున్నారు. ఇప్పుడు వాళ్లు తమ చేతులతో ఏం సృష్టించుకున్నారో తెలుసుకుంటారు.” మూడు రాజ్యాలకు ఆవల ఏదో పురాతన శక్తి తన కళ్లను తెరిచింది.",
+            "ఎపిసోడ్ 1 ముగింపు. తర్వాతి ఎపిసోడ్: ఎపిసోడ్ 2 — మూడు రాజ్యాల రహస్యం."
+          ]
+        }
+      },
       {
         id: "s001",
         category: "horror",
@@ -1525,8 +1624,10 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
 
         return `
           <article class="story-card">
-            <div class="story-cover" aria-hidden="true">
-              ${story.icon}
+            <div class="story-cover ${story.coverImage ? "has-image" : ""}" aria-hidden="true">
+              ${story.coverImage
+                ? `<img src="${escapeHTML(story.coverImage)}" alt="" loading="lazy">`
+                : story.icon}
             </div>
 
             <div class="story-content">
@@ -1701,6 +1802,14 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
     );
 
     $("#year").textContent = new Date().getFullYear();
+
+    const bloodBannerRead = $("#bloodBannerRead");
+    if (bloodBannerRead) {
+      bloodBannerRead.addEventListener("click", (event) => {
+        event.preventDefault();
+        openStory("blood-s1e1");
+      });
+    }
 
     /* Start the website. */
 
