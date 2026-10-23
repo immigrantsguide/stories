@@ -442,6 +442,11 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
         linear-gradient(135deg, #202344, #111827);
     }
 
+
+    .story-card[role="link"] { cursor: pointer; }
+    .story-cover-button { width:100%; border:0; padding:0; color:inherit; cursor:pointer; font:inherit; }
+    .story-cover-button:focus-visible, .story-card:focus-visible { outline:3px solid #d8b4fe; outline-offset:3px; }
+
     .story-content {
       padding: 19px;
     }
@@ -971,6 +976,16 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
     */
 
     const storiesData = [
+      {
+        id: "animal-kingdom",
+        category: "kids",
+        icon: "🦁",
+        cover: "assets/Animalkingdomstory.jpg",
+        minutes: 25,
+        title: { en: "THE ANIMAL KINGDOM: Book One — The Last Roar", te: "THE ANIMAL KINGDOM: Book One — The Last Roar" },
+        description: { en: "King Simha's promise, a kingdom divided, and the last roar that will unite the forest.", te: "King Simha's promise, a kingdom divided, and the last roar that will unite the forest." },
+        body: { en: ["Read THE ANIMAL KINGDOM: Book One — The Last Roar."], te: ["Read THE ANIMAL KINGDOM: Book One — The Last Roar."] }
+      },
       {
         id: "the-blood-series",
         category: "fantasy",
@@ -1543,10 +1558,10 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
           : "";
 
         return `
-          <article class="story-card">
-            <div class="story-cover" aria-hidden="true" style="${story.cover ? `background-image:linear-gradient(#0002,#0005),url('${story.cover}');background-size:cover;background-position:center;` : ''}">
+          <article class="story-card" role="link" tabindex="0" data-card-read="${escapeHTML(story.id)}" aria-label="Open ${escapeHTML(title)}">
+            <button class="story-cover story-cover-button" type="button" data-read="${escapeHTML(story.id)}" aria-label="Open ${escapeHTML(title)}" style="${story.cover ? `background-image:linear-gradient(#0002,#0005),url('${story.cover}');background-size:cover;background-position:center;` : ''}">
               ${story.cover ? '' : story.icon}
-            </div>
+            </button>
 
             <div class="story-content">
               <div class="story-meta">
@@ -1557,25 +1572,36 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
               <h3>${escapeHTML(title)}</h3>
 
               <p>${escapeHTML(description)}</p>
-
-              <button class="read-link"
-                      type="button"
-                      data-read="${escapeHTML(story.id)}">
-                ${escapeHTML(t("read"))}
-              </button>
             </div>
           </article>
         `;
       }).join("");
 
       grid.querySelectorAll("[data-read]").forEach((button) => {
-        button.addEventListener("click", () => {
+        button.addEventListener("click", (event) => {
+          event.stopPropagation();
           openStory(button.dataset.read);
+        });
+      });
+      grid.querySelectorAll("[data-card-read]").forEach((card) => {
+        card.addEventListener("click", (event) => {
+          if (event.target.closest("button")) return;
+          openStory(card.dataset.cardRead);
+        });
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openStory(card.dataset.cardRead);
+          }
         });
       });
     }
 
     function openStory(id) {
+      if (id === "animal-kingdom") {
+        window.location.href = "animal-kingdom.html";
+        return;
+      }
       if (id === "the-blood-series") {
         window.location.href = "the-blood.html";
         return;
