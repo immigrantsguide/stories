@@ -954,15 +954,21 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
       },
       {
         id: "the-light-in-the-empty-house",
-        window.location.href = "the-light-in-the-empty-house.html";
-        return;
         category: "horror",
         icon: "👻",
         cover: "assets/emptylight.png",
         minutes: 40,
-        title: { en: "THE Light In The Empty House", te: "THE Light In The Empty House" },
-        description: { en: "The daughter was never found. The neighboring boy was never found. And nobody ever discovered what really happened beside the old well. But the two houses still stand. Waiting for someone to come home." },
-        body: { en: ["Read TTHE Light In The Empty House"], te: ["Read THE Light In The Empty House"] }
+        title: {
+          en: "The Light in the Empty House",
+          te: "The Light in the Empty House"
+        },
+        description: {
+          en: "The daughter was never found. The neighboring boy was never found. And nobody ever discovered what really happened beside the old well. But the two houses still stand, waiting for someone to come home.",
+          te: "The daughter was never found. The neighboring boy was never found. And nobody ever discovered what really happened beside the old well. But the two houses still stand, waiting for someone to come home."
+        },
+        body: {
+          en: ["Open the full story to uncover what happened in the village."],
+          te: ["Open the full story to uncover what happened in the village."]
         }
       },
 
@@ -1534,6 +1540,10 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
       }
       if (id === "the-blood-series") {
         window.location.href = "the-blood.html";
+        return;
+      }
+      if (id === "the-light-in-the-empty-house") {
+        window.location.href = "the-light-in-the-empty-house.html";
         return;
       }
 
