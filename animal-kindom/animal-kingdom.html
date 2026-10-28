@@ -25,34 +25,105 @@ main{max-width:1000px;margin:auto;padding:30px 22px 80px}
 .book{display:block;overflow:hidden;border:1px solid #d7b56c88;border-radius:18px;background:rgba(3,10,6,.78);box-shadow:0 18px 55px #0005;transition:transform .2s,border-color .2s}
 .book:hover,.book:focus-visible{transform:translateY(-4px);border-color:var(--gold)}
 .cover{height:230px;background-position:center;background-size:cover;background-repeat:no-repeat}
-<main><section class="cast" aria-label="Characters"><figure><img src="/stories/assets/kalakeshari.jpg" alt="Kaalakesari" loading="lazy"><figcaption>Kaalakesari</figcaption></figure>
-<figure><img src="/stories/assets/rudra.jpg" alt="Rudra" loading="lazy"><figcaption>Rudra</figcaption></figure>
-<figure><img src="/stories/assets/jaga.jpg" alt="Jaga" loading="lazy"><figcaption>Jaga</figcaption></figure>
-<figure><img src="/stories/assets/puli.jpg" alt="Puli" loading="lazy"><figcaption>Puli</figcaption></figure>
-<figure><img src="/stories/assets/BujjiMonkey.jpg" alt="Bujji" loading="lazy"><figcaption>Bujji</figcaption></figure>
-<figure><img src="/stories/assets/Chinnafox.jpg" alt="Chinna" loading="lazy"><figcaption>Chinna</figcaption></figure>
-<figure><img src="/stories/assets/Nagu.jpg" alt="Nagu" loading="lazy"><figcaption>Nagu</figcaption></figure>
-<figure><img src="/stories/assets/Kingsimha.jpg" alt="King Simha" loading="lazy"><figcaption>King Simha</figcaption></figure></section>
+.cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;max-width:1000px;margin:30px auto;padding:20px}
+.cast figure{margin:0;text-align:center}
+.cast img{display:block;width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid #d7b56c88}
+.cast figcaption{padding:8px;color:#f4cc79;font-weight:bold}
+
+
 .cover-one{background-image:linear-gradient(0deg,rgba(0,0,0,.45),transparent),url('/stories/assets/Bookone.jpg')}
 .cover-two{background-image:linear-gradient(0deg,rgba(0,0,0,.45),transparent),url('/stories/assets/Booktwo.jpg')}
-.cover-two{background-image:linear-gradient(0deg,rgba(0,0,0,.45),transparent),url('/stories/assets/bookthree.png')}
+.cover-three{background-image:linear-gradient(0deg,rgba(0,0,0,.45),transparent),url('/stories/assets/bookthree.png')}
 .bookcontent{padding:22px}
 .label{font:700 11px Arial,sans-serif;letter-spacing:3px;color:var(--gold)}
 h2{font-size:clamp(24px,3vw,34px);margin:9px 0 12px;line-height:1.15}
 .desc{color:#e9ddcf;margin:0 0 20px}
 .open{display:inline-block;background:var(--gold);color:#191208;border-radius:8px;padding:12px 17px;font:700 12px Arial,sans-serif;letter-spacing:1px}
 footer{text-align:center;padding:25px;background:rgba(3,10,6,.88);font:11px Arial,sans-serif;letter-spacing:2px;color:#dfcda8}
-@media(max-width:650px){.hero{min-height:42vh;padding:38px 20px}main{padding:24px 14px 55px}.books{grid-template-columns:1fr}.cover{height:190px}.top{font-size:10px}}
+@media(max-width:650px){.hero{min-height:42vh;padding:38px 20px}main{padding:24px 14px 55px}.books{grid-template-columns:1fr}.cover{height:190px}.top{font-size:10px}.cast{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px}.cast img{height:160px}}
 </style>
 </head>
 <body>
-<nav class="top"><a href="../index.html">← BACK TO STORIES</a><span>THE ANIMAL KINGDOM · BOOK COLLECTION</span><a href="#books">CHOOSE A BOOK ↓</a></nav>
-<header class="hero"><div class="hero-inner"><div class="eyebrow">An Original Animal Fantasy</div><h1>THE ANIMAL KINGDOM</h1><p class="subtitle">Three books. One forest. A legacy that will change every kingdom.</p><div class="byline">CREATED BY VIJAY KRISHNA</div></div></header>
+<nav class="top">
+<a href="https://www.immigrantsguide.in/stories/index.html">← BACK TO STORIES</a>
+<span>THE ANIMAL KINGDOM · BOOK COLLECTION</span>
+<a href="https://www.immigrantsguide.in/stories/animal-kindom/animal-kingdom.html#books">CHOOSE A BOOK ↓</a>
+</nav>
+<header class="hero">
+<div class="hero-inner">
+<div class="eyebrow">An Original Animal Fantasy</div>
+<h1>THE ANIMAL KINGDOM</h1>
+<p class="subtitle">Four books. One forest. A legacy that will change every kingdom.</p>
+<div class="byline">CREATED BY VIJAY KRISHNA</div>
+</div>
+</header>
+<main>
+<section class="cast" aria-label="Characters">
+<figure>
+<img src="/stories/assets/kalakeshari.jpg" alt="Kaalakesari" loading="lazy">
+<figcaption>Kaalakesari</figcaption>
+</figure>
+<figure>
+<img src="/stories/assets/rudra.jpg" alt="Rudra" loading="lazy">
+<figcaption>Rudra</figcaption>
+</figure>
+<figure>
+<img src="/stories/assets/jaga.jpg" alt="Jaga" loading="lazy">
+<figcaption>Jaga</figcaption>
+</figure>
+<figure>
+<img src="/stories/assets/puli.jpg" alt="Puli" loading="lazy">
+<figcaption>Puli</figcaption>
+</figure>
+<figure>
+<img src="/stories/assets/BujjiMonkey.jpg" alt="Bujji" loading="lazy">
+<figcaption>Bujji</figcaption>
+</figure>
+<figure>
+<img src="/stories/assets/Chinnafox.jpg" alt="Chinna" loading="lazy">
+<figcaption>Chinna</figcaption>
+</figure>
+<figure>
+<img src="/stories/assets/Nagu.jpg" alt="Nagu" loading="lazy">
+<figcaption>Nagu</figcaption>
+</figure>
+<figure>
+<img src="/stories/assets/Kingsimha.jpg" alt="King Simha" loading="lazy">
+<figcaption>King Simha</figcaption>
+</figure>
+</section>
 <main id="books">
 <div class="books">
-<a class="book" href="animal-kingdom-book-1.html"><div class="cover cover-one" role="img" aria-label="Book One cover"></div><div class="bookcontent"><div class="label">BOOK ONE</div><h2>The Last Roar</h2><p class="desc">A king's promise. A forest divided. A final roar that changes every kingdom.</p><span class="open">OPEN BOOK ONE →</span></div></a>
-<a class="book" href="animal-kingdom-book-2.html"><div class="cover cover-two" role="img" aria-label="Book Two cover"></div><div class="bookcontent"><div class="label">BOOK TWO</div><h2>A New Beginning</h2><p class="desc">After the king's sacrifice, his legacy lives on—and an ancient enemy begins to rise.</p><span class="open">OPEN BOOK TWO →</span></div></a>
-<a class="book" href="animal-kingdom-book-3.html"><div class="cover cover-two" role="img" aria-label="Book Three cover"></div><div class="bookcontent"><div class="label">BOOK THREE</div><h2>The Fall of the Serpent</h2><p class="desc">When one enemy falls, another rises. When a kingdom thinks it is safe, the deadliest danger may already be beneath its feet.</p><span class="open">OPEN BOOK THREE →</span></div></a>
+<a class="book" href="https://www.immigrantsguide.in/stories/animal-kindom/animal-kingdom-book-1.html">
+<div class="cover cover-one" role="img" aria-label="Book One cover">
+</div>
+<div class="bookcontent">
+<div class="label">BOOK ONE</div>
+<h2>The Last Roar</h2>
+<p class="desc">A king's promise. A forest divided. A final roar that changes every kingdom.</p>
+<span class="open">OPEN BOOK ONE →</span>
+</div>
+</a>
+<a class="book" href="https://www.immigrantsguide.in/stories/animal-kindom/animal-kingdom-book-2.html">
+<div class="cover cover-two" role="img" aria-label="Book Two cover">
+</div>
+<div class="bookcontent">
+<div class="label">BOOK TWO</div>
+<h2>A New Beginning</h2>
+<p class="desc">After the king's sacrifice, his legacy lives on—and an ancient enemy begins to rise.</p>
+<span class="open">OPEN BOOK TWO →</span>
+</div>
+</a>
+<a class="book" href="https://www.immigrantsguide.in/stories/animal-kindom/animal-kingdom-book-3.html">
+<div class="cover cover-three" role="img" aria-label="Book Three cover">
+</div>
+<div class="bookcontent">
+<div class="label">BOOK THREE</div>
+<h2>The Fall of the Serpent</h2>
+<p class="desc">When one enemy falls, another rises. When a kingdom thinks it is safe, the deadliest danger may already be beneath its feet.</p>
+<span class="open">OPEN BOOK THREE →</span>
+</div>
+</a>
 </div>
 </main>
 <footer>THE ANIMAL KINGDOM · CREATED BY VIJAY KRISHNA</footer>
