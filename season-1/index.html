@@ -1,14 +1,18 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Blood — Season 1</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Blood — Season 1</title>
 <style>
 :root{--gold:#f4cc79;--text:#fff5e7;--muted:#e3d6c8}
 *{box-sizing:border-box}
 html{background:#07110b;scroll-behavior:smooth}
-body{margin:0;color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.9;background:transparent;position:relative;isolation:isolate}
+body{margin:0;color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.9;background:transparent;position:relative;isolation:isolate;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;z-index:-2;background:url('/stories/assets/The%20Blood%20Title%20card.png') center center/cover no-repeat;transform:translateZ(0)}
 body:after{content:"";position:fixed;inset:0;z-index:-1;background:rgba(3,10,6,.72);pointer-events:none}
 a{color:var(--gold);text-decoration:none}
-.top{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px max(18px,calc((100% - 1000px)/2));background:rgba(3,10,6,.88);backdrop-filter:blur(10px);font:700 12px Arial,sans-serif;letter-spacing:1px;border-bottom:1px solid #ffffff20}
+.topbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px max(18px,calc((100% - 1000px)/2));background:rgba(3,10,6,.88);backdrop-filter:blur(10px);font:700 12px Arial,sans-serif;letter-spacing:1px;border-bottom:1px solid #ffffff20}
 .hero{min-height:48vh;display:flex;align-items:end;padding:55px max(22px,calc((100% - 1000px)/2));background:linear-gradient(0deg,rgba(3,10,6,.84),rgba(3,10,6,.1) 90%)}
 .hero-inner{max-width:900px;text-shadow:0 3px 18px #000}
 .eyebrow{color:var(--gold);font:700 12px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase}
@@ -16,36 +20,42 @@ h1{font-size:clamp(38px,7vw,76px);line-height:1.04;margin:14px 0}
 .subtitle{font-size:clamp(17px,2.5vw,22px);max-width:760px;color:#fff0d8}
 .byline{font:700 12px Arial,sans-serif;letter-spacing:3px;color:#f3d9a5;margin-top:20px}
 main{max-width:1000px;margin:auto;padding:30px 22px 80px}
-.books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.book{display:block;overflow:hidden;border:1px solid #d7b56c88;border-radius:18px;background:rgba(3,10,6,.78);box-shadow:0 18px 55px #0005;transition:transform .2s,border-color .2s}
-.book:hover,.book:focus-visible{transform:translateY(-4px);border-color:var(--gold)}
-.cover{height:230px;background-position:center;background-size:cover;background-repeat:no-repeat}
-.cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;max-width:1000px;margin:30px auto;padding:20px}
-.cast figure{margin:0;text-align:center}
-.cast img{display:block;width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid #d7b56c88}
-.cast figcaption{padding:8px;color:#f4cc79;font-weight:bold}
-
-
-.cover-one{background-image:linear-gradient(0deg,rgba(0,0,0,.45),transparent),url('/stories/assets/thebloodepisode1.png')}
-.cover-two{background-image:linear-gradient(0deg,rgba(0,0,0,.45),transparent),url('/stories/assets/thebloodepisode2.png')}
-.cover-three{background-image:linear-gradient(0deg,rgba(0,0,0,.45),transparent),url('/stories/assets/thebloodepisode3.png')}
-.bookcontent{padding:22px}
-.label{font:700 11px Arial,sans-serif;letter-spacing:3px;color:var(--gold)}
+.section-title{font-size:clamp(26px,4vw,38px);margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 24px}
+.episodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+.episode{min-width:0;overflow:hidden;border:1px solid #d7b56c88;border-radius:18px;background:rgba(3,10,6,.84);box-shadow:0 18px 55px #0005;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
+.episode:hover,.episode:focus-within{transform:translateY(-4px);border-color:var(--gold)}
+.cover-link{display:block;order:0}
+.cover{display:block;width:100%;height:270px;object-fit:cover;object-position:center;background:#151016;border-bottom:1px solid #d7b56c66}
+.bookcontent{padding:20px 22px 22px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.number{font:700 11px Arial,sans-serif;letter-spacing:3px;color:var(--gold)}
 h2{font-size:clamp(24px,3vw,34px);margin:9px 0 12px;line-height:1.15}
-.desc{color:#e9ddcf;margin:0 0 20px}
+.desc{color:#e9ddcf;margin:0 0 20px;flex:1}
 .open{display:inline-block;background:var(--gold);color:#191208;border-radius:8px;padding:12px 17px;font:700 12px Arial,sans-serif;letter-spacing:1px}
+.open:hover{background:#ffe5a6}
 footer{text-align:center;padding:25px;background:rgba(3,10,6,.88);font:11px Arial,sans-serif;letter-spacing:2px;color:#dfcda8}
-@media(max-width:650px){.hero{min-height:42vh;padding:38px 20px}main{padding:24px 14px 55px}.books{grid-template-columns:1fr}.cover{height:190px}.top{font-size:10px}.cast{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px}.cast img{height:160px}}
-
-</style></head><body>
-<header class="topbar"><a href="../the-blood.html">✦ THE BLOOD</a><a class="back" href="../the-blood.html">← Back to The Blood</a></header>
-<header class="hero"><div><div class="eyebrow">THE BLOOD · SEASON ONE</div><h1>Season 1 — The Awakening</h1><p>Three kingdoms. Ancient promises. Follow the story episode by episode.</p></div></header>
-<main class="wrap"><h2 class="section-title">Season 1 Episodes</h2><p class="sub">Choose an episode to read. When you go back, you will return to this Season 1 screen.</p>
+@media(max-width:650px){.hero{min-height:42vh;padding:38px 20px}main{padding:24px 14px 55px}.episodes{grid-template-columns:1fr}.cover{height:230px}.topbar{font-size:10px}}
+</style>
+</head>
+<body>
+<header class="topbar"><a href="/stories/the-blood.html">✦ THE BLOOD</a><a href="/stories/the-blood.html">← Back to The Blood</a></header>
+<header class="hero"><div class="hero-inner"><div class="eyebrow">THE BLOOD · SEASON ONE</div><h1>Season 1 — The Awakening</h1><p class="subtitle">Three kingdoms. Ancient promises. Follow the story episode by episode.</p><div class="byline">CREATED BY VIJAY KRISHNA</div></div></header>
+<main><h2 class="section-title">Season 1 Episodes</h2><p class="sub">Choose an episode to read. When you go back, you will return to this Season 1 screen.</p>
 <section class="episodes" aria-label="Season 1 episodes">
-<article class="episode"><div class="number">EPISODE 01</div><h3>The Beginning of War</h3><p>Three kingdoms, one forbidden bloodline, and a child whose return threatens to awaken an ancient evil.</p><a class="open" href="the-blood-episode-1.html">READ EPISODE 1 →<div class="cover cover-one" role="img" aria-label="Episode One Cover">
-</div></a></article>
-<article class="episode"><div class="number">EPISODE 02</div><h3>The Secret of the Three Kingdoms</h3><p>Three kings, an ancient guiding stone, and the Book of Three Bloods. Can their broken covenant be restored?</p><a class="open" href="the-blood-episode-2.html">READ EPISODE 2 →<div class="cover cover-two" role="img" aria-label="Episode two Cover">
-</div></a></article>
-<article class="episode"><div class="number">EPISODE 03</div><h3>The Last Spell</h3><p>The three kingdoms unite to destroy Vijay. When armies fail and ancient magic begins to break, Queen Mahakaali risks her own blood to imprison him—and awakens a threat older than them all.</p><a class="open" href="the-blood-episode-3.html">READ EPISODE 3 →<div class="cover cover-three" role="img" aria-label="Episode Three Cover">
-</div></a></article>
-</section></main><footer class="footer">© <span id="year"></span> THE BLOOD · Created by Vijay Krishna</footer><script>document.getElementById('year').textContent=new Date().getFullYear()</script></body></html>
+<article class="episode">
+<a class="cover-link" href="/stories/season-1/the-blood-episode-1.html" aria-label="Read Episode 1"><img class="cover" src="/stories/assets/thebloodepisode1.png" alt="The Blood — Episode 1 cover" loading="eager" onerror="this.onerror=null;this.src='/stories/assets/thebloodepisode1.PNG'"></a>
+<div class="bookcontent"><div class="number">EPISODE 01</div><h2>The Beginning of War</h2><p class="desc">Three kingdoms, one forbidden bloodline, and a child whose return threatens to awaken an ancient evil.</p><a class="open" href="/stories/season-1/the-blood-episode-1.html">READ EPISODE 1 →</a></div>
+</article>
+<article class="episode">
+<a class="cover-link" href="/stories/season-1/the-blood-episode-2.html" aria-label="Read Episode 2"><img class="cover" src="/stories/assets/thebloodepisode2.png" alt="The Blood — Episode 2 cover" loading="lazy" onerror="this.onerror=null;this.src='/stories/assets/thebloodepisode2.PNG'"></a>
+<div class="bookcontent"><div class="number">EPISODE 02</div><h2>The Secret of the Three Kingdoms</h2><p class="desc">Three rulers, an ancient guiding stone, and the Book of Three Bloods. Can their broken covenant be restored?</p><a class="open" href="/stories/season-1/the-blood-episode-2.html">READ EPISODE 2 →</a></div>
+</article>
+<article class="episode">
+<a class="cover-link" href="/stories/season-1/the-blood-episode-3.html" aria-label="Read Episode 3"><img class="cover" src="/stories/assets/thebloodepisode3.png" alt="The Blood — Episode 3: The Last Spell cover" loading="eager" onerror="this.onerror=null;this.src='/stories/assets/thebloodepisode3.PNG'"></a>
+<div class="bookcontent"><div class="number">EPISODE 03</div><h2>The Last Spell</h2><p class="desc">The three kingdoms unite to destroy Vijay. When armies fail and ancient magic begins to break, Queen Mahakaali risks her own blood to imprison him—and awakens a threat older than them all.</p><a class="open" href="/stories/season-1/the-blood-episode-3.html">READ EPISODE 3 →</a></div>
+</article>
+</section></main>
+<footer>© <span id="year"></span> THE BLOOD · Created by Vijay Krishna</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
