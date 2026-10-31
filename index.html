@@ -993,7 +993,7 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
       },
 
       {
-        id: "honestwoodcutter.html",
+        id: "honestwoodcutter",
         category: "moral",
         icon: "🌳",
         minutes: 25,
@@ -1527,7 +1527,11 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
   window.location.href = "a-letter-never-sent.html";
   return;
 }
-
+     if (id=== "honestwoodcutter") {
+  window.location.href =
+"honestwoodcutter.html";
+  return;
+}
       const story = storiesData.find(
         (item) => item.id === id
       );
