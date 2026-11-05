@@ -1030,33 +1030,19 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
       },
 
       {
-        id: "s005",
+        id: "thelastvoice",
         category: "mystery",
         icon: "🔎",
-        minutes: 3,
+        cover: "assets/the-last-voice-poster.png",
+        minutes: 15,
         title: {
-          en: "The Clock That Stopped",
-          te: "ఆగిపోయిన గడియారం"
+          en: "The Last Voice",
         },
         description: {
-          en: "A strange clock stops at the same time every evening.",
-          te: "ప్రతి సాయంత్రం ఒకే సమయానికి ఆగిపోయే వింత గడియారం."
+          en: "She wanted one last hug.. He wanted one more chance..Someone else bought her final words.",
         },
         body: {
-          en: [
-            "In an antique shop stood a clock that always stopped at 7:17 in the evening. The shopkeeper had repaired it many times, but the problem never disappeared.",
-            "One day, a young visitor noticed that the clock stopped whenever a particular old train passed behind the building.",
-            "The shopkeeper investigated and found a forgotten vibration in the wooden wall. The passing train shook the clock just enough to interrupt its delicate mechanism.",
-            "After the clock was moved to another shelf, it continued ticking through the evening.",
-            "The mystery was solved, but the shopkeeper kept telling customers that every old object had a story waiting to be discovered."
-          ],
-          te: [
-            "ఒక పాత వస్తువుల దుకాణంలో ఉన్న గడియారం ప్రతిరోజూ సాయంత్రం 7:17 గంటలకు ఆగిపోయేది. దుకాణదారుడు ఎన్నిసార్లు బాగుచేసినా సమస్య అలాగే ఉండేది.",
-            "ఒక రోజు వచ్చిన యువకుడు, దుకాణం వెనుక నుంచి ఒక పాత రైలు వెళ్లినప్పుడల్లా గడియారం ఆగిపోతున్నట్లు గమనించాడు.",
-            "దుకాణదారుడు పరిశీలించగా చెక్క గోడలో ప్రకంపనలు కలుగుతున్నాయని తెలుసుకున్నాడు. రైలు వెళ్లేటప్పుడు వచ్చే కంపనం గడియారంలోని సున్నితమైన యంత్రాంగాన్ని ప్రభావితం చేస్తోంది.",
-            "గడియారాన్ని మరో అరలో పెట్టిన తర్వాత అది సాయంత్రం అంతా సరిగ్గా పనిచేసింది.",
-            "రహస్యం పరిష్కారమైనా, ప్రతి పాత వస్తువులో తెలుసుకోవాల్సిన ఒక కథ ఉంటుందని దుకాణదారుడు చెబుతూనే ఉండేవాడు."
-          ]
+          en: ["Open the full story to uncover the adventure"],
         }
       },
 
@@ -1522,6 +1508,11 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
      if (id=== "thelosttreasure") {
   window.location.href =
 "thelosttreasure/thelosttreasure.html";
+  return;
+}
+  if (id=== "thelastvoice") {
+  window.location.href =
+"the-last-voice.html";
   return;
 }
       const story = storiesData.find(
