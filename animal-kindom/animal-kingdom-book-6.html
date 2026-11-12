@@ -5,9 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Animal Kingdom – Book Six: Puli & Jaga</title>
 <style>
-  :root { --bg:#101713; --paper:#18231c; --gold:#e5bd68; --ink:#f2ead8; --muted:#c6c0ae; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font-family:Georgia,serif; line-height:1.8; }
+:root{--gold:#f4cc79;--text:#fff5e7;--muted:#e3d6c8}
+*{box-sizing:border-box}
+html{background:#07110b;scroll-behavior:smooth}
+body{margin:0;color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.95;background:transparent;position:relative;isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:url('/stories/assets/Animalkingdomstory.jpg') center center/cover no-repeat;transform:translateZ(0)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:rgba(3,10,6,.72);pointer-events:none}
+a{color:var(--gold);text-decoration:none}
   .cover { min-height:48vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
     padding:48px 22px; background:linear-gradient(135deg,#17251b,#273b2a 55%,#111914); border-bottom:3px solid var(--gold); }
   .cover .series { color:var(--gold); letter-spacing:.22em; font: bold  .85rem Arial,sans-serif; }
