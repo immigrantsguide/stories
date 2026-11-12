@@ -23,9 +23,44 @@
   .dialogue p:last-child { margin-bottom:0; }
   .end { text-align:center; color:var(--gold); font-size:1.2rem; margin-top:42px; }
   @media(max-width:600px){ main{padding:24px 18px 55px} p{font-size:1.02rem} }
+  #reading-progress {
+    position: fixed;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(244, 204, 121, 0.25);
+    z-index: 9999;
+}
+
+#reading-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #f4cc79;
+    transition: width 0.1s linear;
+}
 </style>
 </head>
+<script>
+window.addEventListener("scroll", function () {
+    const scrollTop = window.scrollY;
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress = scrollHeight > 0
+        ? (scrollTop / scrollHeight) * 100
+        : 0;
+
+    document.getElementById("reading-progress-bar")
+        .style.width = progress + "%";
+});
+</script>
 <body>
+<nav class="top"><a href="animal-kingdom.html">← BACK TO BOOKS</a><span>THE ANIMAL KINGDOM · BOOK SIX</span><a href="#story">START READING ↓</a></nav>
+<div id="reading-progress">
+  <div id="reading-progress-bar"></div>
+</div>
 <header class="cover">
   <div class="series">ANIMAL KINGDOM · BOOK SIX</div>
   <h1>PULI &amp; JAGA</h1>
