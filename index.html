@@ -924,6 +924,16 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
 
     const storiesData = [
       {
+        id: "NISHAACHARUDU",
+        category: "horror",
+        icon: "👻",
+        cover: "assets/Nishaacharudu1.png",
+        minutes: 25,
+        title: { en: "NISHAACHARUDU" },
+        description: { en: "Their cries echoed through the well and disappeared into the darkness. Above them, the figure remained completely still. Watching. Waiting..", te: "Their cries echoed through the well and disappeared into the darkness. Above them, the figure remained completely still. Watching. Waiting.." },
+        body: { en: ["Choose an episode of The Nishaacharudu to begin reading."], te: ["Choose an episode of Nishaacharudu to begin reading."] }
+      },
+      {
         id: "animal-kingdom",
         category: "kids",
         icon: "🦁",
@@ -1484,6 +1494,10 @@ font-size='30' font-weight='900' fill='white'&gt;VK&lt;/text&gt;
     }
 
     function openStory(id) {
+      if(id === "NISHAACHARUDU") {
+        window.location.href = "NISHAACHARUDU/index.html";
+        return;
+    {
       if (id === "animal-kingdom") {
         window.location.href = "animal-kindom/animal-kingdom.html";
         return;
